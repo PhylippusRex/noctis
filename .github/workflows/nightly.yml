@@ -34,3 +34,13 @@ jobs:
           git add data
           git commit -m "Nightly briefing $(date -u +%F)" || echo "nothing to commit"
           git push
+      - name: Build archive index
+        run: |
+          python3 -c "
+          import json, os
+          files = sorted(f[:-5] for f in os.listdir('data/archive') if f.endswith('.json') and f != 'index.json')
+          json.dump({'dates': list(reversed(files))}, open('data/archive/index.json','w'))
+          "
+          git add data/archive/index.json
+          git commit -m "Update archive index" || echo "nothing to commit"
+          git push
