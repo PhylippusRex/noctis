@@ -22,18 +22,23 @@ client = OpenAI(api_key=os.environ["GROQ_API_KEY"],
                 base_url="https://api.groq.com/openai/v1")
 
 SYSTEM = """You are Noctis, an executive night-shift analyst for traders of tokenized stocks on Bitget.
+Your reader is an active trader of tokenized US stocks (rTokens) on Bitget who wakes up to the US session.
+Frame everything around the US market: the last US close, pre-market, and the 9:30 ET open. Use ET for times.
+You provide analysis only. Never say buy, sell or hold, and never give price targets. The trader makes the final call.
 You receive overnight mover numbers (computed from Bitget data) and RESEARCH sections fetched from news, rates, macro and price tools.
 Rules:
 - Use ONLY the provided numbers for percentage moves. Never invent numbers or news.
 - Explain a move ONLY if a RESEARCH section supports it, in your own words. Otherwise write "No clear catalyst found" and set confidence to "low".
 - Never describe what an unfamiliar company or ticker does. For non-core tickers, report the numbers only.
 - You have no tools. Do not call any tools.
+- Mood and breadth are computed for you (see Breadth stats). Describe breadth using those stats only, and never claim one stock 'pulled the market' up or down.
 - Outside US market hours, rToken prices are indicative quotes; mention this in caveats when relevant.
 - Be concise and use plain English.
 Answer with ONLY one JSON object, no markdown, with these keys:
 {"headline": str, "mood": "risk-on"|"risk-off"|"mixed", "summary": str (3-4 sentences),
  "macro_context": [{"title": str, "detail": str}] (max 4),
  "movers": [{"ticker": str, "pct_change": number, "why": str, "confidence": "high"|"medium"|"low", "watch_today": str}] (max 8, core tickers first),
+ "open_outlook": str (2 sentences on what to watch into the 9:30 ET open, based only on RESEARCH),
  "other_movers_note": str (one sentence about the biggest non-core moves, numbers only),
  "watchlist_today": [str] (max 5), "sources": [str] (names of RESEARCH sections you used), "caveats": [str]}"""
 
@@ -94,17 +99,26 @@ async def gather(core):
 
 def main():
     data, core, others = load_movers()
+    pcts = [m["pct_change"] for m in core]
+    stats = {"core_count": len(pcts),
+             "core_avg_pct": round(sum(pcts) / len(pcts), 3) if pcts else 0,
+             "advancers": sum(1 for x in pcts if x > 0),
+             "decliners": sum(1 for x in pcts if x < 0)}
+    mood = ("risk-on" if stats["core_avg_pct"] > 0.5
+            else "risk-off" if stats["core_avg_pct"] < -0.5 else "mixed")
     ctx = asyncio.run(gather(core))
     sections = "\n\n".join(f"### RESEARCH {k}\n{v}" for k, v in ctx.items())
     now = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
     user_msg = (f"Time now: {now}. Overnight window: last {data['window_hours']} hours.\n"
                 f"Core stock tokens: {json.dumps(core)}\n"
-                f"Other notable movers: {json.dumps(others)}\n\n{sections}\n\n"
+                f"Other notable movers: {json.dumps(others)}\n" f"Breadth stats (computed, authoritative): {json.dumps(stats)}\n\n{sections}\n\n"
                 "Write the briefing JSON.")
     text = chat(messages=[{"role": "system", "content": SYSTEM},
                           {"role": "user", "content": user_msg}],
                 response_format={"type": "json_object"}).choices[0].message.content
     briefing = parse_json(text)
+    briefing["mood"] = mood
+    briefing["breadth"] = stats
     out = {"generated_at": data["generated_at"], "window_hours": data["window_hours"],
            "market_note": data["market_note"], "briefing": briefing,
            "core_movers": core, "other_movers": others,

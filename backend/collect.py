@@ -1,17 +1,40 @@
-import json, os, subprocess
+import json, os, subprocess, time
 from datetime import datetime, timezone
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-OVERNIGHT_HOURS = 12
+from datetime import timedelta
+
+def hours_since_us_close():
+    try:
+        from zoneinfo import ZoneInfo
+        tz = ZoneInfo("America/New_York")
+    except Exception:
+        tz = timezone(timedelta(hours=-4))
+    now = datetime.now(tz)
+    close = now.replace(hour=16, minute=0, second=0, microsecond=0)
+    if close > now:
+        close -= timedelta(days=1)
+    while close.weekday() >= 5:
+        close -= timedelta(days=1)
+    return max(2, min(96, int((now - close).total_seconds() // 3600)))
+
+OVERNIGHT_HOURS = hours_since_us_close()  # hours since the last US market close
 DEEP_LIMIT = 40
 MIN_TURNOVER_USDT = 50_000
 CORE = ["TSLA","NVDA","AAPL","MSFT","GOOGL","AMZN","META","AMD","SPY","QQQ"]
 
 def bgc(*args):
-    p = subprocess.run(["bgc", *args], capture_output=True, text=True, timeout=120)
-    if p.returncode != 0:
-        raise RuntimeError(f"bgc {' '.join(args)} failed: {p.stderr.strip()[:300]}")
-    return json.loads(p.stdout)["data"]
+    last = None
+    for attempt in range(3):
+        p = subprocess.run(["bgc", *args], capture_output=True, text=True, timeout=120)
+        try:
+            if p.returncode != 0:
+                raise RuntimeError(p.stderr.strip()[:300])
+            return json.loads(p.stdout)["data"]
+        except Exception as e:
+            last = e
+            time.sleep(1.5 * (attempt + 1))
+    raise RuntimeError(f"bgc {' '.join(args)} failed: {last}")
 
 def stock_universe():
     rows = bgc("market", "--action", "instruments", "--category", "SPOT")
