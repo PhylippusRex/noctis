@@ -1,0 +1,299 @@
+{
+  "generated_at": "2026-09-28T09:53:13.677489+00:00",
+  "window_hours": 12,
+  "market_note": "Outside Nasdaq/NYSE hours, rToken prices are indicative quotes, not live exchange prices.",
+  "briefing": {
+    "headline": "US tech stocks slide, metals tumble amid lack of catalyst",
+    "mood": "risk-off",
+    "summary": "Most major US equity tokens slipped overnight, led by a broad sell\u2011off in technology names. AAPL and NVDA managed modest gains but were insufficient to offset the declines. No clear news or macro driver emerged to explain the moves. Metals and other commodities also fell sharply, reflecting broader risk aversion.",
+    "macro_context": [
+      {
+        "title": "Yield Curve",
+        "detail": "The 10\u2011year/2\u2011year spread remains non\u2011inverted, indicating no immediate recession signal."
+      },
+      {
+        "title": "Fed Activity",
+        "detail": "No significant Fed announcements or policy changes were reported overnight."
+      }
+    ],
+    "movers": [
+      {
+        "ticker": "QQQ",
+        "pct_change": -0.925,
+        "why": "No clear catalyst found",
+        "confidence": "low",
+        "watch_today": "Monitor earnings and macro data"
+      },
+      {
+        "ticker": "META",
+        "pct_change": -2.755,
+        "why": "No clear catalyst found",
+        "confidence": "low",
+        "watch_today": "Monitor earnings and macro data"
+      },
+      {
+        "ticker": "NVDA",
+        "pct_change": 0.182,
+        "why": "No clear catalyst found",
+        "confidence": "low",
+        "watch_today": "Monitor earnings and macro data"
+      },
+      {
+        "ticker": "AMD",
+        "pct_change": -2.53,
+        "why": "No clear catalyst found",
+        "confidence": "low",
+        "watch_today": "Monitor earnings and macro data"
+      },
+      {
+        "ticker": "SPY",
+        "pct_change": -0.572,
+        "why": "No clear catalyst found",
+        "confidence": "low",
+        "watch_today": "Monitor earnings and macro data"
+      },
+      {
+        "ticker": "TSLA",
+        "pct_change": -0.84,
+        "why": "No clear catalyst found",
+        "confidence": "low",
+        "watch_today": "Monitor earnings and macro data"
+      },
+      {
+        "ticker": "MSFT",
+        "pct_change": -0.748,
+        "why": "No clear catalyst found",
+        "confidence": "low",
+        "watch_today": "Monitor earnings and macro data"
+      },
+      {
+        "ticker": "GOOGL",
+        "pct_change": -0.716,
+        "why": "No clear catalyst found",
+        "confidence": "low",
+        "watch_today": "Monitor earnings and macro data"
+      }
+    ],
+    "other_movers_note": "GFI -16.11%, GDXU -14.77%, AU -7.40%, HMY -7.22%, SOXS +6.98%",
+    "watchlist_today": [
+      "META",
+      "AMD",
+      "QQQ",
+      "TSLA",
+      "SPY"
+    ],
+    "sources": [
+      "META",
+      "AMD",
+      "QQQ",
+      "TSLA",
+      "MSFT",
+      "Wall Street",
+      "Fed",
+      "rates"
+    ],
+    "caveats": [
+      "rToken prices are indicative quotes outside US market hours",
+      "Lack of news items limits catalyst identification"
+    ]
+  },
+  "core_movers": [
+    {
+      "symbol": "RMETAUSDT",
+      "ticker": "META",
+      "start_price": 747.66,
+      "end_price": 727.06,
+      "pct_change": -2.755,
+      "range_pct": 3.342,
+      "turnover_usdt": 470382553.49
+    },
+    {
+      "symbol": "RAMDUSDT",
+      "ticker": "AMD",
+      "start_price": 630.42,
+      "end_price": 614.47,
+      "pct_change": -2.53,
+      "range_pct": 4.107,
+      "turnover_usdt": 213703903.89
+    },
+    {
+      "symbol": "RQQQUSDT",
+      "ticker": "QQQ",
+      "start_price": 744.42,
+      "end_price": 737.536,
+      "pct_change": -0.925,
+      "range_pct": 1.296,
+      "turnover_usdt": 786550512.61
+    },
+    {
+      "symbol": "RTSLAUSDT",
+      "ticker": "TSLA",
+      "start_price": 372.45,
+      "end_price": 369.32,
+      "pct_change": -0.84,
+      "range_pct": 1.63,
+      "turnover_usdt": 141430763.08
+    },
+    {
+      "symbol": "RMSFTUSDT",
+      "ticker": "MSFT",
+      "start_price": 517.25,
+      "end_price": 513.38,
+      "pct_change": -0.748,
+      "range_pct": 1.214,
+      "turnover_usdt": 121074029.21
+    },
+    {
+      "symbol": "RGOOGLUSDT",
+      "ticker": "GOOGL",
+      "start_price": 343.19,
+      "end_price": 340.7336,
+      "pct_change": -0.716,
+      "range_pct": 1.058,
+      "turnover_usdt": 70662253.33
+    },
+    {
+      "symbol": "RAMZNUSDT",
+      "ticker": "AMZN",
+      "start_price": 249.27,
+      "end_price": 247.83,
+      "pct_change": -0.578,
+      "range_pct": 0.955,
+      "turnover_usdt": 42277293.81
+    },
+    {
+      "symbol": "RSPYUSDT",
+      "ticker": "SPY",
+      "start_price": 772.24,
+      "end_price": 767.821,
+      "pct_change": -0.572,
+      "range_pct": 0.665,
+      "turnover_usdt": 223548275.49
+    },
+    {
+      "symbol": "RAAPLUSDT",
+      "ticker": "AAPL",
+      "start_price": 339.61,
+      "end_price": 340.6457,
+      "pct_change": 0.305,
+      "range_pct": 0.568,
+      "turnover_usdt": 53788352.68
+    },
+    {
+      "symbol": "RNVDAUSDT",
+      "ticker": "NVDA",
+      "start_price": 224.34,
+      "end_price": 224.7482,
+      "pct_change": 0.182,
+      "range_pct": 1.297,
+      "turnover_usdt": 240115703.02
+    }
+  ],
+  "other_movers": [
+    {
+      "symbol": "RGFIUSDT",
+      "ticker": "GFI",
+      "start_price": 40.41,
+      "end_price": 33.9,
+      "pct_change": -16.11,
+      "range_pct": 16.93,
+      "turnover_usdt": 27311516.57
+    },
+    {
+      "symbol": "RGDXUUSDT",
+      "ticker": "GDXU",
+      "start_price": 127.49,
+      "end_price": 108.66,
+      "pct_change": -14.77,
+      "range_pct": 15.843,
+      "turnover_usdt": 61301181.24
+    },
+    {
+      "symbol": "RAUUSDT",
+      "ticker": "AU",
+      "start_price": 99.3,
+      "end_price": 91.95,
+      "pct_change": -7.402,
+      "range_pct": 8.882,
+      "turnover_usdt": 7166930.97
+    },
+    {
+      "symbol": "RHMYUSDT",
+      "ticker": "HMY",
+      "start_price": 18.97,
+      "end_price": 17.6,
+      "pct_change": -7.222,
+      "range_pct": 7.696,
+      "turnover_usdt": 6043059.46
+    },
+    {
+      "symbol": "RSOXSUSDT",
+      "ticker": "SOXS",
+      "start_price": 32.36,
+      "end_price": 34.62,
+      "pct_change": 6.984,
+      "range_pct": 9.394,
+      "turnover_usdt": 495121880.9
+    },
+    {
+      "symbol": "RSBSWUSDT",
+      "ticker": "SBSW",
+      "start_price": 10.5,
+      "end_price": 9.77,
+      "pct_change": -6.952,
+      "range_pct": 11.238,
+      "turnover_usdt": 9611618.81
+    },
+    {
+      "symbol": "RCHRNUSDT",
+      "ticker": "CHRN",
+      "start_price": 21.99,
+      "end_price": 20.5,
+      "pct_change": -6.776,
+      "range_pct": 10.687,
+      "turnover_usdt": 3052261.53
+    },
+    {
+      "symbol": "RSOXLUSDT",
+      "ticker": "SOXL",
+      "start_price": 151.7006,
+      "end_price": 141.45,
+      "pct_change": -6.757,
+      "range_pct": 9.117,
+      "turnover_usdt": 1362620536.19
+    },
+    {
+      "symbol": "RRAMUSDT",
+      "ticker": "RAM",
+      "start_price": 14.48,
+      "end_price": 13.509,
+      "pct_change": -6.706,
+      "range_pct": 9.185,
+      "turnover_usdt": 16163342.57
+    },
+    {
+      "symbol": "RSECZUSDT",
+      "ticker": "SECZ",
+      "start_price": 16.4,
+      "end_price": 15.33,
+      "pct_change": -6.524,
+      "range_pct": 9.512,
+      "turnover_usdt": 2301917.6
+    }
+  ],
+  "evidence": {
+    "news:META": "[{\"feed\": \"cointelegraph\", \"error\": \"\", \"items\": []}, {\"feed\": \"decrypt\", \"error\": \"\", \"items\": []}, {\"feed\": \"bitcoinist\", \"error\": \"\", \"items\": []}, {\"feed\": \"blockworks\", \"error\": \"\", \"items\": []}, {\"feed\": \"the_defiant\", \"error\": \"\", \"items\": []}, {\"feed\": \"watcherguru\", \"error\": \"\", \"items\": []}, {\"feed\": \"coindesk\", \"error\": \"\", \"items\": []}, {\"feed\": \"cryptonews_com\", \"error\": \"\", \"items\": []}, {\"feed\": \"u_today\", \"error\": \"\", \"items\": []}, {\"feed\": \"cryptobriefing\", \"error\": \"\", \"items\": []}, {\"feed\": \"cryptonews\", \"error\": \"\", \"items\": []}, {\"feed\": \"bitcoin_com\", \"error\": \"\", \"items\"",
+    "news:AMD": "[{\"feed\": \"cointelegraph\", \"error\": \"\", \"items\": []}, {\"feed\": \"decrypt\", \"error\": \"\", \"items\": []}, {\"feed\": \"bitcoinist\", \"error\": \"\", \"items\": []}, {\"feed\": \"blockworks\", \"error\": \"\", \"items\": []}, {\"feed\": \"the_defiant\", \"error\": \"\", \"items\": []}, {\"feed\": \"watcherguru\", \"error\": \"\", \"items\": []}, {\"feed\": \"coindesk\", \"error\": \"\", \"items\": []}, {\"feed\": \"cryptonews_com\", \"error\": \"\", \"items\": []}, {\"feed\": \"u_today\", \"error\": \"\", \"items\": []}, {\"feed\": \"cryptobriefing\", \"error\": \"\", \"items\": []}, {\"feed\": \"cryptonews\", \"error\": \"\", \"items\": []}, {\"feed\": \"bitcoin_com\", \"error\": \"\", \"items\"",
+    "news:QQQ": "[{\"feed\": \"cointelegraph\", \"error\": \"\", \"items\": []}, {\"feed\": \"decrypt\", \"error\": \"\", \"items\": []}, {\"feed\": \"bitcoinist\", \"error\": \"\", \"items\": []}, {\"feed\": \"blockworks\", \"error\": \"\", \"items\": []}, {\"feed\": \"the_defiant\", \"error\": \"\", \"items\": []}, {\"feed\": \"watcherguru\", \"error\": \"\", \"items\": []}, {\"feed\": \"coindesk\", \"error\": \"\", \"items\": []}, {\"feed\": \"cryptonews_com\", \"error\": \"\", \"items\": []}, {\"feed\": \"u_today\", \"error\": \"\", \"items\": []}, {\"feed\": \"cryptobriefing\", \"error\": \"\", \"items\": []}, {\"feed\": \"cryptonews\", \"error\": \"\", \"items\": []}, {\"feed\": \"bitcoin_com\", \"error\": \"\", \"items\"",
+    "news:TSLA": "[{\"feed\": \"cointelegraph\", \"error\": \"\", \"items\": []}, {\"feed\": \"decrypt\", \"error\": \"\", \"items\": []}, {\"feed\": \"bitcoinist\", \"error\": \"\", \"items\": []}, {\"feed\": \"blockworks\", \"error\": \"\", \"items\": []}, {\"feed\": \"the_defiant\", \"error\": \"\", \"items\": []}, {\"feed\": \"watcherguru\", \"error\": \"\", \"items\": []}, {\"feed\": \"coindesk\", \"error\": \"\", \"items\": []}, {\"feed\": \"cryptonews_com\", \"error\": \"\", \"items\": []}, {\"feed\": \"u_today\", \"error\": \"\", \"items\": []}, {\"feed\": \"cryptobriefing\", \"error\": \"\", \"items\": []}, {\"feed\": \"cryptonews\", \"error\": \"\", \"items\": []}, {\"feed\": \"bitcoin_com\", \"error\": \"\", \"items\"",
+    "news:MSFT": "[{\"feed\": \"cointelegraph\", \"error\": \"\", \"items\": []}, {\"feed\": \"decrypt\", \"error\": \"\", \"items\": []}, {\"feed\": \"bitcoinist\", \"error\": \"\", \"items\": []}, {\"feed\": \"blockworks\", \"error\": \"\", \"items\": []}, {\"feed\": \"the_defiant\", \"error\": \"\", \"items\": []}, {\"feed\": \"watcherguru\", \"error\": \"\", \"items\": []}, {\"feed\": \"coindesk\", \"error\": \"\", \"items\": []}, {\"feed\": \"cryptonews_com\", \"error\": \"\", \"items\": []}, {\"feed\": \"u_today\", \"error\": \"\", \"items\": []}, {\"feed\": \"cryptobriefing\", \"error\": \"\", \"items\": []}, {\"feed\": \"cryptonews\", \"error\": \"\", \"items\": []}, {\"feed\": \"bitcoin_com\", \"error\": \"\", \"items\"",
+    "news:Wall Street": "[{\"feed\": \"cointelegraph\", \"error\": \"\", \"items\": []}, {\"feed\": \"decrypt\", \"error\": \"\", \"items\": []}, {\"feed\": \"bitcoinist\", \"error\": \"\", \"items\": []}, {\"feed\": \"blockworks\", \"error\": \"\", \"items\": []}, {\"feed\": \"the_defiant\", \"error\": \"\", \"items\": []}, {\"feed\": \"watcherguru\", \"error\": \"\", \"items\": []}, {\"feed\": \"coindesk\", \"error\": \"\", \"items\": []}, {\"feed\": \"cryptonews_com\", \"error\": \"\", \"items\": []}, {\"feed\": \"u_today\", \"error\": \"\", \"items\": []}, {\"feed\": \"cryptobriefing\", \"error\": \"\", \"items\": []}, {\"feed\": \"cryptonews\", \"error\": \"\", \"items\": []}, {\"feed\": \"bitcoin_com\", \"error\": \"\", \"items\"",
+    "news:Fed": "[{\"feed\": \"cointelegraph\", \"error\": \"\", \"items\": []}, {\"feed\": \"decrypt\", \"error\": \"\", \"items\": []}, {\"feed\": \"bitcoinist\", \"error\": \"\", \"items\": []}, {\"feed\": \"blockworks\", \"error\": \"\", \"items\": []}, {\"feed\": \"the_defiant\", \"error\": \"\", \"items\": []}, {\"feed\": \"watcherguru\", \"error\": \"\", \"items\": []}, {\"feed\": \"coindesk\", \"error\": \"\", \"items\": []}, {\"feed\": \"cryptonews_com\", \"error\": \"\", \"items\": []}, {\"feed\": \"u_today\", \"error\": \"\", \"items\": []}, {\"feed\": \"cryptobriefing\", \"error\": \"\", \"items\": []}, {\"feed\": \"cryptonews\", \"error\": \"\", \"items\": []}, {\"feed\": \"bitcoin_com\", \"error\": \"\", \"items\"",
+    "rates": "{\"fed_funds_target_upper\": {\"error\": \"\"}, \"fed_funds_target_lower\": {\"error\": \"\"}, \"t2y\": {\"error\": \"\"}, \"t10y\": {\"error\": \"\"}, \"t30y\": {\"error\": \"\"}, \"spread_10y2y\": {\"error\": \"\"}, \"breakeven_10y\": {\"error\": \"\"}, \"sofr\": {\"error\": \"\"}, \"mortgage_30y\": {\"error\": \"\"}, \"hy_spread\": {\"error\": \"\"}, \"ig_spread\": {\"error\": \"\"}, \"yield_curve_inverted\": false}",
+    "fed-news": "{\"error\": \"Failed to fetch Fed RSS: \"}",
+    "underlying:META": "Error executing tool global_assets: ",
+    "underlying:AMD": "Error executing tool global_assets: ",
+    "underlying:QQQ": "Error executing tool global_assets: ",
+    "sentiment": "{\"alt_me_error\": \"\"}"
+  }
+}
