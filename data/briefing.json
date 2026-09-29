@@ -1,170 +1,170 @@
 {
-  "generated_at": "2026-09-29T07:35:05.699178+00:00",
-  "window_hours": 11,
+  "generated_at": "2026-09-29T11:08:03.626613+00:00",
+  "window_hours": 15,
   "market_note": "Outside Nasdaq/NYSE hours, rToken prices are indicative quotes, not live exchange prices.",
   "briefing": {
-    "headline": "Mixed overnight with modest tech gains and sharp moves in niche stocks",
+    "headline": "Mixed overnight moves as small caps swing wildly while mega\u2011caps show modest gains",
     "mood": "mixed",
-    "summary": "The major US tech names showed small upticks, with NVDA and AMD edging higher while MSFT and AAPL slipped slightly. Broad market indices (SPY, QQQ) were essentially flat. Semiconductor exposure saw notable activity as MU rose nearly 2% and leveraged SOXL gained about 1.9%, whereas the energy\u2011related ITG tumbled over 28%. Smaller\u2011cap tokens like SMMT and MAAS posted large gains, contrasting with steep declines in AAUC and TBN, indicating a split market breadth.",
+    "summary": "Core mega\u2011cap tech names posted small advances, with the Nasdaq\u2011linked QQQ up 0.33% and the broader SPY up 0.14%. Small\u2011cap and specialty tokens displayed extreme divergence, led by SMMT (+17.2%) and PRMB (+15.1%) on the upside and QURE (-59.7%) and ITG (-30.0%) on the downside. Advancers outnumbered decliners among the core set (8 vs 2), but the overall tape showed heightened volatility. Traders should note the lack of clear macro or company\u2011specific catalysts overnight.",
     "macro_context": [
       {
-        "title": "Macro headlines",
-        "detail": "No Wall Street or Fed news items were found in the overnight feeds."
+        "title": "Yield curve",
+        "detail": "The 10\u2011year/2\u2011year spread remains positive, confirming the yield curve is not inverted."
       },
       {
-        "title": "Yield curve",
-        "detail": "The yield curve is not inverted, per the rates data."
+        "title": "Macro releases",
+        "detail": "No major macroeconomic data or Fed announcements were released in the overnight window."
       }
     ],
     "movers": [
       {
-        "ticker": "NVDA",
-        "pct_change": 0.661,
-        "why": "NVDA rose 0.661% overnight, ranking 6th of 20 moves and 0.538% above the core average, with turnover rank 6 of 20.",
-        "confidence": "low",
-        "watch_today": "No catalyst identified; monitor price action."
-      },
-      {
         "ticker": "AMD",
-        "pct_change": 0.488,
-        "why": "AMD rose 0.488% overnight, ranking 7th of 20 moves and 0.365% above the core average, with turnover rank 8 of 20.",
+        "pct_change": 1.189,
+        "why": "AMD rose 1.189% overnight, ranking 6th out of 20 moves and 6th in turnover, 0.866% above the core average.",
         "confidence": "low",
-        "watch_today": "No catalyst identified; monitor price action."
-      },
-      {
-        "ticker": "MSFT",
-        "pct_change": -0.343,
-        "why": "MSFT fell 0.343% overnight, ranking 15th of 20 moves and 0.466% below the core average, with turnover rank 12 of 20.",
-        "confidence": "low",
-        "watch_today": "No catalyst identified; monitor price action."
-      },
-      {
-        "ticker": "AAPL",
-        "pct_change": -0.242,
-        "why": "AAPL fell 0.242% overnight, ranking 14th of 20 moves and 0.365% below the core average, with turnover rank 10 of 20.",
-        "confidence": "low",
-        "watch_today": "No catalyst identified; monitor price action."
-      },
-      {
-        "ticker": "TSLA",
-        "pct_change": 0.235,
-        "why": "TSLA rose 0.235% overnight, ranking 8th of 20 moves and 0.112% above the core average, with turnover rank 5 of 20.",
-        "confidence": "low",
-        "watch_today": "No catalyst identified; monitor price action."
+        "watch_today": "Monitor for any US\u2011open news that could affect AMD."
       },
       {
         "ticker": "META",
-        "pct_change": 0.148,
-        "why": "META rose 0.148% overnight, ranking 9th of 20 moves and 0.025% above the core average, with turnover rank 7 of 20.",
+        "pct_change": 0.807,
+        "why": "META gained 0.807% overnight, ranking 7th out of 20 moves and 5th in turnover, 0.484% above the core average.",
         "confidence": "low",
-        "watch_today": "No catalyst identified; monitor price action."
+        "watch_today": "Monitor for any US\u2011open news that could affect META."
+      },
+      {
+        "ticker": "NVDA",
+        "pct_change": 0.77,
+        "why": "NVDA climbed 0.77% overnight, ranking 8th out of 20 moves and 3rd in turnover, 0.447% above the core average.",
+        "confidence": "low",
+        "watch_today": "Monitor for any US\u2011open news that could affect NVDA."
+      },
+      {
+        "ticker": "TSLA",
+        "pct_change": 0.462,
+        "why": "TSLA increased 0.462% overnight, ranking 9th out of 20 moves and 4th in turnover, 0.139% above the core average.",
+        "confidence": "low",
+        "watch_today": "Monitor for any US\u2011open news that could affect TSLA."
+      },
+      {
+        "ticker": "AAPL",
+        "pct_change": -0.434,
+        "why": "AAPL fell 0.434% overnight, ranking 15th out of 20 moves and 9th in turnover, 0.757% below the core average.",
+        "confidence": "low",
+        "watch_today": "Monitor for any US\u2011open news that could affect AAPL."
       },
       {
         "ticker": "QQQ",
-        "pct_change": 0.143,
-        "why": "QQQ rose 0.143% overnight, ranking 10th of 20 moves and 0.02% above the core average, with turnover rank 3 of 20.",
+        "pct_change": 0.331,
+        "why": "QQQ rose 0.331% overnight, ranking 10th out of 20 moves and 1st in turnover, 0.008% above the core average.",
         "confidence": "low",
-        "watch_today": "No catalyst identified; monitor price action."
+        "watch_today": "Monitor for any US\u2011open news that could affect QQQ."
+      },
+      {
+        "ticker": "MSFT",
+        "pct_change": -0.241,
+        "why": "MSFT slipped 0.241% overnight, ranking 14th out of 20 moves and 11th in turnover, 0.564% below the core average.",
+        "confidence": "low",
+        "watch_today": "Monitor for any US\u2011open news that could affect MSFT."
       },
       {
         "ticker": "AMZN",
-        "pct_change": 0.089,
-        "why": "AMZN rose 0.089% overnight, ranking 11th of 20 moves and 0.034% below the core average, with turnover rank 9 of 20.",
+        "pct_change": 0.187,
+        "why": "AMZN edged up 0.187% overnight, ranking 11th out of 20 moves and 8th in turnover, 0.136% below the core average.",
         "confidence": "low",
-        "watch_today": "No catalyst identified; monitor price action."
+        "watch_today": "Monitor for any US\u2011open news that could affect AMZN."
       },
       {
         "ticker": "SPY",
-        "pct_change": 0.032,
-        "why": "SPY rose 0.032% overnight, ranking 12th of 20 moves and 0.091% below the core average, with turnover rank 4 of 20.",
+        "pct_change": 0.14,
+        "why": "SPY gained 0.14% overnight, ranking 12th out of 20 moves and 2nd in turnover, 0.183% below the core average.",
         "confidence": "low",
-        "watch_today": "No catalyst identified; monitor price action."
+        "watch_today": "Monitor for any US\u2011open news that could affect SPY."
       },
       {
         "ticker": "GOOGL",
-        "pct_change": 0.015,
-        "why": "GOOGL rose 0.015% overnight, ranking 13th of 20 moves and 0.108% below the core average, with turnover rank 11 of 20.",
+        "pct_change": 0.019,
+        "why": "GOOGL was up 0.019% overnight, ranking 13th out of 20 moves and 10th in turnover, 0.304% below the core average.",
         "confidence": "low",
-        "watch_today": "No catalyst identified; monitor price action."
+        "watch_today": "Monitor for any US\u2011open news that could affect GOOGL."
+      },
+      {
+        "ticker": "QURE",
+        "pct_change": -59.679,
+        "why": "QURE plunged 59.679% overnight, ranking 20th out of 20 moves and 16th in turnover, 60.002% below the core average.",
+        "confidence": "low",
+        "watch_today": "Monitor for any US\u2011open news that could affect QURE."
       },
       {
         "ticker": "ITG",
-        "pct_change": -28.019,
-        "why": "ITG fell 28.019% overnight, the largest mover (rank 20 of 20) and 28.142% below the core average, with turnover rank 18 of 20.",
+        "pct_change": -29.952,
+        "why": "ITG fell 29.952% overnight, ranking 19th out of 20 moves and 20th in turnover, 30.275% below the core average.",
         "confidence": "low",
-        "watch_today": "No catalyst identified; monitor price action."
+        "watch_today": "Monitor for any US\u2011open news that could affect ITG."
       },
       {
         "ticker": "SMMT",
-        "pct_change": 24.711,
-        "why": "SMMT rose 24.711% overnight, the top mover (rank 1 of 20) and 24.588% above the core average, with turnover rank 13 of 20.",
+        "pct_change": 17.182,
+        "why": "SMMT surged 17.182% overnight, ranking 1st out of 20 moves and 15th in turnover, 16.859% above the core average.",
         "confidence": "low",
-        "watch_today": "No catalyst identified; monitor price action."
+        "watch_today": "Monitor for any US\u2011open news that could affect SMMT."
+      },
+      {
+        "ticker": "DBRG",
+        "pct_change": -16.405,
+        "why": "DBRG dropped 16.405% overnight, ranking 18th out of 20 moves and 14th in turnover, 16.728% below the core average.",
+        "confidence": "low",
+        "watch_today": "Monitor for any US\u2011open news that could affect DBRG."
+      },
+      {
+        "ticker": "PRMB",
+        "pct_change": 15.139,
+        "why": "PRMB rose 15.139% overnight, ranking 2nd out of 20 moves and 12th in turnover, 14.816% above the core average.",
+        "confidence": "low",
+        "watch_today": "Monitor for any US\u2011open news that could affect PRMB."
+      },
+      {
+        "ticker": "BRVE",
+        "pct_change": -14.727,
+        "why": "BRVE fell 14.727% overnight, ranking 17th out of 20 moves and 19th in turnover, 15.05% below the core average.",
+        "confidence": "low",
+        "watch_today": "Monitor for any US\u2011open news that could affect BRVE."
+      },
+      {
+        "ticker": "WDFC",
+        "pct_change": 12.139,
+        "why": "WDFC jumped 12.139% overnight, ranking 3rd out of 20 moves and 17th in turnover, 11.816% above the core average.",
+        "confidence": "low",
+        "watch_today": "Monitor for any US\u2011open news that could affect WDFC."
       },
       {
         "ticker": "MAAS",
-        "pct_change": 13.14,
-        "why": "MAAS rose 13.14% overnight, ranking 2nd of 20 moves and 13.017% above the core average, with turnover rank 17 of 20.",
+        "pct_change": 12.089,
+        "why": "MAAS increased 12.089% overnight, ranking 4th out of 20 moves and 18th in turnover, 11.766% above the core average.",
         "confidence": "low",
-        "watch_today": "No catalyst identified; monitor price action."
+        "watch_today": "Monitor for any US\u2011open news that could affect MAAS."
       },
       {
-        "ticker": "AAUC",
-        "pct_change": -10.209,
-        "why": "AAUC fell 10.209% overnight, ranking 19th of 20 moves and 10.332% below the core average, with turnover rank 20 of 20.",
+        "ticker": "DGX",
+        "pct_change": -11.971,
+        "why": "DGX slipped 11.971% overnight, ranking 16th out of 20 moves and 7th in turnover, 12.294% below the core average.",
         "confidence": "low",
-        "watch_today": "No catalyst identified; monitor price action."
+        "watch_today": "Monitor for any US\u2011open news that could affect DGX."
       },
       {
-        "ticker": "TBN",
-        "pct_change": -8.62,
-        "why": "TBN fell 8.62% overnight, ranking 18th of 20 moves and 8.743% below the core average, with turnover rank 19 of 20.",
+        "ticker": "CXW",
+        "pct_change": 9.555,
+        "why": "CXW rose 9.555% overnight, ranking 5th out of 20 moves and 13th in turnover, 9.232% above the core average.",
         "confidence": "low",
-        "watch_today": "No catalyst identified; monitor price action."
-      },
-      {
-        "ticker": "COUR",
-        "pct_change": -2.542,
-        "why": "COUR fell 2.542% overnight, ranking 17th of 20 moves and 2.665% below the core average, with turnover rank 14 of 20.",
-        "confidence": "low",
-        "watch_today": "No catalyst identified; monitor price action."
-      },
-      {
-        "ticker": "KOD",
-        "pct_change": -2.435,
-        "why": "KOD fell 2.435% overnight, ranking 16th of 20 moves and 2.558% below the core average, with turnover rank 16 of 20.",
-        "confidence": "low",
-        "watch_today": "No catalyst identified; monitor price action."
-      },
-      {
-        "ticker": "MU",
-        "pct_change": 1.961,
-        "why": "MU rose 1.961% overnight, ranking 3rd of 20 moves and 1.838% above the core average, with turnover rank 2 of 20.",
-        "confidence": "low",
-        "watch_today": "No catalyst identified; monitor price action."
-      },
-      {
-        "ticker": "SOXL",
-        "pct_change": 1.933,
-        "why": "SOXL rose 1.933% overnight, ranking 4th of 20 moves and 1.81% above the core average, with turnover rank 1 of 20.",
-        "confidence": "low",
-        "watch_today": "No catalyst identified; monitor price action."
-      },
-      {
-        "ticker": "ULCC",
-        "pct_change": 1.725,
-        "why": "ULCC rose 1.725% overnight, ranking 5th of 20 moves and 1.602% above the core average, with turnover rank 15 of 20.",
-        "confidence": "low",
-        "watch_today": "No catalyst identified; monitor price action."
+        "watch_today": "Monitor for any US\u2011open news that could affect CXW."
       }
     ],
-    "open_outlook": "No clear catalyst emerged overnight, so price action at the 9:30\u202fET open will be driven largely by technical factors and any late\u2011breaking news. Traders should keep a close eye on the large movers\u2014especially ITG, SMMT, MAAS, MU and SOXL\u2014as they could set the tone for the session.",
+    "open_outlook": "With no clear catalyst emerging overnight, the market will likely react to any earnings releases or macro data that appear at the 9:30\u202fET open. Keep an eye on the direction of the major indices as they set the tone for the session.",
     "watchlist_today": [
-      "ITG",
+      "AMD",
+      "NVDA",
       "SMMT",
-      "MAAS",
-      "MU",
-      "SOXL"
+      "PRMB",
+      "QURE"
     ],
     "sources": [
       "Wall Street",
@@ -172,209 +172,208 @@
       "rates"
     ],
     "caveats": [
-      "These prices are indicative quotes as the US markets are closed.",
-      "No news items were found for any ticker, so explanations are based solely on price movements."
+      "rToken prices shown are indicative quotes outside regular US market hours; actual trading may differ when markets open. No news items were found for many tickers, so explanations rely solely on price movement statistics."
     ],
     "breadth": {
       "core_count": 10,
-      "core_avg_pct": 0.123,
+      "core_avg_pct": 0.323,
       "advancers": 8,
       "decliners": 2
     }
   },
   "core_movers": [
     {
-      "symbol": "RNVDAUSDT",
-      "ticker": "NVDA",
-      "start_price": 228.7877,
-      "end_price": 230.3,
-      "pct_change": 0.661,
-      "range_pct": 1.084,
-      "turnover_usdt": 330325623.46
-    },
-    {
       "symbol": "RAMDUSDT",
       "ticker": "AMD",
       "start_price": 608.3,
-      "end_price": 611.27,
-      "pct_change": 0.488,
-      "range_pct": 1.463,
-      "turnover_usdt": 201113059.33
-    },
-    {
-      "symbol": "RMSFTUSDT",
-      "ticker": "MSFT",
-      "start_price": 509.5,
-      "end_price": 507.75,
-      "pct_change": -0.343,
-      "range_pct": 1.046,
-      "turnover_usdt": 55955723.54
-    },
-    {
-      "symbol": "RAAPLUSDT",
-      "ticker": "AAPL",
-      "start_price": 338.3995,
-      "end_price": 337.58,
-      "pct_change": -0.242,
-      "range_pct": 0.514,
-      "turnover_usdt": 137250292.62
-    },
-    {
-      "symbol": "RTSLAUSDT",
-      "ticker": "TSLA",
-      "start_price": 357.7,
-      "end_price": 358.54,
-      "pct_change": 0.235,
-      "range_pct": 0.853,
-      "turnover_usdt": 440556428.74
+      "end_price": 615.53,
+      "pct_change": 1.189,
+      "range_pct": 2.268,
+      "turnover_usdt": 353642275.75
     },
     {
       "symbol": "RMETAUSDT",
       "ticker": "META",
       "start_price": 716.0635,
-      "end_price": 717.12,
-      "pct_change": 0.148,
-      "range_pct": 1.226,
-      "turnover_usdt": 275892564.03
+      "end_price": 721.84,
+      "pct_change": 0.807,
+      "range_pct": 1.718,
+      "turnover_usdt": 439356023.06
+    },
+    {
+      "symbol": "RNVDAUSDT",
+      "ticker": "NVDA",
+      "start_price": 228.7877,
+      "end_price": 230.5485,
+      "pct_change": 0.77,
+      "range_pct": 1.576,
+      "turnover_usdt": 636788377.28
+    },
+    {
+      "symbol": "RTSLAUSDT",
+      "ticker": "TSLA",
+      "start_price": 357.7,
+      "end_price": 359.3543,
+      "pct_change": 0.462,
+      "range_pct": 1.121,
+      "turnover_usdt": 536877534.18
+    },
+    {
+      "symbol": "RAAPLUSDT",
+      "ticker": "AAPL",
+      "start_price": 338.3995,
+      "end_price": 336.93,
+      "pct_change": -0.434,
+      "range_pct": 0.798,
+      "turnover_usdt": 190609907.27
     },
     {
       "symbol": "RQQQUSDT",
       "ticker": "QQQ",
       "start_price": 736.5,
-      "end_price": 737.55,
-      "pct_change": 0.143,
-      "range_pct": 0.77,
-      "turnover_usdt": 516504135.42
+      "end_price": 738.94,
+      "pct_change": 0.331,
+      "range_pct": 0.968,
+      "turnover_usdt": 993489510.15
+    },
+    {
+      "symbol": "RMSFTUSDT",
+      "ticker": "MSFT",
+      "start_price": 509.5,
+      "end_price": 508.27,
+      "pct_change": -0.241,
+      "range_pct": 1.046,
+      "turnover_usdt": 90685149.05
     },
     {
       "symbol": "RAMZNUSDT",
       "ticker": "AMZN",
       "start_price": 246.3,
-      "end_price": 246.52,
-      "pct_change": 0.089,
-      "range_pct": 0.967,
-      "turnover_usdt": 190009265.17
+      "end_price": 246.76,
+      "pct_change": 0.187,
+      "range_pct": 0.983,
+      "turnover_usdt": 229526836.22
     },
     {
       "symbol": "RSPYUSDT",
       "ticker": "SPY",
       "start_price": 765.635,
-      "end_price": 765.88,
-      "pct_change": 0.032,
-      "range_pct": 0.453,
-      "turnover_usdt": 502910232.93
+      "end_price": 766.7107,
+      "pct_change": 0.14,
+      "range_pct": 0.545,
+      "turnover_usdt": 814629329.05
     },
     {
       "symbol": "RGOOGLUSDT",
       "ticker": "GOOGL",
       "start_price": 342.5,
-      "end_price": 342.55,
-      "pct_change": 0.015,
+      "end_price": 342.5657,
+      "pct_change": 0.019,
       "range_pct": 0.549,
-      "turnover_usdt": 83131126.5
+      "turnover_usdt": 128415932.06
     }
   ],
   "other_movers": [
     {
+      "symbol": "RQUREUSDT",
+      "ticker": "QURE",
+      "start_price": 38.59,
+      "end_price": 15.56,
+      "pct_change": -59.679,
+      "range_pct": 62.464,
+      "turnover_usdt": 53313396.14
+    },
+    {
       "symbol": "RITGUSDT",
       "ticker": "ITG",
       "start_price": 10.35,
-      "end_price": 7.45,
-      "pct_change": -28.019,
+      "end_price": 7.25,
+      "pct_change": -29.952,
       "range_pct": 32.367,
-      "turnover_usdt": 9178031.87
+      "turnover_usdt": 9196775.06
     },
     {
       "symbol": "RSMMTUSDT",
       "ticker": "SMMT",
       "start_price": 15.58,
-      "end_price": 19.43,
-      "pct_change": 24.711,
-      "range_pct": 26.958,
-      "turnover_usdt": 42462126.73
+      "end_price": 18.2569,
+      "pct_change": 17.182,
+      "range_pct": 27.15,
+      "turnover_usdt": 62252230.15
+    },
+    {
+      "symbol": "RDBRGUSDT",
+      "ticker": "DBRG",
+      "start_price": 15.91,
+      "end_price": 13.3,
+      "pct_change": -16.405,
+      "range_pct": 22.879,
+      "turnover_usdt": 62803679.3
+    },
+    {
+      "symbol": "RPRMBUSDT",
+      "ticker": "PRMB",
+      "start_price": 19.5,
+      "end_price": 22.4522,
+      "pct_change": 15.139,
+      "range_pct": 17.704,
+      "turnover_usdt": 77336831.98
+    },
+    {
+      "symbol": "RBRVEUSDT",
+      "ticker": "BRVE",
+      "start_price": 21.11,
+      "end_price": 18.0012,
+      "pct_change": -14.727,
+      "range_pct": 19.18,
+      "turnover_usdt": 11478530.35
+    },
+    {
+      "symbol": "RWDFCUSDT",
+      "ticker": "WDFC",
+      "start_price": 198.88,
+      "end_price": 223.0217,
+      "pct_change": 12.139,
+      "range_pct": 12.446,
+      "turnover_usdt": 17045513.45
     },
     {
       "symbol": "RMAASUSDT",
       "ticker": "MAAS",
-      "start_price": 15.83,
-      "end_price": 17.91,
-      "pct_change": 13.14,
-      "range_pct": 19.52,
-      "turnover_usdt": 11943644.18
+      "start_price": 16.014,
+      "end_price": 17.95,
+      "pct_change": 12.089,
+      "range_pct": 22.043,
+      "turnover_usdt": 12014966.27
     },
     {
-      "symbol": "RAAUCUSDT",
-      "ticker": "AAUC",
-      "start_price": 23.41,
-      "end_price": 21.02,
-      "pct_change": -10.209,
-      "range_pct": 10.252,
-      "turnover_usdt": 3952146.34
+      "symbol": "RDGXUSDT",
+      "ticker": "DGX",
+      "start_price": 236.44,
+      "end_price": 208.1352,
+      "pct_change": -11.971,
+      "range_pct": 12.724,
+      "turnover_usdt": 235559437.33
     },
     {
-      "symbol": "RTBNUSDT",
-      "ticker": "TBN",
-      "start_price": 35.4564,
-      "end_price": 32.4,
-      "pct_change": -8.62,
-      "range_pct": 10.153,
-      "turnover_usdt": 4767677.72
-    },
-    {
-      "symbol": "RCOURUSDT",
-      "ticker": "COUR",
-      "start_price": 4.72,
-      "end_price": 4.6,
-      "pct_change": -2.542,
-      "range_pct": 4.343,
-      "turnover_usdt": 40976312.86
-    },
-    {
-      "symbol": "RKODUSDT",
-      "ticker": "KOD",
-      "start_price": 87.9,
-      "end_price": 85.76,
-      "pct_change": -2.435,
-      "range_pct": 8.089,
-      "turnover_usdt": 15535814.6
-    },
-    {
-      "symbol": "RMUUSDT",
-      "ticker": "MU",
-      "start_price": 1052.84,
-      "end_price": 1073.49,
-      "pct_change": 1.961,
-      "range_pct": 2.991,
-      "turnover_usdt": 563856286.55
-    },
-    {
-      "symbol": "RSOXLUSDT",
-      "ticker": "SOXL",
-      "start_price": 141.6717,
-      "end_price": 144.41,
-      "pct_change": 1.933,
-      "range_pct": 5.139,
-      "turnover_usdt": 675137522.13
-    },
-    {
-      "symbol": "RULCCUSDT",
-      "ticker": "ULCC",
-      "start_price": 6.18,
-      "end_price": 6.2866,
-      "pct_change": 1.725,
-      "range_pct": 5.366,
-      "turnover_usdt": 16533063.26
+      "symbol": "RCXWUSDT",
+      "ticker": "CXW",
+      "start_price": 32.13,
+      "end_price": 35.2,
+      "pct_change": 9.555,
+      "range_pct": 14.13,
+      "turnover_usdt": 63003978.15
     }
   ],
   "evidence": {
-    "news:NVDA": "[{\"feed\": \"cnbc\", \"error\": \"\", \"items\": []}, {\"feed\": \"techcrunch\", \"error\": \"\", \"items\": []}, {\"feed\": \"theverge\", \"error\": \"\", \"items\": []}, {\"feed\": \"wired\", \"error\": \"\", \"items\": []}, {\"feed\": \"arstechnica\", \"error\": \"\", \"items\": []}]",
     "news:AMD": "[{\"feed\": \"cnbc\", \"error\": \"\", \"items\": []}, {\"feed\": \"techcrunch\", \"error\": \"\", \"items\": []}, {\"feed\": \"theverge\", \"error\": \"\", \"items\": []}, {\"feed\": \"wired\", \"error\": \"\", \"items\": []}, {\"feed\": \"arstechnica\", \"error\": \"\", \"items\": []}]",
-    "news:MSFT": "[{\"feed\": \"cnbc\", \"error\": \"\", \"items\": []}, {\"feed\": \"techcrunch\", \"error\": \"\", \"items\": []}, {\"feed\": \"theverge\", \"error\": \"\", \"items\": []}, {\"feed\": \"wired\", \"error\": \"\", \"items\": []}, {\"feed\": \"arstechnica\", \"error\": \"\", \"items\": []}]",
-    "news:AAPL": "[{\"feed\": \"cnbc\", \"error\": \"\", \"items\": []}, {\"feed\": \"techcrunch\", \"error\": \"\", \"items\": []}, {\"feed\": \"theverge\", \"error\": \"\", \"items\": []}, {\"feed\": \"wired\", \"error\": \"\", \"items\": []}, {\"feed\": \"arstechnica\", \"error\": \"\", \"items\": []}]",
+    "news:META": "[{\"feed\": \"cnbc\", \"error\": \"\", \"items\": []}, {\"feed\": \"techcrunch\", \"error\": \"\", \"items\": []}, {\"feed\": \"theverge\", \"error\": \"\", \"items\": []}, {\"feed\": \"wired\", \"error\": \"\", \"items\": []}, {\"feed\": \"arstechnica\", \"error\": \"\", \"items\": []}]",
+    "news:NVDA": "[{\"feed\": \"cnbc\", \"error\": \"\", \"items\": []}, {\"feed\": \"techcrunch\", \"error\": \"\", \"items\": []}, {\"feed\": \"theverge\", \"error\": \"\", \"items\": []}, {\"feed\": \"wired\", \"error\": \"\", \"items\": []}, {\"feed\": \"arstechnica\", \"error\": \"\", \"items\": []}]",
     "news:TSLA": "[{\"feed\": \"cnbc\", \"error\": \"\", \"items\": []}, {\"feed\": \"techcrunch\", \"error\": \"\", \"items\": []}, {\"feed\": \"theverge\", \"error\": \"\", \"items\": []}, {\"feed\": \"wired\", \"error\": \"\", \"items\": []}, {\"feed\": \"arstechnica\", \"error\": \"\", \"items\": []}]",
+    "news:AAPL": "[{\"feed\": \"cnbc\", \"error\": \"\", \"items\": []}, {\"feed\": \"techcrunch\", \"error\": \"\", \"items\": []}, {\"feed\": \"theverge\", \"error\": \"\", \"items\": []}, {\"feed\": \"wired\", \"error\": \"\", \"items\": []}, {\"feed\": \"arstechnica\", \"error\": \"\", \"items\": []}]",
+    "news:QURE": "[{\"feed\": \"cnbc\", \"error\": \"\", \"items\": []}, {\"feed\": \"techcrunch\", \"error\": \"\", \"items\": []}, {\"feed\": \"theverge\", \"error\": \"\", \"items\": []}, {\"feed\": \"wired\", \"error\": \"\", \"items\": []}, {\"feed\": \"arstechnica\", \"error\": \"\", \"items\": []}]",
     "news:ITG": "[{\"feed\": \"cnbc\", \"error\": \"\", \"items\": []}, {\"feed\": \"techcrunch\", \"error\": \"\", \"items\": []}, {\"feed\": \"theverge\", \"error\": \"\", \"items\": []}, {\"feed\": \"wired\", \"error\": \"\", \"items\": []}, {\"feed\": \"arstechnica\", \"error\": \"\", \"items\": []}]",
     "news:SMMT": "[{\"feed\": \"cnbc\", \"error\": \"\", \"items\": []}, {\"feed\": \"techcrunch\", \"error\": \"\", \"items\": []}, {\"feed\": \"theverge\", \"error\": \"\", \"items\": []}, {\"feed\": \"wired\", \"error\": \"\", \"items\": []}, {\"feed\": \"arstechnica\", \"error\": \"\", \"items\": []}]",
-    "news:MAAS": "[{\"feed\": \"cnbc\", \"error\": \"\", \"items\": []}, {\"feed\": \"techcrunch\", \"error\": \"\", \"items\": []}, {\"feed\": \"theverge\", \"error\": \"\", \"items\": []}, {\"feed\": \"wired\", \"error\": \"\", \"items\": []}, {\"feed\": \"arstechnica\", \"error\": \"\", \"items\": []}]",
     "news:Wall Street": "[{\"feed\": \"cnbc\", \"error\": \"\", \"items\": []}, {\"feed\": \"fed\", \"error\": \"\", \"items\": []}]",
     "news:Fed": "[{\"feed\": \"cnbc\", \"error\": \"\", \"items\": []}, {\"feed\": \"fed\", \"error\": \"\", \"items\": []}]",
     "rates": "{\"fed_funds_target_upper\": {\"error\": \"\"}, \"fed_funds_target_lower\": {\"error\": \"\"}, \"t2y\": {\"error\": \"\"}, \"t10y\": {\"error\": \"\"}, \"t30y\": {\"error\": \"\"}, \"spread_10y2y\": {\"error\": \"\"}, \"breakeven_10y\": {\"error\": \"\"}, \"sofr\": {\"error\": \"\"}, \"mortgage_30y\": {\"error\": \"\"}, \"hy_spread\": {\"error\": \"\"}, \"ig_spread\": {\"error\": \"\"}, \"yield_curve_inverted\": false}"
