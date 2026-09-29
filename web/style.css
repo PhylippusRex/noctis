@@ -175,7 +175,6 @@ h1#headline {
 .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: var(--gap); }
 .body { color: var(--text-dim); margin: 0 0 12px; }
 
-/* movers card bleeds to the edges -- "no gutter" terminal feel */
 .card.flush { padding-left: 0; padding-right: 0; }
 .card.flush > .card-head,
 .card.flush > #otherNote { padding-left: 20px; padding-right: 20px; }
@@ -190,21 +189,22 @@ h1#headline {
 }
 .seg button.on { background: var(--accent); color: var(--accent-contrast); font-weight: 700; }
 
-/* timeline */
-.tl { position: relative; }
-.tl-plot { width: 100%; height: 78px; display: block; }
-.tl-labels { position: relative; height: 26px; margin-top: 4px; }
+/* timeline -- stems terminate directly at the ticker chip, no separate dots
+   or fixed row. A chip's vertical position IS its move: up chips float
+   above the yellow baseline, down chips sit below it. */
+.tl { position: relative; height: 140px; }
+.tl svg { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
 .tl-chip {
-  position: absolute; top: 0; transform: translateX(-50%);
+  position: absolute;
+  transform: translate(-50%, -50%);
   display: inline-flex; align-items: center; justify-content: center;
-  padding: 2px 7px; border-radius: 5px;
+  padding: 3px 8px; border-radius: 5px;
   font-family: var(--font-mono); font-size: 10px; font-weight: 700; letter-spacing: .01em;
   background: var(--bg-card); color: var(--text-dim);
   border: 1px solid var(--border); cursor: pointer; white-space: nowrap;
 }
 .tl-chip.up { border-color: var(--up); color: var(--up); }
 .tl-chip.down { border-color: var(--down); color: var(--down); }
-.tl-dot { cursor: pointer; }
 .tl-tip {
   position: absolute; transform: translate(-50%, -110%);
   background: var(--bg-raised); border: 1px solid var(--border);
@@ -214,7 +214,7 @@ h1#headline {
 }
 .tl-tip.show { opacity: 1; }
 
-/* chips */
+/* chips (generic, used elsewhere -- sources, watchlist, etc.) */
 .chips { display: flex; flex-wrap: wrap; gap: 8px; }
 .chip {
   display: inline-flex; align-items: center; gap: 6px;
@@ -318,4 +318,4 @@ dialog::backdrop { background: rgba(0,0,0,.6); }
 
 @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
   .hero { background: var(--bg-card); }
-}
+  }
