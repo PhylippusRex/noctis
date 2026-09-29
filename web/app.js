@@ -98,22 +98,24 @@ function renderHero() {
   }
 }
 
+// Stems run from the yellow baseline straight into the ticker chip -- the
+// chip IS the tip of the stem, scattered up (gain, green) or down (loss,
+// red) by how large the move was. No separate dots, no fixed row.
 function renderTimeline() {
   const core = STATE.core_movers || [];
   const el = $("#tlChart");
   el.innerHTML = "";
   if (!core.length) { $("#tlNote").textContent = ""; return; }
 
-  const plotH = 78, pad = 16;
+  const H = 140, padX = 30, chipHalfH = 14;
   const w = el.clientWidth || 600;
   const vals = core.map(m => m.pct_change);
   const maxAbs = Math.max(1, ...vals.map(v => Math.abs(v)));
-  const mid = plotH / 2;
+  const mid = H / 2;
   const svgNS = "http://www.w3.org/2000/svg";
 
   const svg = document.createElementNS(svgNS, "svg");
-  svg.setAttribute("viewBox", `0 0 ${w} ${plotH}`);
-  svg.classList.add("tl-plot");
+  svg.setAttribute("viewBox", `0 0 ${w} ${H}`);
 
   const baseline = document.createElementNS(svgNS, "line");
   baseline.setAttribute("x1", 0); baseline.setAttribute("x2", w);
@@ -123,21 +125,19 @@ function renderTimeline() {
   svg.appendChild(baseline);
 
   const n = core.length;
-  const step = (w - pad * 2) / Math.max(1, n - 1);
+  const step = (w - padX * 2) / Math.max(1, n - 1);
 
   const tip = document.createElement("div");
   tip.className = "tl-tip";
 
-  const labels = document.createElement("div");
-  labels.className = "tl-labels";
-
   core.forEach((m, i) => {
-    const x = n === 1 ? w / 2 : pad + i * step;
-    const y = mid - (m.pct_change / maxAbs) * (mid - 12);
+    const x = n === 1 ? w / 2 : padX + i * step;
+    let y = mid - (m.pct_change / maxAbs) * (mid - chipHalfH - 6);
+    y = Math.max(chipHalfH + 2, Math.min(H - chipHalfH - 2, y));
     const up = m.pct_change >= 0;
     const color = up ? "var(--up)" : "var(--down)";
 
-    if (Math.abs(y - mid) > 1) {
+    if (Math.abs(y - mid) > 2) {
       const stem = document.createElementNS(svgNS, "line");
       stem.setAttribute("x1", x); stem.setAttribute("x2", x);
       stem.setAttribute("y1", mid); stem.setAttribute("y2", y);
@@ -147,27 +147,20 @@ function renderTimeline() {
       svg.appendChild(stem);
     }
 
-    const dot = document.createElementNS(svgNS, "circle");
-    dot.setAttribute("cx", x); dot.setAttribute("cy", y); dot.setAttribute("r", "4");
-    dot.setAttribute("fill", color);
-    dot.classList.add("tl-dot");
-    dot.addEventListener("mouseenter", () => showTip(tip, x, y, m));
-    dot.addEventListener("mouseleave", () => tip.classList.remove("show"));
-    dot.addEventListener("click", () => openDetail(m));
-    svg.appendChild(dot);
-
     const chip = document.createElement("span");
     chip.className = "tl-chip " + (up ? "up" : "down");
     chip.textContent = m.ticker;
     chip.style.left = x + "px";
+    chip.style.top = y + "px";
+    chip.addEventListener("mouseenter", () => showTip(tip, x, y, m));
+    chip.addEventListener("mouseleave", () => tip.classList.remove("show"));
     chip.addEventListener("click", () => openDetail(m));
-    labels.appendChild(chip);
+    el.appendChild(chip);
   });
 
   el.appendChild(svg);
   el.appendChild(tip);
-  el.appendChild(labels);
-  $("#tlNote").textContent = `Each point is a core name's move since the last US close. Tap a point or ticker for detail.`;
+  $("#tlNote").textContent = `Each ticker sits where its move puts it -- above the line for gains, below for losses. Tap one for detail.`;
 }
 function showTip(tip, x, y, m) {
   tip.textContent = `${m.ticker} ${fmtPct(m.pct_change)}`;
