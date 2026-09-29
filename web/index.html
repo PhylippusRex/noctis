@@ -42,13 +42,20 @@
       <div class="hero-row">
         <span id="mood" class="mood"></span>
         <span id="breadth" class="muted"></span>
+        <button id="shareBtn" class="share-btn" type="button" aria-label="Share this briefing">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.6" y1="10.5" x2="15.4" y2="6.5"/><line x1="8.6" y1="13.5" x2="15.4" y2="17.5"/></svg>
+          Share
+        </button>
       </div>
       <p id="summary" class="lede"></p>
-      <p class="meta"><span id="meta"></span> <span id="session" class="session"></span></p>
+      <p class="meta">
+        <span id="meta"></span> <span id="session" class="session"></span>
+        <span id="staleBadge" class="stale-badge" hidden>⚠ May be stale — check the nightly job</span>
+      </p>
     </section>
 
     <section class="card" aria-labelledby="tlTitle">
-      <h2 id="tlTitle">While you slept</h2>
+      <h2 id="tlTitle">How the market moved while you slept</h2>
       <div id="tlChart" class="tl"></div>
       <p id="tlNote" class="muted small"></p>
     </section>
@@ -96,10 +103,9 @@
     </section>
 
     <section class="card" aria-labelledby="evTitle">
-      <h2 id="evTitle">Evidence and caveats</h2>
-      <p class="muted small">Every explanation in the briefing must come from one of these sources. When nothing supports a move, Noctis says so.</p>
+      <h2 id="evTitle">Sources checked tonight</h2>
+      <p class="muted small">Noctis only explains a move when one of these sources actually supports it. When nothing does, it says so instead of guessing.</p>
       <div id="sources" class="chips"></div>
-      <div id="evidence"></div>
       <ul id="caveats" class="caveats"></ul>
     </section>
 
@@ -114,7 +120,7 @@
     </section>
   </main>
 
-  <footer class="wrap foot">
+  <footer id="siteFooter" class="wrap foot">
     <p id="marketNote" class="small"></p>
     <p class="small muted">Noctis provides analysis, not financial advice. You make the final call. Built for the Bitget AI Hackathon S2, Track 3: Personalized research workstation.</p>
   </footer>

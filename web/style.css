@@ -1,23 +1,15 @@
 /* ---------- Noctis ---------- */
-@font-face {
-  font-family: "Soria";
-  src: url("fonts/soria-regular.woff2") format("woff2"),
-       url("fonts/soria-regular.woff") format("woff");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
 :root {
   --radius: 14px;
   --radius-sm: 8px;
   --gap: 20px;
   --max: 960px;
-  --font-head: "Soria", "Marcellus", Georgia, serif;
+  --font-head: "Marcellus", Georgia, serif;
   --font-body: "Nunito", -apple-system, "Segoe UI", sans-serif;
   --up: #3ddc84;
   --down: #ff6161;
   --flat: #9aa0a6;
+  --baseline: #f5c94b;
 }
 
 [data-theme="dark"] {
@@ -31,6 +23,11 @@
   --accent: #f4f3ef;
   --accent-contrast: #000000;
   --shadow: 0 1px 0 rgba(255,255,255,0.03) inset;
+  --glass-bg-1: rgba(255,255,255,0.07);
+  --glass-bg-2: rgba(255,255,255,0.02);
+  --glass-border: rgba(255,255,255,0.14);
+  --glass-glare: rgba(255,255,255,0.10);
+  --glass-shadow: 0 10px 36px rgba(0,0,0,0.45);
 }
 
 [data-theme="light"] {
@@ -44,6 +41,11 @@
   --accent: #14140f;
   --accent-contrast: #faf9f6;
   --shadow: 0 1px 0 rgba(0,0,0,0.02) inset;
+  --glass-bg-1: rgba(255,255,255,0.55);
+  --glass-bg-2: rgba(255,255,255,0.22);
+  --glass-border: rgba(20,20,15,0.10);
+  --glass-glare: rgba(255,255,255,0.65);
+  --glass-shadow: 0 10px 30px rgba(20,20,15,0.10);
 }
 
 * { box-sizing: border-box; }
@@ -94,8 +96,37 @@ body {
 [data-theme="dark"] .i-sun { display: block; }
 [data-theme="light"] .i-moon { display: block; }
 
-/* hero */
-.hero { padding: 40px 0 24px; }
+/* hero -- liquid glass panel */
+.hero {
+  position: relative;
+  overflow: hidden;
+  margin-top: 20px;
+  padding: 40px 28px 32px;
+  border-radius: 26px;
+  border: 1px solid var(--glass-border);
+  background: linear-gradient(150deg, var(--glass-bg-1), var(--glass-bg-2));
+  backdrop-filter: blur(20px) saturate(150%);
+  -webkit-backdrop-filter: blur(20px) saturate(150%);
+  box-shadow: var(--glass-shadow), inset 0 1px 0 rgba(255,255,255,0.10);
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  top: -60%; left: -20%;
+  width: 70%; height: 200%;
+  background: radial-gradient(closest-side, var(--glass-glare), transparent 70%);
+  transform: rotate(18deg);
+  opacity: 0.5;
+  pointer-events: none;
+}
+.hero::after {
+  content: "";
+  position: absolute; inset: 0;
+  border-radius: inherit;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.04);
+  pointer-events: none;
+}
+.hero > * { position: relative; z-index: 1; }
 .eyebrow {
   font-size: 13px; letter-spacing: .08em; text-transform: uppercase;
   color: var(--text-faint); margin: 0 0 10px;
@@ -117,8 +148,25 @@ h1#headline {
 .muted { color: var(--text-dim); }
 .small { font-size: 13px; }
 .lede { font-size: 18px; color: var(--text-dim); max-width: 62ch; margin: 0 0 12px; }
-.meta { font-size: 13px; color: var(--text-faint); }
-.session { padding-left: 8px; margin-left: 8px; border-left: 1px solid var(--border); }
+.meta { font-size: 13px; color: var(--text-faint); display: flex; align-items: center; flex-wrap: wrap; gap: 4px; }
+.session { padding-left: 8px; margin-left: 4px; border-left: 1px solid var(--border); }
+.share-btn {
+  margin-left: auto; display: inline-flex; align-items: center; gap: 6px;
+  background: var(--bg-raised); color: var(--text); border: 1px solid var(--border);
+  border-radius: 999px; padding: 7px 14px; font-size: 13px; font-weight: 700;
+  cursor: pointer; font-family: var(--font-body);
+}
+.share-btn:hover { border-color: var(--text-faint); }
+
+/* staleness badge */
+.stale-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  margin-left: 8px; padding: 4px 10px; border-radius: 999px;
+  font-size: 12px; font-weight: 700; color: var(--baseline);
+  border: 1px solid color-mix(in srgb, var(--baseline) 45%, transparent);
+  background: color-mix(in srgb, var(--baseline) 10%, transparent);
+}
+.stale-badge[hidden] { display: none; }
 
 /* cards */
 .card {
@@ -146,7 +194,7 @@ h1#headline {
 .seg button.on { background: var(--accent); color: var(--accent-contrast); font-weight: 700; }
 
 /* timeline */
-.tl { position: relative; height: 92px; }
+.tl { position: relative; height: 100px; }
 .tl svg { width: 100%; height: 100%; display: block; }
 .tl-dot { cursor: pointer; }
 .tl-tip {
@@ -192,11 +240,12 @@ table.movers tr.row:hover td { background: color-mix(in srgb, var(--text) 4%, tr
 .star { background: transparent; border: 0; cursor: pointer; font-size: 16px; color: var(--text-faint); padding: 0 4px; }
 .star.on { color: #f5c94b; }
 
-/* heatmap */
-.heat { display: grid; grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap: 8px; }
+/* heatmap -- Finviz-style: tile size scales with turnover, color is always clearly red/green */
+.heat { display: flex; flex-wrap: wrap; gap: 6px; align-items: stretch; }
 .heat-tile {
   border-radius: var(--radius-sm); padding: 12px 10px; cursor: pointer;
-  border: 1px solid var(--border); color: #0a0a0a;
+  border: 1px solid rgba(0,0,0,.15); color: #0a0a0a;
+  min-width: 92px; display: flex; flex-direction: column; justify-content: center;
 }
 .heat-tile .t { font-weight: 800; font-size: 14px; }
 .heat-tile .p { font-variant-numeric: tabular-nums; font-size: 13px; }
@@ -219,16 +268,7 @@ table.movers tr.row:hover td { background: color-mix(in srgb, var(--text) 4%, tr
 .wtile .t { font-weight: 700; }
 .empty { color: var(--text-faint); font-size: 14px; padding: 8px 0; }
 
-/* evidence */
-.ev-item { border-top: 1px solid var(--border); padding: 12px 0; }
-.ev-item:first-child { border-top: 0; }
-.ev-item summary { cursor: pointer; font-weight: 700; font-size: 14px; }
-.ev-item pre {
-  white-space: pre-wrap; word-break: break-word; font-family: inherit;
-  font-size: 13px; color: var(--text-dim); background: var(--bg-raised);
-  border: 1px solid var(--border); border-radius: var(--radius-sm);
-  padding: 10px; margin-top: 8px;
-}
+/* sources & caveats */
 .caveats { margin: 14px 0 0; padding-left: 18px; color: var(--text-dim); font-size: 14px; }
 
 /* how it works */
@@ -236,8 +276,12 @@ table.movers tr.row:hover td { background: color-mix(in srgb, var(--text) 4%, tr
 .steps li { margin-bottom: 8px; }
 .steps strong { color: var(--text); }
 
-/* footer */
-.foot { padding: 10px 20px 48px; text-align: center; }
+/* footer -- fades in only when scrolled into view */
+.foot {
+  padding: 10px 20px 48px; text-align: center;
+  opacity: 0; transition: opacity .7s ease;
+}
+.foot.visible { opacity: 1; }
 .foot p { margin: 4px 0; }
 
 /* dialog */
@@ -256,8 +300,17 @@ dialog::backdrop { background: rgba(0,0,0,.6); }
 /* responsive */
 @media (max-width: 720px) {
   .grid2 { grid-template-columns: 1fr; }
+  .hero { padding: 30px 20px 26px; border-radius: 20px; }
   table.movers thead { display: none; }
   table.movers tr.row { display: grid; grid-template-columns: 1fr auto; gap: 2px 10px; padding: 10px 0; border-top: 1px solid var(--border); }
   table.movers td { border-top: none; padding: 2px 0; }
   table.movers td.c-why { grid-column: 1 / -1; color: var(--text-dim); font-size: 13px; }
+  .hero-row { flex-wrap: wrap; }
+  .share-btn { margin-left: 0; }
+}
+
+/* Respect reduced-motion / low-power: browsers that can't do backdrop-filter
+   just show the solid gradient beneath, which still looks intentional. */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .hero { background: var(--bg-card); }
 }

@@ -4,6 +4,7 @@ const ARCHIVE_INDEX_URL = "../data/archive/index.json"; // optional; see README
 const ARCHIVE_DIR = "../data/archive/";
 const WATCH_KEY = "noctis-watchlist";
 const THEME_KEY = "noctis-theme";
+const STALE_HOURS = 30; // nightly job runs ~24h apart; flag if older than this
 
 const $ = (sel, root = document) => root.querySelector(sel);
 const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
@@ -44,6 +45,8 @@ function removeFromWatchlist(ticker) {
 let STATE = null;   // the loaded briefing JSON
 let VIEW = "table";
 let FILTER = "all";
+// Default rank: highest gainers first, then down through the losers --
+// i.e. sort by the actual signed percentage, never by magnitude.
 let SORT = { key: "pct_change", dir: "desc" };
 
 /* ---------- fetch ---------- */
@@ -89,6 +92,23 @@ function renderHero() {
   $("#session").textContent = `Window: last ${STATE.window_hours}h since US close`;
   $("#dateLabel").textContent = gen ? "· " + gen.toLocaleDateString(undefined, { month: "short", day: "numeric" }) : "";
   $("#marketNote").textContent = STATE.market_note || "";
+
+  // Staleness badge: only shown if the briefing is meaningfully older than
+  // one nightly cycle, meaning the scheduled job likely didn't run.
+  const badge = $("#staleBadge");
+  if (badge) {
+    if (gen) {
+      const hours = (Date.now() - gen.getTime()) / 3600000;
+      if (hours > STALE_HOURS) {
+        badge.hidden = false;
+        badge.title = `Generated about ${Math.round(hours)}h ago`;
+      } else {
+        badge.hidden = true;
+      }
+    } else {
+      badge.hidden = true;
+    }
+  }
 }
 
 /* ---------- render: while-you-slept timeline ---------- */
@@ -97,18 +117,21 @@ function renderTimeline() {
   const el = $("#tlChart");
   el.innerHTML = "";
   if (!core.length) { $("#tlNote").textContent = ""; return; }
-  const w = el.clientWidth || 600, h = 92, pad = 16;
+  const w = el.clientWidth || 600, h = 100, pad = 16;
   const vals = core.map(m => m.pct_change);
   const maxAbs = Math.max(1, ...vals.map(v => Math.abs(v)));
   const mid = h / 2;
   const svgNS = "http://www.w3.org/2000/svg";
   const svg = document.createElementNS(svgNS, "svg");
   svg.setAttribute("viewBox", `0 0 ${w} ${h}`);
-  const line = document.createElementNS(svgNS, "line");
-  line.setAttribute("x1", 0); line.setAttribute("x2", w);
-  line.setAttribute("y1", mid); line.setAttribute("y2", mid);
-  line.setAttribute("stroke", "var(--border)");
-  svg.appendChild(line);
+
+  // yellow baseline
+  const baseline = document.createElementNS(svgNS, "line");
+  baseline.setAttribute("x1", 0); baseline.setAttribute("x2", w);
+  baseline.setAttribute("y1", mid); baseline.setAttribute("y2", mid);
+  baseline.setAttribute("stroke", "var(--baseline)");
+  baseline.setAttribute("stroke-width", "2");
+  svg.appendChild(baseline);
 
   const n = core.length;
   const step = (w - pad * 2) / Math.max(1, n - 1);
@@ -119,14 +142,29 @@ function renderTimeline() {
   core.forEach((m, i) => {
     const x = n === 1 ? w / 2 : pad + i * step;
     const y = mid - (m.pct_change / maxAbs) * (mid - 14);
+    const color = m.pct_change >= 0 ? "var(--up)" : "var(--down)";
+
+    // stem connecting the yellow baseline to the point -- its length IS the move.
+    // near-zero moves produce a stem too short to notice, by design.
+    if (Math.abs(y - mid) > 1) {
+      const stem = document.createElementNS(svgNS, "line");
+      stem.setAttribute("x1", x); stem.setAttribute("x2", x);
+      stem.setAttribute("y1", mid); stem.setAttribute("y2", y);
+      stem.setAttribute("stroke", color);
+      stem.setAttribute("stroke-width", "3");
+      stem.setAttribute("stroke-linecap", "round");
+      svg.appendChild(stem);
+    }
+
     const dot = document.createElementNS(svgNS, "circle");
     dot.setAttribute("cx", x); dot.setAttribute("cy", y); dot.setAttribute("r", 5);
-    dot.setAttribute("fill", m.pct_change >= 0 ? "var(--up)" : "var(--down)");
+    dot.setAttribute("fill", color);
     dot.classList.add("tl-dot");
     dot.addEventListener("mouseenter", () => showTip(tip, x, y, m));
     dot.addEventListener("mouseleave", () => tip.classList.remove("show"));
     dot.addEventListener("click", () => openDetail(m));
     svg.appendChild(dot);
+
     const label = document.createElementNS(svgNS, "text");
     label.setAttribute("x", x); label.setAttribute("y", h - 2);
     label.setAttribute("text-anchor", "middle");
@@ -184,6 +222,9 @@ function moverRows() {
     watch_today: briefMap.get(m.ticker)?.watch_today || null,
   }));
 }
+// Ranking is by the signed percentage value -- every gainer ranks above every
+// loser by default (KOD +49% ... NVDA +1% ... AAPL -0.1% ... SPY -0.3%),
+// regardless of how "popular" or core the ticker is.
 function applyFilterSort(rows) {
   const watch = new Set(getWatchlist());
   let out = rows;
@@ -191,8 +232,7 @@ function applyFilterSort(rows) {
   if (FILTER === "watch") out = out.filter(r => watch.has(r.ticker));
   out = out.slice().sort((a, b) => {
     const dir = SORT.dir === "asc" ? 1 : -1;
-    const av = SORT.key === "pct_change" ? Math.abs(a.pct_change) : a[SORT.key];
-    const bv = SORT.key === "pct_change" ? Math.abs(b.pct_change) : b[SORT.key];
+    const av = a[SORT.key], bv = b[SORT.key];
     return av < bv ? -dir : av > bv ? dir : 0;
   });
   return out;
@@ -250,25 +290,29 @@ function buildTable(rows) {
   table.appendChild(tbody);
   return table;
 }
+// Finviz-style: tile SIZE scales with turnover, COLOR always clearly reads red/green.
 function buildHeatmap(rows) {
   const wrap = document.createElement("div");
   wrap.className = "heat";
-  const maxAbs = Math.max(1, ...rows.map(r => Math.abs(r.pct_change)));
   rows.forEach(r => {
     const tile = document.createElement("div");
     tile.className = "heat-tile";
-    tile.style.background = heatColor(r.pct_change, maxAbs);
+    const weight = Math.sqrt(Math.max(1, r.turnover_usdt || 1));
+    tile.style.flex = `${weight} 1 92px`;
+    tile.style.background = heatColor(r.pct_change);
     tile.innerHTML = `<div class="t">${escapeHtml(r.ticker)}</div><div class="p">${fmtPct(r.pct_change)}</div>`;
     tile.addEventListener("click", () => openDetail(r));
     wrap.appendChild(tile);
   });
   return wrap;
 }
-function heatColor(pct, maxAbs) {
-  const t = Math.min(1, Math.abs(pct) / maxAbs);
-  const light = 88 - t * 48; // 88% -> 40%
-  const hue = pct >= 0 ? 152 : 6;
-  return `hsl(${hue} 70% ${light}%)`;
+function heatColor(pct) {
+  const CAP = 3; // a 3%+ move reaches full color intensity
+  const t = Math.min(1, Math.abs(pct) / CAP);
+  const light = 60 - t * 24;
+  const sat = 58 + t * 18;
+  const hue = pct >= 0 ? 152 : 358;
+  return `hsl(${hue} ${sat}% ${light}%)`;
 }
 
 /* ---------- detail dialog ---------- */
@@ -323,28 +367,20 @@ function renderWatchlist() {
   });
 }
 
-/* ---------- evidence ---------- */
+/* ---------- sources & caveats ---------- */
 function renderEvidence() {
   const b = STATE.briefing;
   const src = $("#sources");
   src.innerHTML = "";
-  (b.sources || []).forEach(s => {
-    const c = document.createElement("span");
-    c.className = "chip";
-    c.textContent = s;
-    src.appendChild(c);
-  });
-  const ev = $("#evidence");
-  ev.innerHTML = "";
-  const entries = Object.entries(STATE.evidence || {});
-  if (!entries.length) {
-    ev.innerHTML = '<p class="empty">No raw evidence saved with this briefing.</p>';
+  const sources = (b.sources || []).map(niceSourceName);
+  if (!sources.length) {
+    src.innerHTML = '<p class="empty">No sources logged for this briefing.</p>';
   } else {
-    entries.forEach(([k, v]) => {
-      const d = document.createElement("details");
-      d.className = "ev-item";
-      d.innerHTML = `<summary>${escapeHtml(k)}</summary><pre>${escapeHtml(v)}</pre>`;
-      ev.appendChild(d);
+    sources.forEach(s => {
+      const c = document.createElement("span");
+      c.className = "chip";
+      c.textContent = s;
+      src.appendChild(c);
     });
   }
   const cav = $("#caveats");
@@ -354,6 +390,136 @@ function renderEvidence() {
     li.textContent = c;
     cav.appendChild(li);
   });
+}
+function niceSourceName(key) {
+  const [kind, rest] = String(key).split(":");
+  const map = {
+    news: rest ? `${rest} news headlines` : "News headlines",
+    underlying: rest ? `${rest} real-stock price` : "Real-stock price",
+    rates: "Interest rates & bond yields",
+    sentiment: "Market sentiment index",
+    "fed-news": "Federal Reserve news",
+  };
+  return map[kind] || key;
+}
+
+/* ---------- footer fade on scroll ---------- */
+function initFooterFade() {
+  const foot = $("#siteFooter");
+  if (!foot || !("IntersectionObserver" in window)) { if (foot) foot.classList.add("visible"); return; }
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => foot.classList.toggle("visible", e.isIntersecting));
+  }, { threshold: 0.15 });
+  io.observe(foot);
+}
+
+/* ---------- share ---------- */
+function wrapText(ctx, text, maxWidth) {
+  const words = String(text).split(" ");
+  const lines = [];
+  let line = "";
+  words.forEach(word => {
+    const test = line ? line + " " + word : word;
+    if (ctx.measureText(test).width > maxWidth && line) {
+      lines.push(line);
+      line = word;
+    } else {
+      line = test;
+    }
+  });
+  if (line) lines.push(line);
+  return lines;
+}
+
+async function shareBriefing() {
+  if (!STATE) return;
+  const b = STATE.briefing;
+  const W = 1080, H = 1080;
+  const canvas = document.createElement("canvas");
+  canvas.width = W; canvas.height = H;
+  const ctx = canvas.getContext("2d");
+
+  const isLight = document.documentElement.dataset.theme === "light";
+  const bg = isLight ? "#faf9f6" : "#000000";
+  const text = isLight ? "#14140f" : "#f4f3ef";
+  const dim = isLight ? "#56564f" : "#a3a3a0";
+  const up = "#3ddc84", down = "#ff6161";
+
+  ctx.fillStyle = bg;
+  ctx.fillRect(0, 0, W, H);
+
+  // wordmark
+  ctx.fillStyle = text;
+  ctx.font = "700 30px Nunito, sans-serif";
+  ctx.textBaseline = "top";
+  ctx.fillText("NOCTIS", 60, 60);
+
+  ctx.fillStyle = dim;
+  ctx.font = "600 22px Nunito, sans-serif";
+  const gen = STATE.generated_at ? new Date(STATE.generated_at) : new Date();
+  ctx.fillText(gen.toLocaleDateString(undefined, { weekday: "long", month: "long", day: "numeric" }), 60, 105);
+
+  // mood badge
+  const mood = (b.mood || "mixed").toLowerCase();
+  const moodColor = mood === "risk-on" ? up : mood === "risk-off" ? down : dim;
+  ctx.fillStyle = moodColor;
+  ctx.beginPath();
+  ctx.arc(64, 168, 7, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.font = "700 20px Nunito, sans-serif";
+  ctx.fillText(mood.replace("-", " ").toUpperCase(), 82, 158);
+
+  // headline
+  ctx.fillStyle = text;
+  ctx.font = "400 46px Marcellus, Georgia, serif";
+  const headLines = wrapText(ctx, b.headline || "", W - 120);
+  let y = 210;
+  headLines.slice(0, 4).forEach(line => { ctx.fillText(line, 60, y); y += 56; });
+
+  // top movers -- gainers first, then losers, same rule as the site
+  const rows = moverRows().slice().sort((a, c) => c.pct_change - a.pct_change);
+  const top = [...rows.slice(0, 3), ...rows.slice(-2)];
+  y += 30;
+  ctx.font = "700 22px Nunito, sans-serif";
+  ctx.fillStyle = dim;
+  ctx.fillText("TOP MOVERS", 60, y);
+  y += 44;
+  top.forEach(r => {
+    const rowUp = r.pct_change >= 0;
+    ctx.fillStyle = text;
+    ctx.font = "700 30px Nunito, sans-serif";
+    ctx.fillText(r.ticker, 60, y);
+    ctx.fillStyle = rowUp ? up : down;
+    ctx.font = "700 30px Nunito, sans-serif";
+    ctx.textAlign = "right";
+    ctx.fillText(fmtPct(r.pct_change), W - 60, y);
+    ctx.textAlign = "left";
+    y += 46;
+  });
+
+  // footer
+  ctx.fillStyle = dim;
+  ctx.font = "600 20px Nunito, sans-serif";
+  ctx.fillText("noctis.xyz · analysis, not financial advice", 60, H - 70);
+
+  canvas.toBlob(async (blob) => {
+    if (!blob) return;
+    const file = new File([blob], "noctis-briefing.png", { type: "image/png" });
+    if (navigator.canShare && navigator.canShare({ files: [file] })) {
+      try {
+        await navigator.share({ files: [file], title: "Noctis briefing", text: b.headline || "" });
+        return;
+      } catch (e) { /* user cancelled or share failed -- fall through to download */ }
+    }
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "noctis-briefing.png";
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 2000);
+  }, "image/png");
 }
 
 /* ---------- controls wiring ---------- */
@@ -381,6 +547,7 @@ function initControls() {
   $("#watchInput").addEventListener("keydown", (e) => {
     if (e.key === "Enter") { e.preventDefault(); $("#watchAdd").click(); }
   });
+  $("#shareBtn").addEventListener("click", shareBriefing);
 }
 
 /* ---------- helpers ---------- */
@@ -416,6 +583,7 @@ async function boot(url) {
 document.addEventListener("DOMContentLoaded", () => {
   initTheme();
   initControls();
+  initFooterFade();
   populateDatePicker();
   boot(DATA_URL);
   window.addEventListener("resize", () => { if (STATE) renderTimeline(); });
