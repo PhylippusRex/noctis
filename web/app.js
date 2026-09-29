@@ -1,15 +1,14 @@
 /* ---------- Noctis frontend ---------- */
-const DATA_URL = "../data/briefing.json";
-const ARCHIVE_INDEX_URL = "../data/archive/index.json"; // optional; see README
-const ARCHIVE_DIR = "../data/archive/";
+const DATA_URL = "data/briefing.json";
+const ARCHIVE_INDEX_URL = "data/archive/index.json";
+const ARCHIVE_DIR = "data/archive/";
 const WATCH_KEY = "noctis-watchlist";
 const THEME_KEY = "noctis-theme";
-const STALE_HOURS = 30; // nightly job runs ~24h apart; flag if older than this
+const STALE_HOURS = 30;
 
 const $ = (sel, root = document) => root.querySelector(sel);
 const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
 
-/* ---------- theme ---------- */
 function initTheme() {
   const btn = $("#themeBtn");
   btn.addEventListener("click", () => {
@@ -20,7 +19,6 @@ function initTheme() {
   });
 }
 
-/* ---------- watchlist (localStorage) ---------- */
 function getWatchlist() {
   try { return JSON.parse(localStorage.getItem(WATCH_KEY) || "[]"); } catch (e) { return []; }
 }
@@ -41,15 +39,11 @@ function removeFromWatchlist(ticker) {
   renderMovers();
 }
 
-/* ---------- state ---------- */
-let STATE = null;   // the loaded briefing JSON
+let STATE = null;
 let VIEW = "table";
 let FILTER = "all";
-// Default rank: highest gainers first, then down through the losers --
-// i.e. sort by the actual signed percentage, never by magnitude.
 let SORT = { key: "pct_change", dir: "desc" };
 
-/* ---------- fetch ---------- */
 async function loadBriefing(url) {
   const res = await fetch(url, { cache: "no-store" });
   if (!res.ok) throw new Error("Could not load " + url);
@@ -66,15 +60,10 @@ async function populateDatePicker() {
       opt.textContent = d;
       sel.appendChild(opt);
     });
-  } catch (e) {
-    // no archive index yet -- fine, "Latest briefing" still works
-  }
-  sel.addEventListener("change", () => {
-    boot(sel.value || DATA_URL);
-  });
+  } catch (e) {}
+  sel.addEventListener("change", () => boot(sel.value || DATA_URL));
 }
 
-/* ---------- render: hero ---------- */
 function renderHero() {
   const b = STATE.briefing;
   $("#headline").textContent = b.headline || "Briefing unavailable";
@@ -93,8 +82,6 @@ function renderHero() {
   $("#dateLabel").textContent = gen ? "· " + gen.toLocaleDateString(undefined, { month: "short", day: "numeric" }) : "";
   $("#marketNote").textContent = STATE.market_note || "";
 
-  // Staleness badge: only shown if the briefing is meaningfully older than
-  // one nightly cycle, meaning the scheduled job likely didn't run.
   const badge = $("#staleBadge");
   if (badge) {
     if (gen) {
@@ -111,53 +98,57 @@ function renderHero() {
   }
 }
 
-/* ---------- render: while-you-slept timeline ---------- */
 function renderTimeline() {
   const core = STATE.core_movers || [];
   const el = $("#tlChart");
   el.innerHTML = "";
   if (!core.length) { $("#tlNote").textContent = ""; return; }
-  const w = el.clientWidth || 600, h = 100, pad = 16;
+
+  const plotH = 78, pad = 16;
+  const w = el.clientWidth || 600;
   const vals = core.map(m => m.pct_change);
   const maxAbs = Math.max(1, ...vals.map(v => Math.abs(v)));
-  const mid = h / 2;
+  const mid = plotH / 2;
   const svgNS = "http://www.w3.org/2000/svg";
-  const svg = document.createElementNS(svgNS, "svg");
-  svg.setAttribute("viewBox", `0 0 ${w} ${h}`);
 
-  // yellow baseline
+  const svg = document.createElementNS(svgNS, "svg");
+  svg.setAttribute("viewBox", `0 0 ${w} ${plotH}`);
+  svg.classList.add("tl-plot");
+
   const baseline = document.createElementNS(svgNS, "line");
   baseline.setAttribute("x1", 0); baseline.setAttribute("x2", w);
   baseline.setAttribute("y1", mid); baseline.setAttribute("y2", mid);
   baseline.setAttribute("stroke", "var(--baseline)");
-  baseline.setAttribute("stroke-width", "2");
+  baseline.setAttribute("stroke-width", "1");
   svg.appendChild(baseline);
 
   const n = core.length;
   const step = (w - pad * 2) / Math.max(1, n - 1);
+
   const tip = document.createElement("div");
   tip.className = "tl-tip";
-  el.appendChild(tip);
+
+  const labels = document.createElement("div");
+  labels.className = "tl-labels";
 
   core.forEach((m, i) => {
     const x = n === 1 ? w / 2 : pad + i * step;
-    const y = mid - (m.pct_change / maxAbs) * (mid - 14);
-    const color = m.pct_change >= 0 ? "var(--up)" : "var(--down)";
+    const y = mid - (m.pct_change / maxAbs) * (mid - 12);
+    const up = m.pct_change >= 0;
+    const color = up ? "var(--up)" : "var(--down)";
 
-    // stem connecting the yellow baseline to the point -- its length IS the move.
-    // near-zero moves produce a stem too short to notice, by design.
     if (Math.abs(y - mid) > 1) {
       const stem = document.createElementNS(svgNS, "line");
       stem.setAttribute("x1", x); stem.setAttribute("x2", x);
       stem.setAttribute("y1", mid); stem.setAttribute("y2", y);
       stem.setAttribute("stroke", color);
-      stem.setAttribute("stroke-width", "3");
+      stem.setAttribute("stroke-width", "1.5");
       stem.setAttribute("stroke-linecap", "round");
       svg.appendChild(stem);
     }
 
     const dot = document.createElementNS(svgNS, "circle");
-    dot.setAttribute("cx", x); dot.setAttribute("cy", y); dot.setAttribute("r", 5);
+    dot.setAttribute("cx", x); dot.setAttribute("cy", y); dot.setAttribute("r", "4");
     dot.setAttribute("fill", color);
     dot.classList.add("tl-dot");
     dot.addEventListener("mouseenter", () => showTip(tip, x, y, m));
@@ -165,16 +156,18 @@ function renderTimeline() {
     dot.addEventListener("click", () => openDetail(m));
     svg.appendChild(dot);
 
-    const label = document.createElementNS(svgNS, "text");
-    label.setAttribute("x", x); label.setAttribute("y", h - 2);
-    label.setAttribute("text-anchor", "middle");
-    label.setAttribute("font-size", "10");
-    label.setAttribute("fill", "var(--text-faint)");
-    label.textContent = m.ticker;
-    svg.appendChild(label);
+    const chip = document.createElement("span");
+    chip.className = "tl-chip " + (up ? "up" : "down");
+    chip.textContent = m.ticker;
+    chip.style.left = x + "px";
+    chip.addEventListener("click", () => openDetail(m));
+    labels.appendChild(chip);
   });
+
   el.appendChild(svg);
-  $("#tlNote").textContent = `Each point is a core name's move since the last US close. Tap a point for detail.`;
+  el.appendChild(tip);
+  el.appendChild(labels);
+  $("#tlNote").textContent = `Each point is a core name's move since the last US close. Tap a point or ticker for detail.`;
 }
 function showTip(tip, x, y, m) {
   tip.textContent = `${m.ticker} ${fmtPct(m.pct_change)}`;
@@ -183,7 +176,6 @@ function showTip(tip, x, y, m) {
   tip.classList.add("show");
 }
 
-/* ---------- render: open outlook + macro ---------- */
 function renderOutlook() {
   const b = STATE.briefing;
   $("#outlook").textContent = b.open_outlook || b.other_movers_note || "No outlook available.";
@@ -209,7 +201,6 @@ function renderMacro() {
   });
 }
 
-/* ---------- render: movers (table + heatmap) ---------- */
 function moverRows() {
   const CORE = new Set((STATE.core_movers || []).map(m => m.ticker));
   const briefMap = new Map((STATE.briefing.movers || []).map(m => [m.ticker, m]));
@@ -222,9 +213,6 @@ function moverRows() {
     watch_today: briefMap.get(m.ticker)?.watch_today || null,
   }));
 }
-// Ranking is by the signed percentage value -- every gainer ranks above every
-// loser by default (KOD +49% ... NVDA +1% ... AAPL -0.1% ... SPY -0.3%),
-// regardless of how "popular" or core the ticker is.
 function applyFilterSort(rows) {
   const watch = new Set(getWatchlist());
   let out = rows;
@@ -290,7 +278,6 @@ function buildTable(rows) {
   table.appendChild(tbody);
   return table;
 }
-// Finviz-style: tile SIZE scales with turnover, COLOR always clearly reads red/green.
 function buildHeatmap(rows) {
   const wrap = document.createElement("div");
   wrap.className = "heat";
@@ -307,7 +294,7 @@ function buildHeatmap(rows) {
   return wrap;
 }
 function heatColor(pct) {
-  const CAP = 3; // a 3%+ move reaches full color intensity
+  const CAP = 3;
   const t = Math.min(1, Math.abs(pct) / CAP);
   const light = 60 - t * 24;
   const sat = 58 + t * 18;
@@ -315,7 +302,6 @@ function heatColor(pct) {
   return `hsl(${hue} ${sat}% ${light}%)`;
 }
 
-/* ---------- detail dialog ---------- */
 function openDetail(r) {
   const dlg = $("#detail");
   const body = $("#detailBody");
@@ -332,7 +318,6 @@ function openDetail(r) {
   dlg.showModal();
 }
 
-/* ---------- watchlist UI ---------- */
 function renderWatchlist() {
   const list = getWatchlist();
   const chips = $("#watchChips");
@@ -367,7 +352,6 @@ function renderWatchlist() {
   });
 }
 
-/* ---------- sources & caveats ---------- */
 function renderEvidence() {
   const b = STATE.briefing;
   const src = $("#sources");
@@ -403,7 +387,6 @@ function niceSourceName(key) {
   return map[kind] || key;
 }
 
-/* ---------- footer fade on scroll ---------- */
 function initFooterFade() {
   const foot = $("#siteFooter");
   if (!foot || !("IntersectionObserver" in window)) { if (foot) foot.classList.add("visible"); return; }
@@ -413,7 +396,6 @@ function initFooterFade() {
   io.observe(foot);
 }
 
-/* ---------- share ---------- */
 function wrapText(ctx, text, maxWidth) {
   const words = String(text).split(" ");
   const lines = [];
@@ -440,67 +422,61 @@ async function shareBriefing() {
   const ctx = canvas.getContext("2d");
 
   const isLight = document.documentElement.dataset.theme === "light";
-  const bg = isLight ? "#faf9f6" : "#000000";
-  const text = isLight ? "#14140f" : "#f4f3ef";
-  const dim = isLight ? "#56564f" : "#a3a3a0";
-  const up = "#3ddc84", down = "#ff6161";
+  const bg = isLight ? "#faf9f6" : "#0a0a0c";
+  const text = isLight ? "#14140f" : "#f2f2f0";
+  const dim = isLight ? "#56564f" : "#9c9ca0";
+  const up = "#35d399", down = "#ff5c5c";
 
   ctx.fillStyle = bg;
   ctx.fillRect(0, 0, W, H);
 
-  // wordmark
   ctx.fillStyle = text;
-  ctx.font = "700 30px Nunito, sans-serif";
+  ctx.font = "700 28px 'Space Grotesk', sans-serif";
   ctx.textBaseline = "top";
   ctx.fillText("NOCTIS", 60, 60);
 
   ctx.fillStyle = dim;
-  ctx.font = "600 22px Nunito, sans-serif";
+  ctx.font = "600 20px 'JetBrains Mono', monospace";
   const gen = STATE.generated_at ? new Date(STATE.generated_at) : new Date();
-  ctx.fillText(gen.toLocaleDateString(undefined, { weekday: "long", month: "long", day: "numeric" }), 60, 105);
+  ctx.fillText(gen.toLocaleDateString(undefined, { weekday: "long", month: "long", day: "numeric" }), 60, 102);
 
-  // mood badge
   const mood = (b.mood || "mixed").toLowerCase();
   const moodColor = mood === "risk-on" ? up : mood === "risk-off" ? down : dim;
   ctx.fillStyle = moodColor;
   ctx.beginPath();
-  ctx.arc(64, 168, 7, 0, Math.PI * 2);
+  ctx.arc(64, 165, 7, 0, Math.PI * 2);
   ctx.fill();
-  ctx.font = "700 20px Nunito, sans-serif";
-  ctx.fillText(mood.replace("-", " ").toUpperCase(), 82, 158);
+  ctx.font = "700 18px 'JetBrains Mono', monospace";
+  ctx.fillText(mood.replace("-", " ").toUpperCase(), 82, 156);
 
-  // headline
   ctx.fillStyle = text;
-  ctx.font = "400 46px Marcellus, Georgia, serif";
+  ctx.font = "700 42px 'Space Grotesk', sans-serif";
   const headLines = wrapText(ctx, b.headline || "", W - 120);
-  let y = 210;
-  headLines.slice(0, 4).forEach(line => { ctx.fillText(line, 60, y); y += 56; });
+  let y = 206;
+  headLines.slice(0, 4).forEach(line => { ctx.fillText(line, 60, y); y += 52; });
 
-  // top movers -- gainers first, then losers, same rule as the site
   const rows = moverRows().slice().sort((a, c) => c.pct_change - a.pct_change);
   const top = [...rows.slice(0, 3), ...rows.slice(-2)];
   y += 30;
-  ctx.font = "700 22px Nunito, sans-serif";
+  ctx.font = "700 20px 'JetBrains Mono', monospace";
   ctx.fillStyle = dim;
   ctx.fillText("TOP MOVERS", 60, y);
-  y += 44;
+  y += 42;
   top.forEach(r => {
     const rowUp = r.pct_change >= 0;
     ctx.fillStyle = text;
-    ctx.font = "700 30px Nunito, sans-serif";
+    ctx.font = "700 28px 'JetBrains Mono', monospace";
     ctx.fillText(r.ticker, 60, y);
     ctx.fillStyle = rowUp ? up : down;
-    ctx.font = "700 30px Nunito, sans-serif";
     ctx.textAlign = "right";
     ctx.fillText(fmtPct(r.pct_change), W - 60, y);
     ctx.textAlign = "left";
-    y += 46;
+    y += 44;
   });
 
-  // footer
   ctx.fillStyle = dim;
-  ctx.font = "600 20px Nunito, sans-serif";
-  ctx.fillText("noctis.xyz · analysis, not financial advice", 60, H - 70);
+  ctx.font = "600 18px Inter, sans-serif";
+  ctx.fillText("noctis · analysis, not financial advice", 60, H - 70);
 
   canvas.toBlob(async (blob) => {
     if (!blob) return;
@@ -509,7 +485,7 @@ async function shareBriefing() {
       try {
         await navigator.share({ files: [file], title: "Noctis briefing", text: b.headline || "" });
         return;
-      } catch (e) { /* user cancelled or share failed -- fall through to download */ }
+      } catch (e) {}
     }
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
@@ -522,7 +498,6 @@ async function shareBriefing() {
   }, "image/png");
 }
 
-/* ---------- controls wiring ---------- */
 function initControls() {
   $$(".seg button[data-filter]").forEach(btn => {
     btn.addEventListener("click", () => {
@@ -550,7 +525,6 @@ function initControls() {
   $("#shareBtn").addEventListener("click", shareBriefing);
 }
 
-/* ---------- helpers ---------- */
 function fmtPct(v) {
   if (v == null || isNaN(v)) return "—";
   const s = v >= 0 ? "+" : "";
@@ -562,7 +536,6 @@ function escapeHtml(s) {
   })[c]);
 }
 
-/* ---------- boot ---------- */
 async function boot(url) {
   try {
     STATE = await loadBriefing(url || DATA_URL);
