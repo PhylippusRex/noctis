@@ -20,7 +20,7 @@ digs up the real evidence behind each move, and writes your morning briefing
 | | |
 |--|--|
 | **No-guessing test** | see [below](#the-no-guessing-test) — a real briefing line, proving the honesty rule in output, not just in prose |
-| **Live briefing** | [noctis.xyz](https://noctis-one.vercel.app/) |
+| **Live briefing** | [https://noctis-one.vercel.app](https://noctis-one.vercel.app/) |
 | **Proof it runs unattended** | see [below](#proof-the-automation-is-real) — check `data/archive/` and the Actions tab yourself |
 | **Run it yourself** | `python3 backend/collect.py && python3 backend/brief.py` — no dashboard, no manual step |
 | **Demo video** | *(added once recorded — see [Status](#status))* |
