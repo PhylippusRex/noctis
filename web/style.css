@@ -11,6 +11,7 @@
   --down: #ff5c5c;
   --flat: #9aa0a6;
   --baseline: #f5c94b;
+  --tl-line: #48484f;
 }
 
 [data-theme="dark"] {
@@ -47,6 +48,7 @@
   --glass-border: rgba(20,20,15,0.10);
   --glass-glare: rgba(255,255,255,0.65);
   --glass-shadow: 0 10px 30px rgba(20,20,15,0.10);
+  --tl-line: #c9c7bc;
 }
 
 * { box-sizing: border-box; }
@@ -189,11 +191,11 @@ h1#headline {
 }
 .seg button.on { background: var(--accent); color: var(--accent-contrast); font-weight: 700; }
 
-/* timeline -- stems terminate directly at the ticker chip, no separate dots
-   or fixed row. A chip's vertical position IS its move: up chips float
-   above the yellow baseline, down chips sit below it. */
+/* timeline -- the SVG (baseline + stems) sits BEHIND the chips in stacking,
+   and is pointer-events:none so taps always reach the chip underneath.
+   Stems stop at the chip's edge, never draw into its center. */
 .tl { position: relative; height: 140px; }
-.tl svg { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.tl svg { position: absolute; inset: 0; width: 100%; height: 100%; display: block; pointer-events: none; }
 .tl-chip {
   position: absolute;
   transform: translate(-50%, -50%);
@@ -202,6 +204,7 @@ h1#headline {
   font-family: var(--font-mono); font-size: 10px; font-weight: 700; letter-spacing: .01em;
   background: var(--bg-card); color: var(--text-dim);
   border: 1px solid var(--border); cursor: pointer; white-space: nowrap;
+  z-index: 1;
 }
 .tl-chip.up { border-color: var(--up); color: var(--up); }
 .tl-chip.down { border-color: var(--down); color: var(--down); }
@@ -211,6 +214,7 @@ h1#headline {
   border-radius: var(--radius-sm); padding: 5px 9px; font-size: 11px;
   font-family: var(--font-mono);
   white-space: nowrap; pointer-events: none; opacity: 0; transition: opacity .1s;
+  z-index: 2;
 }
 .tl-tip.show { opacity: 1; }
 
