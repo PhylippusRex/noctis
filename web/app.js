@@ -98,16 +98,17 @@ function renderHero() {
   }
 }
 
-// Stems run from the yellow baseline straight into the ticker chip -- the
-// chip IS the tip of the stem, scattered up (gain, green) or down (loss,
-// red) by how large the move was. No separate dots, no fixed row.
+// Baseline + stems are drawn first (they sit behind, in stacking order and
+// visually, since chips paint over them). Each stem stops exactly at the
+// chip's near edge -- it never runs into or past the box. Small moves may
+// have a stem too short to see, or none at all -- that's correct, not a bug.
 function renderTimeline() {
   const core = STATE.core_movers || [];
   const el = $("#tlChart");
   el.innerHTML = "";
   if (!core.length) { $("#tlNote").textContent = ""; return; }
 
-  const H = 140, padX = 30, chipHalfH = 14;
+  const H = 140, padX = 30, chipHalfH = 11;
   const w = el.clientWidth || 600;
   const vals = core.map(m => m.pct_change);
   const maxAbs = Math.max(1, ...vals.map(v => Math.abs(v)));
@@ -120,33 +121,43 @@ function renderTimeline() {
   const baseline = document.createElementNS(svgNS, "line");
   baseline.setAttribute("x1", 0); baseline.setAttribute("x2", w);
   baseline.setAttribute("y1", mid); baseline.setAttribute("y2", mid);
-  baseline.setAttribute("stroke", "var(--baseline)");
+  baseline.setAttribute("stroke", "var(--tl-line)");
   baseline.setAttribute("stroke-width", "1");
   svg.appendChild(baseline);
 
   const n = core.length;
   const step = (w - padX * 2) / Math.max(1, n - 1);
-
-  const tip = document.createElement("div");
-  tip.className = "tl-tip";
+  const positions = [];
 
   core.forEach((m, i) => {
     const x = n === 1 ? w / 2 : padX + i * step;
-    let y = mid - (m.pct_change / maxAbs) * (mid - chipHalfH - 6);
-    y = Math.max(chipHalfH + 2, Math.min(H - chipHalfH - 2, y));
+    let y = mid - (m.pct_change / maxAbs) * (mid - chipHalfH - 10);
+    y = Math.max(chipHalfH + 4, Math.min(H - chipHalfH - 4, y));
+    positions.push({ m, x, y });
+
     const up = m.pct_change >= 0;
     const color = up ? "var(--up)" : "var(--down)";
-
-    if (Math.abs(y - mid) > 2) {
+    // Stop the stem at the chip's near edge (not its center).
+    const edgeY = up ? y + chipHalfH : y - chipHalfH;
+    const gap = Math.abs(mid - edgeY);
+    if (gap > 2) {
       const stem = document.createElementNS(svgNS, "line");
       stem.setAttribute("x1", x); stem.setAttribute("x2", x);
-      stem.setAttribute("y1", mid); stem.setAttribute("y2", y);
+      stem.setAttribute("y1", mid); stem.setAttribute("y2", edgeY);
       stem.setAttribute("stroke", color);
       stem.setAttribute("stroke-width", "1.5");
       stem.setAttribute("stroke-linecap", "round");
       svg.appendChild(stem);
     }
+  });
 
+  el.appendChild(svg); // svg first: it sits behind the chips added next
+
+  const tip = document.createElement("div");
+  tip.className = "tl-tip";
+
+  positions.forEach(({ m, x, y }) => {
+    const up = m.pct_change >= 0;
     const chip = document.createElement("span");
     chip.className = "tl-chip " + (up ? "up" : "down");
     chip.textContent = m.ticker;
@@ -158,7 +169,6 @@ function renderTimeline() {
     el.appendChild(chip);
   });
 
-  el.appendChild(svg);
   el.appendChild(tip);
   $("#tlNote").textContent = `Each ticker sits where its move puts it -- above the line for gains, below for losses. Tap one for detail.`;
 }
