@@ -10,20 +10,30 @@ except ImportError:
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SIGNAL_URL = "https://datahub.noxiaohao.com/mcp"
-MODEL = os.environ.get("LLM_MODEL", "qwen3.8-max")
-FALLBACK_MODEL = os.environ.get("LLM_FALLBACK", "qwen3.8-max")
 CORE = {"TSLA","NVDA","AAPL","MSFT","GOOGL","AMZN","META","AMD","SPY","QQQ"}
 COMPANY = {"TSLA":"Tesla","NVDA":"Nvidia","AAPL":"Apple","MSFT":"Microsoft",
            "GOOGL":"Google","AMZN":"Amazon","META":"Meta","AMD":"AMD",
            "SPY":"S&P 500","QQQ":"Nasdaq"}
 CLIP = 900
-
-# Confirmed real (non-crypto) feed keys from data/debug_feed_sources.json.
 FEEDS_BIZ = "cnbc,techcrunch,theverge,wired,arstechnica"
 FEEDS_MACRO = "cnbc,fed"
 
-client = OpenAI(api_key=os.environ.get("QWEN_API_KEY", os.environ.get("GROQ_API_KEY", "")),
-                base_url=os.environ.get("QWEN_BASE_URL", "https://api.groq.com/openai/v1"))
+# Primary: Qwen via the Bitget hackathon relay. It's a shared pool across
+# many teams, so it can get congested -- a short timeout plus a fallback to
+# Groq (fast, reliable) keeps the nightly job from hanging or failing outright.
+PRIMARY_MODEL = os.environ.get("LLM_MODEL", "qwen3.8-max")
+PRIMARY_CLIENT = OpenAI(
+    api_key=os.environ.get("QWEN_API_KEY", ""),
+    base_url=os.environ.get("QWEN_BASE_URL", "https://hackathon.bitgetops.com/v1"),
+    timeout=60.0, max_retries=0,
+)
+
+FALLBACK_MODEL = os.environ.get("LLM_FALLBACK", "openai/gpt-oss-120b")
+_groq_key = os.environ.get("GROQ_API_KEY", "")
+FALLBACK_CLIENT = OpenAI(
+    api_key=_groq_key, base_url="https://api.groq.com/openai/v1",
+    timeout=60.0, max_retries=0,
+) if _groq_key else None
 
 SYSTEM = """You are Noctis, an executive night-shift analyst for traders of tokenized US stocks on Bitget.
 Your reader is an active trader who wakes up to the US session, and who may watch different names than the ones listed here.
@@ -58,18 +68,41 @@ Answer with ONLY one JSON object, no markdown, with these keys:
  "watchlist_today": [str] (max 5), "sources": [str] (RESEARCH section names you actually used), "caveats": [str, plain English]}"""
 
 def chat(**kw):
+    """Try Qwen first (fast timeout, one retry). If it's slow, errors, or the
+    key is missing, fall back to Groq so the nightly job still completes."""
     kw.setdefault("max_tokens", 3200)
-    for model in (MODEL, MODEL, FALLBACK_MODEL):
-        for attempt in range(3):
-            try:
-                return client.chat.completions.create(model=model, **kw)
-            except openai.RateLimitError:
-                print("  rate limited, waiting 25s...")
-                time.sleep(25)
-            except openai.BadRequestError as e:
-                print("  model hiccup, retrying:", str(e)[:100])
-                break
-    raise RuntimeError("all model attempts failed")
+    used_model = None
+
+    for attempt in range(2):
+        try:
+            print(f"  [llm] trying {PRIMARY_MODEL} (attempt {attempt + 1}/2, 60s timeout)")
+            resp = PRIMARY_CLIENT.chat.completions.create(model=PRIMARY_MODEL, **kw)
+            used_model = PRIMARY_MODEL
+            print(f"  [llm] {PRIMARY_MODEL} responded")
+            return resp, used_model
+        except openai.RateLimitError:
+            print("  [llm] Qwen rate limited, waiting 10s...")
+            time.sleep(10)
+        except (openai.APITimeoutError, openai.APIStatusError, openai.APIConnectionError) as e:
+            print(f"  [llm] Qwen failed ({type(e).__name__}: {str(e)[:150]})")
+            break
+
+    if FALLBACK_CLIENT is None:
+        raise RuntimeError("Qwen failed and no GROQ_API_KEY is set for fallback")
+
+    print(f"  [llm] falling back to {FALLBACK_MODEL} via Groq")
+    for attempt in range(3):
+        try:
+            resp = FALLBACK_CLIENT.chat.completions.create(model=FALLBACK_MODEL, **kw)
+            print(f"  [llm] {FALLBACK_MODEL} (fallback) responded")
+            return resp, FALLBACK_MODEL
+        except openai.RateLimitError:
+            print("  [llm] Groq rate limited, waiting 15s...")
+            time.sleep(15)
+        except openai.BadRequestError as e:
+            print(f"  [llm] Groq hiccup: {str(e)[:150]}")
+            break
+    raise RuntimeError("Both Qwen and the Groq fallback failed")
 
 def parse_json(text):
     text = (text or "").strip()
@@ -86,8 +119,6 @@ def load_movers():
     return data, core, others
 
 def has_signal(obj):
-    """True if this parsed tool result contains any real content -- not just
-    an empty 'error' string, an empty 'items' list, or nothing at all."""
     if isinstance(obj, dict):
         for k, v in obj.items():
             if k == "error":
@@ -189,10 +220,10 @@ def main():
                 f"mover_stats (computed, authoritative -- use for tickers with no RESEARCH-backed cause): {json.dumps(mover_stats)}\n\n"
                 f"{sections}\n\nWrite the briefing JSON.")
 
-    text = chat(messages=[{"role": "system", "content": SYSTEM},
-                          {"role": "user", "content": user_msg}],
-                response_format={"type": "json_object"}).choices[0].message.content
-    briefing = parse_json(text)
+    resp, used_model = chat(messages=[{"role": "system", "content": SYSTEM},
+                                       {"role": "user", "content": user_msg}],
+                             response_format={"type": "json_object"})
+    briefing = parse_json(resp.choices[0].message.content)
     briefing["mood"] = mood
     briefing["breadth"] = breadth
 
@@ -211,10 +242,12 @@ def main():
     out = {"generated_at": data["generated_at"], "window_hours": data["window_hours"],
            "market_note": data["market_note"], "briefing": briefing,
            "core_movers": core, "other_movers": others,
+           "llm_used": used_model,
            "evidence": {k: v[:600] for k, v in ctx.items()}}
     with open(os.path.join(ROOT, "data", "briefing.json"), "w") as f:
         json.dump(out, f, indent=2)
-    print("\nHEADLINE:", briefing.get("headline"))
+    print("\nModel used:", used_model)
+    print("HEADLINE:", briefing.get("headline"))
     print("MOOD:", briefing.get("mood"))
     print(briefing.get("summary"))
     for m in briefing.get("movers", []):
@@ -222,3 +255,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+    
