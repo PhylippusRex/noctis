@@ -8,7 +8,7 @@ permissions:
 jobs:
   brief:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -26,6 +26,8 @@ jobs:
           QWEN_API_KEY: ${{ secrets.QWEN_API_KEY }}
           QWEN_BASE_URL: "https://hackathon.bitgetops.com/v1"
           LLM_MODEL: "qwen3.8-max"
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          LLM_FALLBACK: "openai/gpt-oss-120b"
         run: python backend/brief.py
       - name: Save results
         run: |
