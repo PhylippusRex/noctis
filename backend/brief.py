@@ -59,7 +59,7 @@ Other rules:
 - Be concise and use plain English throughout.
 
 Answer with ONLY one JSON object, no markdown, with these keys:
-{"headline": str, "mood": "risk-on"|"risk-off"|"mixed", "summary": str (3-4 sentences, sector/breadth level, not just 1-2 tickers),
+{"headline": str (must name at least one specific ticker with a concrete number, e.g. "SMMT surges 17% as..." -- never a purely generic headline like "small caps swing wildly" with no ticker), "mood": "risk-on"|"risk-off"|"mixed", "summary": str (3-4 sentences, sector/breadth level, not just 1-2 tickers),
  "macro_context": [{"title": str, "detail": str}] (max 4, plain English),
  "movers": [{"ticker": str, "pct_change": number, "why": str (evidence-based if RESEARCH supports it, otherwise a factual
    description built only from that ticker's mover_stats -- never a guessed cause), "confidence": "high"|"medium"|"low"
