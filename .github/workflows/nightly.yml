@@ -1,7 +1,7 @@
 name: Nightly briefing
 on:
   schedule:
-    - cron: "0 5 * * *"   # 05:00 UTC daily; we will set this to your wake-up time
+    - cron: "0 5 * * *"
   workflow_dispatch:
 permissions:
   contents: write
@@ -23,7 +23,9 @@ jobs:
         run: python backend/collect.py
       - name: Write briefing
         env:
-          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          QWEN_API_KEY: ${{ secrets.QWEN_API_KEY }}
+          QWEN_BASE_URL: "https://hackathon.bitgetops.com/v1"
+          LLM_MODEL: "qwen3.8-max"
         run: python backend/brief.py
       - name: Save results
         run: |
