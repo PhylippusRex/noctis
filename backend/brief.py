@@ -10,8 +10,8 @@ except ImportError:
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SIGNAL_URL = "https://datahub.noxiaohao.com/mcp"
-MODEL = os.environ.get("LLM_MODEL", "openai/gpt-oss-120b")
-FALLBACK_MODEL = os.environ.get("LLM_FALLBACK", "qwen/qwen3.8-27b")
+MODEL = os.environ.get("LLM_MODEL", "qwen3.8-max")
+FALLBACK_MODEL = os.environ.get("LLM_FALLBACK", "qwen3.8-max")
 CORE = {"TSLA","NVDA","AAPL","MSFT","GOOGL","AMZN","META","AMD","SPY","QQQ"}
 COMPANY = {"TSLA":"Tesla","NVDA":"Nvidia","AAPL":"Apple","MSFT":"Microsoft",
            "GOOGL":"Google","AMZN":"Amazon","META":"Meta","AMD":"AMD",
@@ -22,8 +22,8 @@ CLIP = 900
 FEEDS_BIZ = "cnbc,techcrunch,theverge,wired,arstechnica"
 FEEDS_MACRO = "cnbc,fed"
 
-client = OpenAI(api_key=os.environ["GROQ_API_KEY"],
-                base_url="https://api.groq.com/openai/v1")
+client = OpenAI(api_key=os.environ.get("QWEN_API_KEY", os.environ.get("GROQ_API_KEY", "")),
+                base_url=os.environ.get("QWEN_BASE_URL", "https://api.groq.com/openai/v1"))
 
 SYSTEM = """You are Noctis, an executive night-shift analyst for traders of tokenized US stocks on Bitget.
 Your reader is an active trader who wakes up to the US session, and who may watch different names than the ones listed here.
@@ -87,9 +87,7 @@ def load_movers():
 
 def has_signal(obj):
     """True if this parsed tool result contains any real content -- not just
-    an empty 'error' string, an empty 'items' list, or nothing at all. This
-    catches cases like rates_yields, where every field is technically present
-    but every value is {"error": ""} with no actual number in it."""
+    an empty 'error' string, an empty 'items' list, or nothing at all."""
     if isinstance(obj, dict):
         for k, v in obj.items():
             if k == "error":
