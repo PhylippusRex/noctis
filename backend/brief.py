@@ -1,5 +1,6 @@
 import asyncio, json, os, time
 from datetime import datetime, timezone
+import requests
 import openai
 from openai import OpenAI
 from mcp import ClientSession
@@ -15,12 +16,10 @@ COMPANY = {"TSLA":"Tesla","NVDA":"Nvidia","AAPL":"Apple","MSFT":"Microsoft",
            "GOOGL":"Google","AMZN":"Amazon","META":"Meta","AMD":"AMD",
            "SPY":"S&P 500","QQQ":"Nasdaq"}
 CLIP = 900
+WEB_CLIP = 900
 FEEDS_BIZ = "cnbc,techcrunch,theverge,wired,arstechnica"
 FEEDS_MACRO = "cnbc,fed"
 
-# Primary: Qwen via the Bitget hackathon relay. It's a shared pool across
-# many teams, so it can get congested -- a short timeout plus a fallback to
-# Groq (fast, reliable) keeps the nightly job from hanging or failing outright.
 PRIMARY_MODEL = os.environ.get("LLM_MODEL", "qwen3.8-max")
 PRIMARY_CLIENT = OpenAI(
     api_key=os.environ.get("QWEN_API_KEY", ""),
@@ -41,13 +40,17 @@ Your reader is an active trader who wakes up to the US session, and who may watc
 THE MOST IMPORTANT RULE: Never state a specific cause (a company action, a news event, an analyst call, a macro release,
 anything) unless it is explicitly present in one of the RESEARCH sections you are given. If RESEARCH does not support a
 specific cause for a ticker, do NOT guess or infer one -- instead describe that ticker's move using ONLY the numeric
-context provided in "mover_stats" (its rank among tonight's movers, how far it is from the average move, its turnover
-rank). It is normal and expected for most tickers, especially obscure ones, to have no news-based cause. Describing them
-factually using only the provided numbers is the correct behavior, not a failure. A guess dressed up as an explanation
-is worse than an honest "no catalyst found, but here is how this move compares to the rest of the tape."
+context provided in "mover_stats". It is normal and expected for some tickers to have no news-based cause. Describing
+them factually using only the provided numbers is correct, not a failure.
+
+RESEARCH sections prefixed "news:" come from Bitget Signal (crypto/market-focused feeds). Sections prefixed "web:" come
+from a general news search engine and are more likely to carry real company-specific headlines. Treat both as equally
+valid evidence when present -- cite whichever one actually supports a given ticker's move.
 
 Other rules:
 - Use ONLY the provided numbers for percentage moves. Never invent numbers or news.
+- Every single entry in "movers" MUST have a non-empty "why" string. Never leave "why" blank or omit it, even when no
+  RESEARCH section covers that ticker -- in that case, use the mover_stats fallback phrasing described below.
 - In the summary, describe the SHAPE of the overnight move -- which groups moved together (mega-cap tech, indices via
   SPY/QQQ, semis, etc.) and the overall breadth -- rather than only naming one or two tickers.
 - The "movers" array in your answer MUST contain exactly one entry for every ticker listed in "required_tickers" in the
@@ -61,25 +64,21 @@ Other rules:
 Answer with ONLY one JSON object, no markdown, with these keys:
 {"headline": str (must name at least one specific ticker with a concrete number, e.g. "SMMT surges 17% as..." -- never a purely generic headline like "small caps swing wildly" with no ticker), "mood": "risk-on"|"risk-off"|"mixed", "summary": str (3-4 sentences, sector/breadth level, not just 1-2 tickers),
  "macro_context": [{"title": str, "detail": str}] (max 4, plain English),
- "movers": [{"ticker": str, "pct_change": number, "why": str (evidence-based if RESEARCH supports it, otherwise a factual
-   description built only from that ticker's mover_stats -- never a guessed cause), "confidence": "high"|"medium"|"low"
+ "movers": [{"ticker": str, "pct_change": number, "why": str (NEVER empty -- evidence-based if RESEARCH supports it, otherwise a factual
+   description built only from that ticker's mover_stats), "confidence": "high"|"medium"|"low"
    ("low" whenever "why" is stats-only with no RESEARCH-backed cause), "watch_today": str}] (one entry per required_tickers, no fewer),
  "open_outlook": str (2 sentences on what to watch into the 9:30 ET open, based only on RESEARCH),
  "watchlist_today": [str] (max 5), "sources": [str] (RESEARCH section names you actually used), "caveats": [str, plain English]}"""
 
 def chat(**kw):
-    """Try Qwen first (fast timeout, one retry). If it's slow, errors, or the
-    key is missing, fall back to Groq so the nightly job still completes."""
-    kw.setdefault("max_tokens", 3200)
+    kw.setdefault("max_tokens", 4000)
     used_model = None
-
     for attempt in range(2):
         try:
             print(f"  [llm] trying {PRIMARY_MODEL} (attempt {attempt + 1}/2, 60s timeout)")
             resp = PRIMARY_CLIENT.chat.completions.create(model=PRIMARY_MODEL, **kw)
-            used_model = PRIMARY_MODEL
             print(f"  [llm] {PRIMARY_MODEL} responded")
-            return resp, used_model
+            return resp, PRIMARY_MODEL
         except openai.RateLimitError:
             print("  [llm] Qwen rate limited, waiting 10s...")
             time.sleep(10)
@@ -162,7 +161,67 @@ def build_mover_stats(core, others):
         }
     return stats
 
-async def gather(core, others):
+def fallback_why(ticker, mover_stats):
+    st = mover_stats[ticker]
+    return (f"Ranked {st['rank_by_move']} of {st['rank_by_move_of']} tonight by size of move, "
+            f"{st['vs_core_avg']:+.2f} pts versus the core average.")
+
+# ---------- GDELT: free, keyless, real-world news search ----------
+# Untested against the live API from this environment -- defensive parsing,
+# degrades to "no usable content" rather than crashing on an unexpected shape.
+def fetch_gdelt(query, max_records=3, timespan="2d"):
+    try:
+        r = requests.get(
+            "https://api.gdeltproject.org/api/v2/doc/doc",
+            params={"query": f'"{query}" sourcelang:eng', "mode": "ArtList",
+                    "maxrecords": max_records, "format": "json",
+                    "timespan": timespan, "sort": "HybridRel"},
+            timeout=15,
+            headers={"User-Agent": "noctis-briefing/1.0"},
+        )
+        r.raise_for_status()
+        data = r.json()
+        articles = data.get("articles") or []
+        if not articles:
+            return None
+        lines = []
+        for a in articles[:max_records]:
+            title = (a.get("title") or "").strip()
+            domain = (a.get("domain") or "").strip()
+            date = (a.get("seendate") or "").strip()
+            if title:
+                lines.append(f"- {title} ({domain}, {date})")
+        return "\n".join(lines) if lines else None
+    except Exception as e:
+        print(f"    (gdelt error: {type(e).__name__}: {e})")
+        return None
+
+def gather_web_news(core, others):
+    ctx = {}
+    top_core = sorted(core, key=lambda m: abs(m["pct_change"]), reverse=True)[:6]
+    top_other = sorted(others, key=lambda m: abs(m["pct_change"]), reverse=True)[:4]
+    for m in top_core:
+        q = COMPANY.get(m["ticker"], m["ticker"])
+        print(f"  [fetch] web:{m['ticker']} (query: {q})")
+        text = fetch_gdelt(q)
+        if text:
+            ctx[f"web:{m['ticker']}"] = text[:WEB_CLIP]
+            print(f"    -> got {text.count(chr(10)) + 1} headline(s)")
+        else:
+            print("    (no usable content)")
+        time.sleep(0.5)
+    for m in top_other:
+        print(f"  [fetch] web:{m['ticker']} (query: {m['ticker']})")
+        text = fetch_gdelt(m["ticker"])
+        if text:
+            ctx[f"web:{m['ticker']}"] = text[:WEB_CLIP]
+            print(f"    -> got {text.count(chr(10)) + 1} headline(s)")
+        else:
+            print("    (no usable content)")
+        time.sleep(0.5)
+    return ctx
+
+async def gather_signal(core, others):
     ctx = {}
     async with connect(SIGNAL_URL) as (r, w, *_):
         async with ClientSession(r, w) as s:
@@ -209,7 +268,12 @@ def main():
     mover_stats = build_mover_stats(core, others)
     required_tickers = [m["ticker"] for m in core] + [m["ticker"] for m in others]
 
-    ctx = asyncio.run(gather(core, others))
+    print("-- Bitget Signal research --")
+    signal_ctx = asyncio.run(gather_signal(core, others))
+    print("-- General web news (GDELT) --")
+    web_ctx = gather_web_news(core, others)
+    ctx = {**signal_ctx, **web_ctx}
+
     sections = "\n\n".join(f"### RESEARCH {k}\n{v}" for k, v in ctx.items()) or "(No research sources returned usable data tonight.)"
     now = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
     user_msg = (f"Time now: {now}. Overnight window: last {data['window_hours']} hours.\n"
@@ -227,17 +291,20 @@ def main():
     briefing["mood"] = mood
     briefing["breadth"] = breadth
 
-    have = {m.get("ticker") for m in briefing.get("movers", [])}
+    # Guarantee: every required ticker has a non-empty "why". Fixes both a
+    # missing entry AND an entry the model left with an empty "why" --
+    # the bug that produced the blank TSLA/META popups.
+    by_ticker = {m.get("ticker"): m for m in briefing.get("movers", []) if m.get("ticker")}
+    fixed_movers = []
     for t in required_tickers:
-        if t not in have:
-            st = mover_stats[t]
-            briefing.setdefault("movers", []).append({
-                "ticker": t, "pct_change": st["pct_change"],
-                "why": (f"Ranked {st['rank_by_move']} of {st['rank_by_move_of']} tonight by size of move, "
-                        f"{st['vs_core_avg']:+.2f} pts versus the core average."),
-                "confidence": "low",
-                "watch_today": "No specific catalyst on record; watch for continuation at the open.",
-            })
+        entry = by_ticker.get(t) or {"ticker": t, "pct_change": mover_stats[t]["pct_change"]}
+        if not str(entry.get("why") or "").strip():
+            entry["why"] = fallback_why(t, mover_stats)
+            entry["confidence"] = "low"
+        entry.setdefault("confidence", "low")
+        entry.setdefault("watch_today", "No specific catalyst on record; watch for continuation at the open.")
+        fixed_movers.append(entry)
+    briefing["movers"] = fixed_movers
 
     out = {"generated_at": data["generated_at"], "window_hours": data["window_hours"],
            "market_note": data["market_note"], "briefing": briefing,
@@ -255,4 +322,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-    
