@@ -1,333 +1,360 @@
 {
-  "generated_at": "2026-10-06T11:49:17.240809+00:00",
+  "generated_at": "2026-10-07T11:32:20.817404+00:00",
   "window_hours": 15,
-  "universe_size": 2811,
-  "liquid_count": 2805,
+  "universe_size": 2812,
+  "liquid_count": 2803,
   "market_note": "Outside Nasdaq/NYSE hours, rToken prices are indicative quotes, not live exchange prices.",
   "movers": [
     {
-      "symbol": "RXERSUSDT",
-      "ticker": "XERS",
-      "start_price": 9.06,
-      "end_price": 10.169,
-      "pct_change": 12.241,
-      "range_pct": 14.195,
-      "turnover_usdt": 50902217.12
+      "symbol": "RBNTUSDT",
+      "ticker": "BNT",
+      "start_price": 37.0573,
+      "end_price": 44.45,
+      "pct_change": 19.949,
+      "range_pct": 20.59,
+      "turnover_usdt": 889257.48
+    },
+    {
+      "symbol": "RBULLUSDT",
+      "ticker": "BULL",
+      "start_price": 7.295,
+      "end_price": 5.9985,
+      "pct_change": -17.772,
+      "range_pct": 19.328,
+      "turnover_usdt": 33974070.72
+    },
+    {
+      "symbol": "RAPMDUSDT",
+      "ticker": "APMD",
+      "start_price": 21.86,
+      "end_price": 18.55,
+      "pct_change": -15.142,
+      "range_pct": 16.4,
+      "turnover_usdt": 12239916.04
+    },
+    {
+      "symbol": "RMIAXUSDT",
+      "ticker": "MIAX",
+      "start_price": 34.32,
+      "end_price": 30.7,
+      "pct_change": -10.548,
+      "range_pct": 11.072,
+      "turnover_usdt": 149218421.14
+    },
+    {
+      "symbol": "RODTXUSDT",
+      "ticker": "ODTX",
+      "start_price": 20.35,
+      "end_price": 18.39,
+      "pct_change": -9.631,
+      "range_pct": 14.201,
+      "turnover_usdt": 9209805.95
+    },
+    {
+      "symbol": "RNEOUSDT",
+      "ticker": "NEO",
+      "start_price": 18.11,
+      "end_price": 16.49,
+      "pct_change": -8.945,
+      "range_pct": 9.939,
+      "turnover_usdt": 77982808.85
+    },
+    {
+      "symbol": "RSTDNUSDT",
+      "ticker": "STDN",
+      "start_price": 14.22,
+      "end_price": 15.4,
+      "pct_change": 8.298,
+      "range_pct": 12.726,
+      "turnover_usdt": 10761484.07
     },
     {
       "symbol": "RALMRUSDT",
       "ticker": "ALMR",
-      "start_price": 33.99,
-      "end_price": 38.13,
-      "pct_change": 12.18,
-      "range_pct": 14.769,
-      "turnover_usdt": 30269896.48
+      "start_price": 34.73,
+      "end_price": 32.0,
+      "pct_change": -7.861,
+      "range_pct": 24.417,
+      "turnover_usdt": 79821820.58
     },
     {
-      "symbol": "RGMABUSDT",
-      "ticker": "GMAB",
-      "start_price": 35.865,
-      "end_price": 39.08,
-      "pct_change": 8.964,
-      "range_pct": 12.017,
-      "turnover_usdt": 345601645.68
+      "symbol": "RSOXLUSDT",
+      "ticker": "SOXL",
+      "start_price": 164.38,
+      "end_price": 155.72,
+      "pct_change": -5.268,
+      "range_pct": 6.546,
+      "turnover_usdt": 1195489190.91
     },
     {
-      "symbol": "RAZTAUSDT",
-      "ticker": "AZTA",
-      "start_price": 39.75,
-      "end_price": 42.81,
-      "pct_change": 7.698,
-      "range_pct": 13.371,
-      "turnover_usdt": 91950841.94
+      "symbol": "RAVBPUSDT",
+      "ticker": "AVBP",
+      "start_price": 15.09,
+      "end_price": 14.5405,
+      "pct_change": -3.641,
+      "range_pct": 9.874,
+      "turnover_usdt": 7080396.05
     },
     {
-      "symbol": "RATECUSDT",
-      "ticker": "ATEC",
-      "start_price": 9.93,
-      "end_price": 10.56,
-      "pct_change": 6.344,
-      "range_pct": 12.588,
-      "turnover_usdt": 21529269.23
+      "symbol": "RITGUSDT",
+      "ticker": "ITG",
+      "start_price": 8.28,
+      "end_price": 8.02,
+      "pct_change": -3.14,
+      "range_pct": 7.971,
+      "turnover_usdt": 4325648.42
     },
     {
-      "symbol": "RCLFUSDT",
-      "ticker": "CLF",
-      "start_price": 12.105,
-      "end_price": 12.805,
-      "pct_change": 5.783,
-      "range_pct": 7.394,
-      "turnover_usdt": 248016589.48
-    },
-    {
-      "symbol": "RCEGUSDT",
-      "ticker": "CEG",
-      "start_price": 268.17,
-      "end_price": 283.33,
-      "pct_change": 5.653,
-      "range_pct": 7.846,
-      "turnover_usdt": 100922870.4
-    },
-    {
-      "symbol": "RTWLOUSDT",
-      "ticker": "TWLO",
-      "start_price": 290.65,
-      "end_price": 303.8,
-      "pct_change": 4.524,
-      "range_pct": 4.915,
-      "turnover_usdt": 9940982734.08
-    },
-    {
-      "symbol": "RAAOXUSDT",
-      "ticker": "AAOX",
-      "start_price": 13.57,
-      "end_price": 14.15,
-      "pct_change": 4.274,
-      "range_pct": 6.485,
-      "turnover_usdt": 13462433.01
-    },
-    {
-      "symbol": "RPCVXUSDT",
-      "ticker": "PCVX",
-      "start_price": 71.39,
-      "end_price": 73.2888,
-      "pct_change": 2.66,
-      "range_pct": 5.669,
-      "turnover_usdt": 10266867.25
-    },
-    {
-      "symbol": "RAMDUSDT",
-      "ticker": "AMD",
-      "start_price": 631.88,
-      "end_price": 643.0,
-      "pct_change": 1.76,
-      "range_pct": 2.354,
-      "turnover_usdt": 365470001.4
-    },
-    {
-      "symbol": "RTEMUSDT",
-      "ticker": "TEM",
-      "start_price": 83.39,
-      "end_price": 84.7,
-      "pct_change": 1.571,
-      "range_pct": 2.41,
-      "turnover_usdt": 14222536.84
-    },
-    {
-      "symbol": "RXPUSDT",
-      "ticker": "XP",
-      "start_price": 28.7,
-      "end_price": 28.2691,
-      "pct_change": -1.501,
-      "range_pct": 3.031,
-      "turnover_usdt": 295380532.02
-    },
-    {
-      "symbol": "RSPHRUSDT",
-      "ticker": "SPHR",
-      "start_price": 113.57,
-      "end_price": 111.97,
-      "pct_change": -1.409,
-      "range_pct": 3.667,
-      "turnover_usdt": 143938484.99
-    },
-    {
-      "symbol": "RRXRXUSDT",
-      "ticker": "RXRX",
-      "start_price": 4.75,
-      "end_price": 4.81,
-      "pct_change": 1.263,
-      "range_pct": 2.947,
-      "turnover_usdt": 5877866.49
-    },
-    {
-      "symbol": "RSSPCUSDT",
-      "ticker": "SSPC",
-      "start_price": 6.63,
-      "end_price": 6.5597,
-      "pct_change": -1.06,
-      "range_pct": 3.318,
-      "turnover_usdt": 13488456.72
-    },
-    {
-      "symbol": "RMSFTUSDT",
-      "ticker": "MSFT",
-      "start_price": 525.05,
-      "end_price": 530.3,
-      "pct_change": 1.0,
-      "range_pct": 1.232,
-      "turnover_usdt": 268547396.25
-    },
-    {
-      "symbol": "RAVGOUSDT",
-      "ticker": "AVGO",
-      "start_price": 362.53,
-      "end_price": 366.14,
-      "pct_change": 0.996,
-      "range_pct": 1.109,
-      "turnover_usdt": 163800003.78
-    },
-    {
-      "symbol": "RNVAXUSDT",
-      "ticker": "NVAX",
-      "start_price": 12.53,
-      "end_price": 12.65,
-      "pct_change": 0.958,
-      "range_pct": 3.352,
-      "turnover_usdt": 9874095.51
-    },
-    {
-      "symbol": "RTSLAUSDT",
-      "ticker": "TSLA",
-      "start_price": 379.31,
-      "end_price": 382.55,
-      "pct_change": 0.854,
-      "range_pct": 1.221,
-      "turnover_usdt": 308249612.16
-    },
-    {
-      "symbol": "RINTCUSDT",
-      "ticker": "INTC",
-      "start_price": 116.3255,
-      "end_price": 117.3047,
-      "pct_change": 0.842,
-      "range_pct": 1.582,
-      "turnover_usdt": 218540709.86
-    },
-    {
-      "symbol": "RNVDAUSDT",
-      "ticker": "NVDA",
-      "start_price": 239.5331,
-      "end_price": 241.2092,
-      "pct_change": 0.7,
-      "range_pct": 1.1,
-      "turnover_usdt": 769676523.24
-    },
-    {
-      "symbol": "RAMZNUSDT",
-      "ticker": "AMZN",
-      "start_price": 251.6,
-      "end_price": 253.24,
-      "pct_change": 0.652,
-      "range_pct": 0.835,
-      "turnover_usdt": 459110988.43
-    },
-    {
-      "symbol": "RIWMUSDT",
-      "ticker": "IWM",
-      "start_price": 283.13,
-      "end_price": 284.86,
-      "pct_change": 0.611,
-      "range_pct": 0.646,
-      "turnover_usdt": 135456998.09
-    },
-    {
-      "symbol": "RGOOGLUSDT",
-      "ticker": "GOOGL",
-      "start_price": 346.19,
-      "end_price": 348.2057,
-      "pct_change": 0.582,
-      "range_pct": 0.893,
-      "turnover_usdt": 325627278.65
-    },
-    {
-      "symbol": "RCAPRUSDT",
-      "ticker": "CAPR",
-      "start_price": 7.8355,
-      "end_price": 7.8799,
-      "pct_change": 0.567,
-      "range_pct": 1.276,
-      "turnover_usdt": 556734.15
-    },
-    {
-      "symbol": "RQQQUSDT",
-      "ticker": "QQQ",
-      "start_price": 756.24,
-      "end_price": 760.4298,
-      "pct_change": 0.554,
-      "range_pct": 0.721,
-      "turnover_usdt": 649898023.36
-    },
-    {
-      "symbol": "ROPCHUSDT",
-      "ticker": "OPCH",
-      "start_price": 28.45,
-      "end_price": 28.3,
-      "pct_change": -0.527,
-      "range_pct": 7.234,
-      "turnover_usdt": 8425840.58
-    },
-    {
-      "symbol": "RSPCXUSDT",
-      "ticker": "SPCX",
-      "start_price": 171.15,
-      "end_price": 172.036,
-      "pct_change": 0.518,
-      "range_pct": 1.691,
-      "turnover_usdt": 911387725.83
-    },
-    {
-      "symbol": "REWZUSDT",
-      "ticker": "EWZ",
-      "start_price": 42.98,
-      "end_price": 43.2,
-      "pct_change": 0.512,
-      "range_pct": 1.815,
-      "turnover_usdt": 10260280.32
-    },
-    {
-      "symbol": "RIVVUSDT",
-      "ticker": "IVV",
-      "start_price": 777.78,
-      "end_price": 781.6,
-      "pct_change": 0.491,
-      "range_pct": 0.509,
-      "turnover_usdt": 16990577.85
-    },
-    {
-      "symbol": "RSPYUSDT",
-      "ticker": "SPY",
-      "start_price": 774.84,
-      "end_price": 778.1507,
-      "pct_change": 0.427,
-      "range_pct": 0.467,
-      "turnover_usdt": 989164124.26
-    },
-    {
-      "symbol": "RMETAUSDT",
-      "ticker": "META",
-      "start_price": 742.063,
-      "end_price": 745.17,
-      "pct_change": 0.419,
-      "range_pct": 0.928,
-      "turnover_usdt": 427102879.7
-    },
-    {
-      "symbol": "RBRUNUSDT",
-      "ticker": "BRUN",
-      "start_price": 14.455,
-      "end_price": 14.5,
-      "pct_change": 0.311,
-      "range_pct": 4.15,
-      "turnover_usdt": 22922442.48
+      "symbol": "RAEHRUSDT",
+      "ticker": "AEHR",
+      "start_price": 94.37,
+      "end_price": 91.44,
+      "pct_change": -3.105,
+      "range_pct": 6.231,
+      "turnover_usdt": 21082594.66
     },
     {
       "symbol": "RMUUSDT",
       "ticker": "MU",
-      "start_price": 1063.7875,
-      "end_price": 1065.65,
-      "pct_change": 0.175,
-      "range_pct": 1.488,
-      "turnover_usdt": 1007331959.61
+      "start_price": 1045.26,
+      "end_price": 1018.0,
+      "pct_change": -2.608,
+      "range_pct": 3.566,
+      "turnover_usdt": 1948512003.65
     },
     {
-      "symbol": "RPICSUSDT",
-      "ticker": "PICS",
-      "start_price": 11.7379,
-      "end_price": 11.75,
-      "pct_change": 0.103,
-      "range_pct": 13.035,
-      "turnover_usdt": 5956853.44
+      "symbol": "RTXGUSDT",
+      "ticker": "TXG",
+      "start_price": 80.9,
+      "end_price": 78.8,
+      "pct_change": -2.596,
+      "range_pct": 4.265,
+      "turnover_usdt": 4828358.11
+    },
+    {
+      "symbol": "RTWSTUSDT",
+      "ticker": "TWST",
+      "start_price": 167.45,
+      "end_price": 163.2,
+      "pct_change": -2.538,
+      "range_pct": 3.852,
+      "turnover_usdt": 13811324.0
+    },
+    {
+      "symbol": "RSNDKUSDT",
+      "ticker": "SNDK",
+      "start_price": 1664.24,
+      "end_price": 1622.2,
+      "pct_change": -2.526,
+      "range_pct": 3.271,
+      "turnover_usdt": 504999621.19
+    },
+    {
+      "symbol": "RLABUUSDT",
+      "ticker": "LABU",
+      "start_price": 232.4,
+      "end_price": 226.8,
+      "pct_change": -2.41,
+      "range_pct": 2.552,
+      "turnover_usdt": 2450451.86
+    },
+    {
+      "symbol": "RLABDUSDT",
+      "ticker": "LABD",
+      "start_price": 7.92,
+      "end_price": 8.11,
+      "pct_change": 2.399,
+      "range_pct": 2.808,
+      "turnover_usdt": 35568380.18
+    },
+    {
+      "symbol": "RSPCXUSDT",
+      "ticker": "SPCX",
+      "start_price": 171.79,
+      "end_price": 167.7301,
+      "pct_change": -2.363,
+      "range_pct": 2.922,
+      "turnover_usdt": 753509848.48
+    },
+    {
+      "symbol": "RAMDUSDT",
+      "ticker": "AMD",
+      "start_price": 651.88,
+      "end_price": 636.63,
+      "pct_change": -2.339,
+      "range_pct": 3.086,
+      "turnover_usdt": 327985000.06
+    },
+    {
+      "symbol": "RAVGOUSDT",
+      "ticker": "AVGO",
+      "start_price": 378.0,
+      "end_price": 370.5,
+      "pct_change": -1.984,
+      "range_pct": 2.405,
+      "turnover_usdt": 206774301.83
+    },
+    {
+      "symbol": "RARKGUSDT",
+      "ticker": "ARKG",
+      "start_price": 52.0,
+      "end_price": 51.0,
+      "pct_change": -1.923,
+      "range_pct": 4.019,
+      "turnover_usdt": 3404277.93
+    },
+    {
+      "symbol": "RTEMUSDT",
+      "ticker": "TEM",
+      "start_price": 72.3,
+      "end_price": 71.03,
+      "pct_change": -1.757,
+      "range_pct": 2.808,
+      "turnover_usdt": 23950543.39
+    },
+    {
+      "symbol": "RMRVLUSDT",
+      "ticker": "MRVL",
+      "start_price": 286.35,
+      "end_price": 281.5,
+      "pct_change": -1.694,
+      "range_pct": 3.684,
+      "turnover_usdt": 351307347.17
+    },
+    {
+      "symbol": "RSDGRUSDT",
+      "ticker": "SDGR",
+      "start_price": 29.1,
+      "end_price": 28.69,
+      "pct_change": -1.409,
+      "range_pct": 5.498,
+      "turnover_usdt": 4243446.98
+    },
+    {
+      "symbol": "RGRALUSDT",
+      "ticker": "GRAL",
+      "start_price": 136.4796,
+      "end_price": 135.0,
+      "pct_change": -1.084,
+      "range_pct": 3.59,
+      "turnover_usdt": 3790147.04
+    },
+    {
+      "symbol": "RMSFTUSDT",
+      "ticker": "MSFT",
+      "start_price": 529.4952,
+      "end_price": 524.5,
+      "pct_change": -0.943,
+      "range_pct": 1.505,
+      "turnover_usdt": 191383406.4
+    },
+    {
+      "symbol": "RAMZNUSDT",
+      "ticker": "AMZN",
+      "start_price": 256.71,
+      "end_price": 254.5,
+      "pct_change": -0.861,
+      "range_pct": 1.609,
+      "turnover_usdt": 469478668.09
+    },
+    {
+      "symbol": "RQQQUSDT",
+      "ticker": "QQQ",
+      "start_price": 760.17,
+      "end_price": 753.87,
+      "pct_change": -0.829,
+      "range_pct": 0.948,
+      "turnover_usdt": 954799658.71
+    },
+    {
+      "symbol": "RNVDAUSDT",
+      "ticker": "NVDA",
+      "start_price": 239.5,
+      "end_price": 237.56,
+      "pct_change": -0.81,
+      "range_pct": 1.428,
+      "turnover_usdt": 755345200.54
+    },
+    {
+      "symbol": "RIWMUSDT",
+      "ticker": "IWM",
+      "start_price": 281.3,
+      "end_price": 279.19,
+      "pct_change": -0.75,
+      "range_pct": 0.858,
+      "turnover_usdt": 112399039.36
+    },
+    {
+      "symbol": "RTSLAUSDT",
+      "ticker": "TSLA",
+      "start_price": 380.0124,
+      "end_price": 377.25,
+      "pct_change": -0.727,
+      "range_pct": 0.905,
+      "turnover_usdt": 206087951.14
+    },
+    {
+      "symbol": "RPSQLUSDT",
+      "ticker": "PSQL",
+      "start_price": 6.93,
+      "end_price": 6.972,
+      "pct_change": 0.606,
+      "range_pct": 6.638,
+      "turnover_usdt": 491977.57
+    },
+    {
+      "symbol": "RMDTUSDT",
+      "ticker": "MDT",
+      "start_price": 86.6,
+      "end_price": 87.09,
+      "pct_change": 0.566,
+      "range_pct": 1.467,
+      "turnover_usdt": 1361754594.62
+    },
+    {
+      "symbol": "RAAPLUSDT",
+      "ticker": "AAPL",
+      "start_price": 333.5737,
+      "end_price": 335.44,
+      "pct_change": 0.559,
+      "range_pct": 0.887,
+      "turnover_usdt": 376420104.23
+    },
+    {
+      "symbol": "RGOOGLUSDT",
+      "ticker": "GOOGL",
+      "start_price": 347.7901,
+      "end_price": 345.87,
+      "pct_change": -0.552,
+      "range_pct": 0.809,
+      "turnover_usdt": 342389730.11
+    },
+    {
+      "symbol": "RMETAUSDT",
+      "ticker": "META",
+      "start_price": 739.8158,
+      "end_price": 736.09,
+      "pct_change": -0.504,
+      "range_pct": 0.913,
+      "turnover_usdt": 421914375.21
+    },
+    {
+      "symbol": "RSPYUSDT",
+      "ticker": "SPY",
+      "start_price": 779.87,
+      "end_price": 776.05,
+      "pct_change": -0.49,
+      "range_pct": 0.6,
+      "turnover_usdt": 1037563916.78
+    },
+    {
+      "symbol": "RINTCUSDT",
+      "ticker": "INTC",
+      "start_price": 112.77,
+      "end_price": 112.9,
+      "pct_change": 0.115,
+      "range_pct": 3.866,
+      "turnover_usdt": 664087139.57
     },
     {
       "symbol": "RWBDUSDT",
@@ -337,33 +364,6 @@
       "pct_change": 0.097,
       "range_pct": 0.194,
       "turnover_usdt": 15029826026.02
-    },
-    {
-      "symbol": "RSECZUSDT",
-      "ticker": "SECZ",
-      "start_price": 11.7996,
-      "end_price": 11.7893,
-      "pct_change": -0.087,
-      "range_pct": 5.17,
-      "turnover_usdt": 1157225.97
-    },
-    {
-      "symbol": "RSNDKUSDT",
-      "ticker": "SNDK",
-      "start_price": 1704.8512,
-      "end_price": 1703.67,
-      "pct_change": -0.069,
-      "range_pct": 1.66,
-      "turnover_usdt": 328078219.16
-    },
-    {
-      "symbol": "RAAPLUSDT",
-      "ticker": "AAPL",
-      "start_price": 332.89,
-      "end_price": 333.03,
-      "pct_change": 0.042,
-      "range_pct": 0.282,
-      "turnover_usdt": 88654194.26
     }
   ]
 }
