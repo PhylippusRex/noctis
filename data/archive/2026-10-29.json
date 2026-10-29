@@ -1,0 +1,376 @@
+{
+  "generated_at": "2026-10-29T11:19:06.169825+00:00",
+  "window_hours": 15,
+  "market_note": "Outside Nasdaq/NYSE hours, rToken prices are indicative quotes, not live exchange prices.",
+  "briefing": {
+    "headline": "PURR jumps 18.7% as overnight rally spikes",
+    "mood": "mixed",
+    "summary": "The overnight session showed a split performance. Mega\u2011cap tech names were mixed, with GOOGL and AMZN down while AAPL edged higher. Semiconductor and chip stocks were largely flat, but the broader market indices (SPY, QQQ) barely moved. Smaller\u2011cap and niche tokens delivered the biggest swings \u2013 PURR, CROX and INSM surged double\u2011digits while INBX, MVLL, BAND and LSTR crashed sharply.",
+    "macro_context": [
+      {
+        "title": "Yield Curve",
+        "detail": "The yield curve remains non\u2011inverted, suggesting no immediate pressure from rate hikes."
+      }
+    ],
+    "movers": [
+      {
+        "ticker": "GOOGL",
+        "pct_change": -2.493,
+        "why": "Dropped 2.493% overnight, ranking 16th of 20 moves and 2.195% below the core average.",
+        "confidence": "low",
+        "watch_today": "Monitor at US open"
+      },
+      {
+        "ticker": "AMZN",
+        "pct_change": -1.011,
+        "why": "Fell 1.011% overnight, ranking 15th of 20 moves and 0.713% below the core average.",
+        "confidence": "low",
+        "watch_today": "Monitor at US open"
+      },
+      {
+        "ticker": "AAPL",
+        "pct_change": 0.752,
+        "why": "Rose 0.752% overnight, ranking 7th of 20 moves and 1.05% above the core average.",
+        "confidence": "low",
+        "watch_today": "Monitor at US open"
+      },
+      {
+        "ticker": "MSFT",
+        "pct_change": -0.728,
+        "why": "Declined 0.728% overnight, ranking 14th of 20 moves and 0.43% below the core average.",
+        "confidence": "low",
+        "watch_today": "Monitor at US open"
+      },
+      {
+        "ticker": "AMD",
+        "pct_change": -0.484,
+        "why": "Down 0.484% overnight, ranking 13th of 20 moves and 0.186% below the core average.",
+        "confidence": "low",
+        "watch_today": "Monitor at US open"
+      },
+      {
+        "ticker": "NVDA",
+        "pct_change": 0.483,
+        "why": "Up 0.483% overnight, ranking 8th of 20 moves and 0.781% above the core average.",
+        "confidence": "low",
+        "watch_today": "Monitor at US open"
+      },
+      {
+        "ticker": "META",
+        "pct_change": 0.458,
+        "why": "Gained 0.458% overnight, ranking 9th of 20 moves and 0.756% above the core average.",
+        "confidence": "low",
+        "watch_today": "Monitor at US open"
+      },
+      {
+        "ticker": "QQQ",
+        "pct_change": -0.204,
+        "why": " slipped 0.204% overnight, ranking 12th of 20 moves and 0.094% above the core average.",
+        "confidence": "low",
+        "watch_today": "Monitor at US open"
+      },
+      {
+        "ticker": "TSLA",
+        "pct_change": 0.136,
+        "why": "Increased 0.136% overnight, ranking 10th of 20 moves and 0.434% above the core average.",
+        "confidence": "low",
+        "watch_today": "Monitor at US open"
+      },
+      {
+        "ticker": "SPY",
+        "pct_change": 0.112,
+        "why": "Rose 0.112% overnight, ranking 11th of 20 moves and 0.41% above the core average.",
+        "confidence": "low",
+        "watch_today": "Monitor at US open"
+      },
+      {
+        "ticker": "INBX",
+        "pct_change": -21.487,
+        "why": "Plummeted 21.487% overnight, the largest drop of the session, ranking 20th of 20 moves and 21.189% below the core average.",
+        "confidence": "low",
+        "watch_today": "Monitor at US open"
+      },
+      {
+        "ticker": "MVLL",
+        "pct_change": -19.691,
+        "why": "Fell 19.691% overnight, ranking 19th of 20 moves and 19.393% below the core average.",
+        "confidence": "low",
+        "watch_today": "Monitor at US open"
+      },
+      {
+        "ticker": "PURR",
+        "pct_change": 18.731,
+        "why": " surged 18.731% overnight, the top gainer of the session, ranking 1st of 20 moves and 19.029% above the core average.",
+        "confidence": "low",
+        "watch_today": "Monitor at US open"
+      },
+      {
+        "ticker": "CROX",
+        "pct_change": 17.874,
+        "why": "Jumped 17.874% overnight, ranking 2nd of 20 moves and 18.172% above the core average.",
+        "confidence": "low",
+        "watch_today": "Monitor at US open"
+      },
+      {
+        "ticker": "BAND",
+        "pct_change": -17.626,
+        "why": "Dropped 17.626% overnight, ranking 18th of 20 moves and 17.328% below the core average.",
+        "confidence": "low",
+        "watch_today": "Monitor at US open"
+      },
+      {
+        "ticker": "LSTR",
+        "pct_change": -17.541,
+        "why": "Fell 17.541% overnight, ranking 17th of 20 moves and 17.243% below the core average.",
+        "confidence": "low",
+        "watch_today": "Monitor at US open"
+      },
+      {
+        "ticker": "INSM",
+        "pct_change": 15.071,
+        "why": "Rised 15.071% overnight, ranking 3rd of 20 moves and 15.369% above the core average.",
+        "confidence": "low",
+        "watch_today": "Monitor at US open"
+      },
+      {
+        "ticker": "BLCO",
+        "pct_change": 14.986,
+        "why": "Climbed 14.986% overnight, ranking 4th of 20 moves and 15.284% above the core average.",
+        "confidence": "low",
+        "watch_today": "Monitor at US open"
+      },
+      {
+        "ticker": "TDOC",
+        "pct_change": 13.227,
+        "why": "Advanced 13.227% overnight, ranking 5th of 20 moves and 13.525% above the core average.",
+        "confidence": "low",
+        "watch_today": "Monitor at US open"
+      },
+      {
+        "ticker": "REPL",
+        "pct_change": 9.684,
+        "why": "Increased 9.684% overnight, ranking 6th of 20 moves and 9.982% above the core average.",
+        "confidence": "low",
+        "watch_today": "Monitor at US open"
+      }
+    ],
+    "open_outlook": "No fresh macro or earnings headlines emerged overnight, so the market may open near flat. Traders should watch for any US\u2011released data that could shift sentiment.",
+    "watchlist_today": [
+      "AAPL",
+      "MSFT",
+      "NVDA",
+      "TSLA",
+      "SPY"
+    ],
+    "sources": [
+      "rates"
+    ],
+    "caveats": [
+      "rToken prices are indicative quotes; actual trading may differ when the US market opens."
+    ],
+    "breadth": {
+      "core_count": 10,
+      "core_avg_pct": -0.298,
+      "advancers": 5,
+      "decliners": 5
+    }
+  },
+  "core_movers": [
+    {
+      "symbol": "RGOOGLUSDT",
+      "ticker": "GOOGL",
+      "start_price": 297.198,
+      "end_price": 289.79,
+      "pct_change": -2.493,
+      "range_pct": 3.338,
+      "turnover_usdt": 4028228763.32
+    },
+    {
+      "symbol": "RAMZNUSDT",
+      "ticker": "AMZN",
+      "start_price": 254.169,
+      "end_price": 251.6,
+      "pct_change": -1.011,
+      "range_pct": 2.636,
+      "turnover_usdt": 404886377.34
+    },
+    {
+      "symbol": "RAAPLUSDT",
+      "ticker": "AAPL",
+      "start_price": 345.55,
+      "end_price": 348.15,
+      "pct_change": 0.752,
+      "range_pct": 1.513,
+      "turnover_usdt": 617806068.13
+    },
+    {
+      "symbol": "RMSFTUSDT",
+      "ticker": "MSFT",
+      "start_price": 545.47,
+      "end_price": 541.5,
+      "pct_change": -0.728,
+      "range_pct": 5.318,
+      "turnover_usdt": 2032281922.69
+    },
+    {
+      "symbol": "RAMDUSDT",
+      "ticker": "AMD",
+      "start_price": 568.2008,
+      "end_price": 565.45,
+      "pct_change": -0.484,
+      "range_pct": 3.765,
+      "turnover_usdt": 303141397.82
+    },
+    {
+      "symbol": "RNVDAUSDT",
+      "ticker": "NVDA",
+      "start_price": 213.64,
+      "end_price": 214.6718,
+      "pct_change": 0.483,
+      "range_pct": 1.582,
+      "turnover_usdt": 497019751.83
+    },
+    {
+      "symbol": "RMETAUSDT",
+      "ticker": "META",
+      "start_price": 615.65,
+      "end_price": 618.47,
+      "pct_change": 0.458,
+      "range_pct": 1.358,
+      "turnover_usdt": 585215703.62
+    },
+    {
+      "symbol": "RQQQUSDT",
+      "ticker": "QQQ",
+      "start_price": 720.0,
+      "end_price": 718.53,
+      "pct_change": -0.204,
+      "range_pct": 1.154,
+      "turnover_usdt": 1810678728.47
+    },
+    {
+      "symbol": "RTSLAUSDT",
+      "ticker": "TSLA",
+      "start_price": 402.91,
+      "end_price": 403.458,
+      "pct_change": 0.136,
+      "range_pct": 1.732,
+      "turnover_usdt": 418263621.37
+    },
+    {
+      "symbol": "RSPYUSDT",
+      "ticker": "SPY",
+      "start_price": 769.85,
+      "end_price": 770.7115,
+      "pct_change": 0.112,
+      "range_pct": 0.614,
+      "turnover_usdt": 718652044.14
+    }
+  ],
+  "other_movers": [
+    {
+      "symbol": "RINBXUSDT",
+      "ticker": "INBX",
+      "start_price": 96.15,
+      "end_price": 75.49,
+      "pct_change": -21.487,
+      "range_pct": 28.617,
+      "turnover_usdt": 89780670.7
+    },
+    {
+      "symbol": "RMVLLUSDT",
+      "ticker": "MVLL",
+      "start_price": 29.4,
+      "end_price": 23.6107,
+      "pct_change": -19.691,
+      "range_pct": 22.415,
+      "turnover_usdt": 37770156.01
+    },
+    {
+      "symbol": "RPURRUSDT",
+      "ticker": "PURR",
+      "start_price": 9.77,
+      "end_price": 11.6,
+      "pct_change": 18.731,
+      "range_pct": 23.337,
+      "turnover_usdt": 17975519.0
+    },
+    {
+      "symbol": "RCROXUSDT",
+      "ticker": "CROX",
+      "start_price": 119.0,
+      "end_price": 140.27,
+      "pct_change": 17.874,
+      "range_pct": 20.177,
+      "turnover_usdt": 191117311.44
+    },
+    {
+      "symbol": "RBANDUSDT",
+      "ticker": "BAND",
+      "start_price": 49.53,
+      "end_price": 40.8,
+      "pct_change": -17.626,
+      "range_pct": 20.896,
+      "turnover_usdt": 61580298.53
+    },
+    {
+      "symbol": "RLSTRUSDT",
+      "ticker": "LSTR",
+      "start_price": 167.865,
+      "end_price": 138.42,
+      "pct_change": -17.541,
+      "range_pct": 18.95,
+      "turnover_usdt": 230018151.57
+    },
+    {
+      "symbol": "RINSMUSDT",
+      "ticker": "INSM",
+      "start_price": 97.105,
+      "end_price": 111.74,
+      "pct_change": 15.071,
+      "range_pct": 23.006,
+      "turnover_usdt": 251131180.99
+    },
+    {
+      "symbol": "RBLCOUSDT",
+      "ticker": "BLCO",
+      "start_price": 18.35,
+      "end_price": 21.1,
+      "pct_change": 14.986,
+      "range_pct": 16.894,
+      "turnover_usdt": 92413103.96
+    },
+    {
+      "symbol": "RTDOCUSDT",
+      "ticker": "TDOC",
+      "start_price": 6.88,
+      "end_price": 7.79,
+      "pct_change": 13.227,
+      "range_pct": 17.297,
+      "turnover_usdt": 17660141.8
+    },
+    {
+      "symbol": "RREPLUSDT",
+      "ticker": "REPL",
+      "start_price": 14.405,
+      "end_price": 15.8,
+      "pct_change": 9.684,
+      "range_pct": 17.077,
+      "turnover_usdt": 101175638.21
+    }
+  ],
+  "llm_used": "openai/gpt-oss-120b",
+  "evidence": {
+    "news:GOOGL": "[{\"feed\": \"cnbc\", \"error\": \"\", \"items\": []}, {\"feed\": \"techcrunch\", \"error\": \"\", \"items\": []}, {\"feed\": \"theverge\", \"error\": \"\", \"items\": []}, {\"feed\": \"wired\", \"error\": \"\", \"items\": []}, {\"feed\": \"arstechnica\", \"error\": \"\", \"items\": []}]",
+    "news:AMZN": "[{\"feed\": \"cnbc\", \"error\": \"\", \"items\": []}, {\"feed\": \"techcrunch\", \"error\": \"\", \"items\": []}, {\"feed\": \"theverge\", \"error\": \"\", \"items\": []}, {\"feed\": \"wired\", \"error\": \"\", \"items\": []}, {\"feed\": \"arstechnica\", \"error\": \"\", \"items\": []}]",
+    "news:AAPL": "[{\"feed\": \"cnbc\", \"error\": \"\", \"items\": []}, {\"feed\": \"techcrunch\", \"error\": \"\", \"items\": []}, {\"feed\": \"theverge\", \"error\": \"\", \"items\": []}, {\"feed\": \"wired\", \"error\": \"\", \"items\": []}, {\"feed\": \"arstechnica\", \"error\": \"\", \"items\": []}]",
+    "news:MSFT": "[{\"feed\": \"cnbc\", \"error\": \"\", \"items\": []}, {\"feed\": \"techcrunch\", \"error\": \"\", \"items\": []}, {\"feed\": \"theverge\", \"error\": \"\", \"items\": []}, {\"feed\": \"wired\", \"error\": \"\", \"items\": []}, {\"feed\": \"arstechnica\", \"error\": \"\", \"items\": []}]",
+    "news:AMD": "[{\"feed\": \"cnbc\", \"error\": \"\", \"items\": []}, {\"feed\": \"techcrunch\", \"error\": \"\", \"items\": []}, {\"feed\": \"theverge\", \"error\": \"\", \"items\": []}, {\"feed\": \"wired\", \"error\": \"\", \"items\": []}, {\"feed\": \"arstechnica\", \"error\": \"\", \"items\": []}]",
+    "news:INBX": "[{\"feed\": \"cnbc\", \"error\": \"\", \"items\": []}, {\"feed\": \"techcrunch\", \"error\": \"\", \"items\": []}, {\"feed\": \"theverge\", \"error\": \"\", \"items\": []}, {\"feed\": \"wired\", \"error\": \"\", \"items\": []}, {\"feed\": \"arstechnica\", \"error\": \"\", \"items\": []}]",
+    "news:MVLL": "[{\"feed\": \"cnbc\", \"error\": \"\", \"items\": []}, {\"feed\": \"techcrunch\", \"error\": \"\", \"items\": []}, {\"feed\": \"theverge\", \"error\": \"\", \"items\": []}, {\"feed\": \"wired\", \"error\": \"\", \"items\": []}, {\"feed\": \"arstechnica\", \"error\": \"\", \"items\": []}]",
+    "news:PURR": "[{\"feed\": \"cnbc\", \"error\": \"\", \"items\": []}, {\"feed\": \"techcrunch\", \"error\": \"\", \"items\": []}, {\"feed\": \"theverge\", \"error\": \"\", \"items\": []}, {\"feed\": \"wired\", \"error\": \"\", \"items\": []}, {\"feed\": \"arstechnica\", \"error\": \"\", \"items\": []}]",
+    "news:Wall Street": "[{\"feed\": \"cnbc\", \"error\": \"\", \"items\": []}, {\"feed\": \"fed\", \"error\": \"\", \"items\": []}]",
+    "news:Fed": "[{\"feed\": \"cnbc\", \"error\": \"\", \"items\": []}, {\"feed\": \"fed\", \"error\": \"\", \"items\": []}]",
+    "rates": "{\"fed_funds_target_upper\": {\"error\": \"\"}, \"fed_funds_target_lower\": {\"error\": \"\"}, \"t2y\": {\"error\": \"\"}, \"t10y\": {\"error\": \"\"}, \"t30y\": {\"error\": \"\"}, \"spread_10y2y\": {\"error\": \"\"}, \"breakeven_10y\": {\"error\": \"\"}, \"sofr\": {\"error\": \"\"}, \"mortgage_30y\": {\"error\": \"\"}, \"hy_spread\": {\"error\": \"\"}, \"ig_spread\": {\"error\": \"\"}, \"yield_curve_inverted\": false}"
+  }
+}
