@@ -1,0 +1,374 @@
+{
+  "generated_at": "2026-11-02T13:07:39.500066+00:00",
+  "window_hours": 64,
+  "market_note": "Outside Nasdaq/NYSE hours, rToken prices are indicative quotes, not live exchange prices.",
+  "briefing": {
+    "headline": "AN jumps 12.1% overnight as the only big gainer among major tokens",
+    "mood": "mixed",
+    "summary": "Mega\u2011cap tech stocks were split, with Amazon up over 5% while Microsoft and Apple slipped 3% and 2% respectively. The broader market index SPY fell about 1.4%, matching the mixed direction of the core group. Leveraged semiconductor ETFs like SOXL and related small\u2011cap tokens plunged 20%\u201122%, pulling down overall breadth. Overall, advancers and decliners were evenly matched, indicating a neutral to mixed tone heading into the US open.",
+    "macro_context": [
+      {
+        "title": "Fed policy unchanged",
+        "detail": "No change to the Federal Funds target range was reported, and the yield curve remains non\u2011inverted."
+      }
+    ],
+    "movers": [
+      {
+        "ticker": "AMZN",
+        "pct_change": 5.204,
+        "why": "AMZN rose 5.204% overnight, outpacing the core average of 0.029% and ranking 2nd largest mover among 20 tokens.",
+        "confidence": "low",
+        "watch_today": "Watch for any US\u2011market news that could affect Amazon\u2019s momentum."
+      },
+      {
+        "ticker": "MSFT",
+        "pct_change": -3.348,
+        "why": "MSFT fell 3.348% overnight, below the core average and ranking 11th in magnitude among 20 tokens.",
+        "confidence": "low",
+        "watch_today": "Watch for earnings or guidance updates that could impact Microsoft."
+      },
+      {
+        "ticker": "AAPL",
+        "pct_change": -1.97,
+        "why": "AAPL declined 1.97% overnight, slightly under the core average and ranking 10th among 20 tokens.",
+        "confidence": "low",
+        "watch_today": "Watch for any Apple product or supply\u2011chain news ahead of the open."
+      },
+      {
+        "ticker": "TSLA",
+        "pct_change": 1.908,
+        "why": "TSLA gained 1.908% overnight, modestly above the core average and ranking 3rd largest mover among 20 tokens.",
+        "confidence": "low",
+        "watch_today": "Watch for any EV\u2011sector news that could affect Tesla."
+      },
+      {
+        "ticker": "SPY",
+        "pct_change": -1.435,
+        "why": "SPY dropped 1.435% overnight, tracking the broader market decline and ranking 9th among 20 tokens.",
+        "confidence": "low",
+        "watch_today": "Watch for overall market sentiment and macro data releases."
+      },
+      {
+        "ticker": "META",
+        "pct_change": -0.981,
+        "why": "META slipped 0.981% overnight, near the core average and ranking 8th among 20 tokens.",
+        "confidence": "low",
+        "watch_today": "Watch for any social\u2011media or ad\u2011revenue news."
+      },
+      {
+        "ticker": "NVDA",
+        "pct_change": 0.945,
+        "why": "NVDA rose 0.945% overnight, slightly above the core average and ranking 4th among 20 tokens.",
+        "confidence": "low",
+        "watch_today": "Watch for semiconductor supply\u2011chain updates."
+      },
+      {
+        "ticker": "AMD",
+        "pct_change": -0.769,
+        "why": "AMD fell 0.769% overnight, marginally below the core average and ranking 7th among 20 tokens.",
+        "confidence": "low",
+        "watch_today": "Watch for chip\u2011industry news that could affect AMD."
+      },
+      {
+        "ticker": "QQQ",
+        "pct_change": 0.557,
+        "why": "QQQ edged up 0.557% overnight, modestly above the core average and ranking 5th among 20 tokens.",
+        "confidence": "low",
+        "watch_today": "Watch for tech\u2011sector news influencing the Nasdaq\u2011100."
+      },
+      {
+        "ticker": "GOOGL",
+        "pct_change": 0.184,
+        "why": "GOOGL nudged up 0.184% overnight, near the core average and ranking 6th among 20 tokens.",
+        "confidence": "low",
+        "watch_today": "Watch for any Google\u2011related announcements."
+      },
+      {
+        "ticker": "SOXL",
+        "pct_change": -22.419,
+        "why": "SOXL plunged 22.419% overnight, the largest negative mover among 20 tokens, far exceeding the core average decline.",
+        "confidence": "low",
+        "watch_today": "Watch for semiconductor sector weakness that could keep SOXL pressured."
+      },
+      {
+        "ticker": "LNVGY",
+        "pct_change": -21.468,
+        "why": "LNVGY fell 21.468% overnight, ranking 19th in magnitude and mirroring the steep decline seen in leveraged semis.",
+        "confidence": "low",
+        "watch_today": "Watch for broader semiconductor market trends."
+      },
+      {
+        "ticker": "TFII",
+        "pct_change": -19.611,
+        "why": "TFII dropped 19.611% overnight, ranking 18th among 20 tokens and reflecting heavy downside pressure.",
+        "confidence": "low",
+        "watch_today": "Watch for any biotech or health\u2011sector news affecting TFII."
+      },
+      {
+        "ticker": "FBYD",
+        "pct_change": -18.664,
+        "why": "FBYD slid 18.664% overnight, ranking 17th among 20 tokens, continuing its steep decline.",
+        "confidence": "low",
+        "watch_today": "Watch for any sector\u2011specific developments."
+      },
+      {
+        "ticker": "PGEN",
+        "pct_change": -18.456,
+        "why": "PGEN declined 18.456% overnight, ranking 16th among 20 tokens, matching the broad sell\u2011off in small caps.",
+        "confidence": "low",
+        "watch_today": "Watch for any biotech\u2011related news."
+      },
+      {
+        "ticker": "FLNC",
+        "pct_change": -17.257,
+        "why": "FLNC fell 17.257% overnight, ranking 15th among 20 tokens, part of the wider decline in niche tech tokens.",
+        "confidence": "low",
+        "watch_today": "Watch for any data\u2011analytics sector updates."
+      },
+      {
+        "ticker": "NSSC",
+        "pct_change": -16.554,
+        "why": "NSSC dropped 16.554% overnight, ranking 14th among 20 tokens, reflecting continued pressure on semiconductor exposure.",
+        "confidence": "low",
+        "watch_today": "Watch for broader semiconductor market dynamics."
+      },
+      {
+        "ticker": "SIVEF",
+        "pct_change": -15.289,
+        "why": "SIVEF slid 15.289% overnight, ranking 13th among 20 tokens, extending the downtrend in niche ETFs.",
+        "confidence": "low",
+        "watch_today": "Watch for any sector\u2011specific catalysts."
+      },
+      {
+        "ticker": "HSLV",
+        "pct_change": -14.135,
+        "why": "HSLV fell 14.135% overnight, ranking 12th among 20 tokens, echoing the broader weakness in leveraged semiconductor ETFs.",
+        "confidence": "low",
+        "watch_today": "Watch for any market\u2011wide risk sentiment shifts."
+      },
+      {
+        "ticker": "AN",
+        "pct_change": 12.119,
+        "why": "AN surged 12.119% overnight, the top positive mover among 20 tokens, outpacing the core average substantially.",
+        "confidence": "low",
+        "watch_today": "Watch for any news on the underlying asset driving AN\u2019s rally."
+      }
+    ],
+    "open_outlook": "No significant news items were found in the overnight research, so the market may open relatively unchanged unless fresh US data or corporate releases appear. Traders should keep an eye on any macro releases or earnings that could tip sentiment.",
+    "watchlist_today": [
+      "AMZN",
+      "MSFT",
+      "AAPL",
+      "TSLA",
+      "SPY"
+    ],
+    "sources": [],
+    "caveats": [
+      "rToken prices are indicative quotes outside US market hours and may differ from actual trading prices."
+    ],
+    "breadth": {
+      "core_count": 10,
+      "core_avg_pct": 0.029,
+      "advancers": 5,
+      "decliners": 5
+    }
+  },
+  "core_movers": [
+    {
+      "symbol": "RAMZNUSDT",
+      "ticker": "AMZN",
+      "start_price": 228.96,
+      "end_price": 240.8741,
+      "pct_change": 5.204,
+      "range_pct": 8.67,
+      "turnover_usdt": 27457856623.97
+    },
+    {
+      "symbol": "RMSFTUSDT",
+      "ticker": "MSFT",
+      "start_price": 541.88,
+      "end_price": 523.74,
+      "pct_change": -3.348,
+      "range_pct": 6.348,
+      "turnover_usdt": 41251827420.54
+    },
+    {
+      "symbol": "RAAPLUSDT",
+      "ticker": "AAPL",
+      "start_price": 351.9537,
+      "end_price": 345.02,
+      "pct_change": -1.97,
+      "range_pct": 3.259,
+      "turnover_usdt": 24728560226.74
+    },
+    {
+      "symbol": "RTSLAUSDT",
+      "ticker": "TSLA",
+      "start_price": 395.14,
+      "end_price": 402.68,
+      "pct_change": 1.908,
+      "range_pct": 4.406,
+      "turnover_usdt": 18417963745.67
+    },
+    {
+      "symbol": "RSPYUSDT",
+      "ticker": "SPY",
+      "start_price": 769.45,
+      "end_price": 758.4085,
+      "pct_change": -1.435,
+      "range_pct": 2.538,
+      "turnover_usdt": 76625962651.53
+    },
+    {
+      "symbol": "RMETAUSDT",
+      "ticker": "META",
+      "start_price": 617.76,
+      "end_price": 611.7,
+      "pct_change": -0.981,
+      "range_pct": 2.812,
+      "turnover_usdt": 16937361268.62
+    },
+    {
+      "symbol": "RNVDAUSDT",
+      "ticker": "NVDA",
+      "start_price": 204.64,
+      "end_price": 206.5743,
+      "pct_change": 0.945,
+      "range_pct": 2.824,
+      "turnover_usdt": 521945198.94
+    },
+    {
+      "symbol": "RAMDUSDT",
+      "ticker": "AMD",
+      "start_price": 514.51,
+      "end_price": 510.5512,
+      "pct_change": -0.769,
+      "range_pct": 5.376,
+      "turnover_usdt": 14294036232.66
+    },
+    {
+      "symbol": "RQQQUSDT",
+      "ticker": "QQQ",
+      "start_price": 691.0623,
+      "end_price": 694.91,
+      "pct_change": 0.557,
+      "range_pct": 1.162,
+      "turnover_usdt": 1044790472.03
+    },
+    {
+      "symbol": "RGOOGLUSDT",
+      "ticker": "GOOGL",
+      "start_price": 281.5085,
+      "end_price": 282.0263,
+      "pct_change": 0.184,
+      "range_pct": 1.73,
+      "turnover_usdt": 456089971.34
+    }
+  ],
+  "other_movers": [
+    {
+      "symbol": "RSOXLUSDT",
+      "ticker": "SOXL",
+      "start_price": 102.72,
+      "end_price": 79.6908,
+      "pct_change": -22.419,
+      "range_pct": 34.278,
+      "turnover_usdt": 28989666983.49
+    },
+    {
+      "symbol": "RLNVGYUSDT",
+      "ticker": "LNVGY",
+      "start_price": 64.7,
+      "end_price": 50.81,
+      "pct_change": -21.468,
+      "range_pct": 25.526,
+      "turnover_usdt": 14982140.45
+    },
+    {
+      "symbol": "RTFIIUSDT",
+      "ticker": "TFII",
+      "start_price": 116.085,
+      "end_price": 93.32,
+      "pct_change": -19.611,
+      "range_pct": 20.494,
+      "turnover_usdt": 245182977.31
+    },
+    {
+      "symbol": "RFBYDUSDT",
+      "ticker": "FBYD",
+      "start_price": 8.385,
+      "end_price": 6.82,
+      "pct_change": -18.664,
+      "range_pct": 22.063,
+      "turnover_usdt": 4729392.44
+    },
+    {
+      "symbol": "RPGENUSDT",
+      "ticker": "PGEN",
+      "start_price": 6.08,
+      "end_price": 4.9579,
+      "pct_change": -18.456,
+      "range_pct": 39.967,
+      "turnover_usdt": 155649896.42
+    },
+    {
+      "symbol": "RFLNCUSDT",
+      "ticker": "FLNC",
+      "start_price": 6.19,
+      "end_price": 5.1218,
+      "pct_change": -17.257,
+      "range_pct": 21.163,
+      "turnover_usdt": 56078796.65
+    },
+    {
+      "symbol": "RNSSCUSDT",
+      "ticker": "NSSC",
+      "start_price": 38.6,
+      "end_price": 32.21,
+      "pct_change": -16.554,
+      "range_pct": 21.528,
+      "turnover_usdt": 81646515.98
+    },
+    {
+      "symbol": "RSIVEFUSDT",
+      "ticker": "SIVEF",
+      "start_price": 2.42,
+      "end_price": 2.05,
+      "pct_change": -15.289,
+      "range_pct": 19.421,
+      "turnover_usdt": 5663396.95
+    },
+    {
+      "symbol": "RHSLVUSDT",
+      "ticker": "HSLV",
+      "start_price": 4.81,
+      "end_price": 4.1301,
+      "pct_change": -14.135,
+      "range_pct": 18.087,
+      "turnover_usdt": 13406871.96
+    },
+    {
+      "symbol": "RANUSDT",
+      "ticker": "AN",
+      "start_price": 160.5432,
+      "end_price": 180.0,
+      "pct_change": 12.119,
+      "range_pct": 22.922,
+      "turnover_usdt": 675446948.32
+    }
+  ],
+  "llm_used": "openai/gpt-oss-120b",
+  "evidence": {
+    "news:AMZN": "[{\"feed\": \"cnbc\", \"error\": \"\", \"items\": []}, {\"feed\": \"techcrunch\", \"error\": \"\", \"items\": []}, {\"feed\": \"theverge\", \"error\": \"\", \"items\": []}, {\"feed\": \"wired\", \"error\": \"\", \"items\": []}, {\"feed\": \"arstechnica\", \"error\": \"\", \"items\": []}]",
+    "news:MSFT": "[{\"feed\": \"cnbc\", \"error\": \"\", \"items\": []}, {\"feed\": \"techcrunch\", \"error\": \"\", \"items\": []}, {\"feed\": \"theverge\", \"error\": \"\", \"items\": []}, {\"feed\": \"wired\", \"error\": \"\", \"items\": []}, {\"feed\": \"arstechnica\", \"error\": \"\", \"items\": []}]",
+    "news:AAPL": "[{\"feed\": \"cnbc\", \"error\": \"\", \"items\": []}, {\"feed\": \"techcrunch\", \"error\": \"\", \"items\": []}, {\"feed\": \"theverge\", \"error\": \"\", \"items\": []}, {\"feed\": \"wired\", \"error\": \"\", \"items\": []}, {\"feed\": \"arstechnica\", \"error\": \"\", \"items\": []}]",
+    "news:TSLA": "[{\"feed\": \"cnbc\", \"error\": \"\", \"items\": []}, {\"feed\": \"techcrunch\", \"error\": \"\", \"items\": []}, {\"feed\": \"theverge\", \"error\": \"\", \"items\": []}, {\"feed\": \"wired\", \"error\": \"\", \"items\": []}, {\"feed\": \"arstechnica\", \"error\": \"\", \"items\": []}]",
+    "news:SPY": "[{\"feed\": \"cnbc\", \"error\": \"\", \"items\": []}, {\"feed\": \"techcrunch\", \"error\": \"\", \"items\": []}, {\"feed\": \"theverge\", \"error\": \"\", \"items\": []}, {\"feed\": \"wired\", \"error\": \"\", \"items\": []}, {\"feed\": \"arstechnica\", \"error\": \"\", \"items\": []}]",
+    "news:SOXL": "[{\"feed\": \"cnbc\", \"error\": \"\", \"items\": []}, {\"feed\": \"techcrunch\", \"error\": \"\", \"items\": []}, {\"feed\": \"theverge\", \"error\": \"\", \"items\": []}, {\"feed\": \"wired\", \"error\": \"\", \"items\": []}, {\"feed\": \"arstechnica\", \"error\": \"\", \"items\": []}]",
+    "news:LNVGY": "[{\"feed\": \"cnbc\", \"error\": \"\", \"items\": []}, {\"feed\": \"techcrunch\", \"error\": \"\", \"items\": []}, {\"feed\": \"theverge\", \"error\": \"\", \"items\": []}, {\"feed\": \"wired\", \"error\": \"\", \"items\": []}, {\"feed\": \"arstechnica\", \"error\": \"\", \"items\": []}]",
+    "news:TFII": "[{\"feed\": \"cnbc\", \"error\": \"\", \"items\": []}, {\"feed\": \"techcrunch\", \"error\": \"\", \"items\": []}, {\"feed\": \"theverge\", \"error\": \"\", \"items\": []}, {\"feed\": \"wired\", \"error\": \"\", \"items\": []}, {\"feed\": \"arstechnica\", \"error\": \"\", \"items\": []}]",
+    "news:Wall Street": "[{\"feed\": \"cnbc\", \"error\": \"\", \"items\": []}, {\"feed\": \"fed\", \"error\": \"\", \"items\": []}]",
+    "news:Fed": "[{\"feed\": \"cnbc\", \"error\": \"\", \"items\": []}, {\"feed\": \"fed\", \"error\": \"\", \"items\": []}]",
+    "rates": "{\"fed_funds_target_upper\": {\"error\": \"\"}, \"fed_funds_target_lower\": {\"error\": \"\"}, \"t2y\": {\"error\": \"\"}, \"t10y\": {\"error\": \"\"}, \"t30y\": {\"error\": \"\"}, \"spread_10y2y\": {\"error\": \"\"}, \"breakeven_10y\": {\"error\": \"\"}, \"sofr\": {\"error\": \"\"}, \"mortgage_30y\": {\"error\": \"\"}, \"hy_spread\": {\"error\": \"\"}, \"ig_spread\": {\"error\": \"\"}, \"yield_curve_inverted\": false}"
+  }
+}
