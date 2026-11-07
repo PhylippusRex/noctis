@@ -1,0 +1,387 @@
+{
+  "generated_at": "2026-11-07T11:31:08.899765+00:00",
+  "window_hours": 14,
+  "market_note": "Outside Nasdaq/NYSE hours, rToken prices are indicative quotes, not live exchange prices.",
+  "briefing": {
+    "headline": "OBX surges 42.7% as alt\u2011token rally tops overnight moves",
+    "mood": "mixed",
+    "summary": "Core US mega\u2011cap tech stocks were split, with META, MSFT and AAPL down modestly while AMD, GOOGL and NVDA edged higher. Breadth was narrow (6 advancers vs 4 decliners) and the overall core average was a slight -0.17%. A group of non\u2011core tokens\u2014OBX, FLY, KRMN, ARQQ, LYNX, IONX, AOSL\u2014posted explosive gains above 20%, offset by sharp drops in AMN, IRTC and OPEN. The picture was mixed: risk\u2011off in the core segment but buoyed by high\u2011beta alternatives.",
+    "macro_context": [
+      {
+        "title": "Fed policy unchanged",
+        "detail": "No Fed rate decision or commentary was released overnight, keeping policy expectations steady."
+      },
+      {
+        "title": "Yield curve normal",
+        "detail": "The 10\u2011year/2\u2011year spread remained positive, indicating no inversion."
+      },
+      {
+        "title": "No major macro releases",
+        "detail": "No significant economic data or corporate earnings were reported in the research feeds."
+      }
+    ],
+    "movers": [
+      {
+        "ticker": "META",
+        "pct_change": -1.504,
+        "why": "META down 1.5% with no specific news; move aligns with modest decline across core tech.",
+        "confidence": "low",
+        "watch_today": "Monitor for any catalyst that could reverse the slight weakness."
+      },
+      {
+        "ticker": "MSFT",
+        "pct_change": -0.816,
+        "why": "MSFT fell 0.8% with no specific news; mirrors the overall modest pullback in the core group.",
+        "confidence": "low",
+        "watch_today": "Watch for earnings or guidance updates at the open."
+      },
+      {
+        "ticker": "AAPL",
+        "pct_change": -0.526,
+        "why": "AAPL slipped 0.5% with no news attached; reflects the general softness among large\u2011cap tech.",
+        "confidence": "low",
+        "watch_today": "Keep an eye on any Apple\u2011related announcements that may surface today."
+      },
+      {
+        "ticker": "AMD",
+        "pct_change": 0.431,
+        "why": "AMD rose 0.4% with no specific news; one of the few core advancers in an otherwise mixed session.",
+        "confidence": "low",
+        "watch_today": "Watch for chip\u2011sector sentiment as the US market opens."
+      },
+      {
+        "ticker": "GOOGL",
+        "pct_change": 0.312,
+        "why": "GOOGL up 0.3% without any news; modest gain amid mixed core performance.",
+        "confidence": "low",
+        "watch_today": "Track any Google\u2011related developments during the morning."
+      },
+      {
+        "ticker": "NVDA",
+        "pct_change": 0.245,
+        "why": "NVDA up 0.2% after fool.com articles highlighted potential buying ahead of a mid\u2011November date.",
+        "confidence": "high",
+        "watch_today": "Watch for any Nvidia earnings or product news that could add momentum."
+      },
+      {
+        "ticker": "QQQ",
+        "pct_change": 0.165,
+        "why": "QQQ edged up 0.2% with no news; reflects slight positive tilt in the broader tech ETF.",
+        "confidence": "low",
+        "watch_today": "Monitor the ETF for any sector\u2011wide shifts."
+      },
+      {
+        "ticker": "SPY",
+        "pct_change": -0.148,
+        "why": "SPY slipped 0.15% with no specific news; the broad market showed a tiny pullback.",
+        "confidence": "low",
+        "watch_today": "Watch overall market direction at the open."
+      },
+      {
+        "ticker": "AMZN",
+        "pct_change": 0.12,
+        "why": "AMZN up 0.12% with no news; a marginal gain amid a flat broader market.",
+        "confidence": "low",
+        "watch_today": "Watch for any Amazon\u2011related updates."
+      },
+      {
+        "ticker": "TSLA",
+        "pct_change": 0.056,
+        "why": "TSLA rose 0.06% with no news; a minimal uptick in an otherwise neutral session.",
+        "confidence": "low",
+        "watch_today": "Track Tesla news for any impact on the move."
+      },
+      {
+        "ticker": "OBX",
+        "pct_change": 42.708,
+        "why": "OBX surged 42.7% with no specific news; the jump is the largest among all tokens overnight.",
+        "confidence": "low",
+        "watch_today": "High volatility; consider tight risk controls."
+      },
+      {
+        "ticker": "FLY",
+        "pct_change": 33.291,
+        "why": "FLY jumped 33.3% with no news; a strong gain among the non\u2011core group.",
+        "confidence": "low",
+        "watch_today": "Watch for liquidity constraints on this thinly traded token."
+      },
+      {
+        "ticker": "KRMN",
+        "pct_change": 30.986,
+        "why": "KRMN rose 31.0% with no news; part of the broad rally in high\u2011beta alternatives.",
+        "confidence": "low",
+        "watch_today": "Monitor price action for potential reversal."
+      },
+      {
+        "ticker": "AMN",
+        "pct_change": -26.771,
+        "why": "AMN fell 26.8% with no news; the steep decline stands out among the movers.",
+        "confidence": "low",
+        "watch_today": "Expect continued pressure unless a catalyst emerges."
+      },
+      {
+        "ticker": "ARQQ",
+        "pct_change": 26.321,
+        "why": "ARQQ climbed 26.3% with no news; a notable gain in the alternative segment.",
+        "confidence": "low",
+        "watch_today": "Watch for rapid profit\u2011taking."
+      },
+      {
+        "ticker": "LYNX",
+        "pct_change": 25.673,
+        "why": "LYNX up 25.7% with no news; adds to the cluster of strong alt\u2011token moves.",
+        "confidence": "low",
+        "watch_today": "High volatility; keep position sizes modest."
+      },
+      {
+        "ticker": "IRTC",
+        "pct_change": -25.405,
+        "why": "IRTC dropped 25.4% with no news; a sharp decline amid the broader alt\u2011token swing.",
+        "confidence": "low",
+        "watch_today": "Potential for further downside if sentiment stays negative."
+      },
+      {
+        "ticker": "IONX",
+        "pct_change": 25.32,
+        "why": "IONX rose 25.3% with no news; another large gain in the non\u2011core set.",
+        "confidence": "low",
+        "watch_today": "Watch for rapid price swings."
+      },
+      {
+        "ticker": "AOSL",
+        "pct_change": 23.872,
+        "why": "AOSL surged 23.9% with no news; contributes to the high\u2011beta rally.",
+        "confidence": "low",
+        "watch_today": "Expect volatility; consider tight stops."
+      },
+      {
+        "ticker": "OPEN",
+        "pct_change": -23.071,
+        "why": "OPEN fell 23.1% with no news; a notable drop in the overnight session.",
+        "confidence": "low",
+        "watch_today": "Watch for any news that could reverse the trend."
+      }
+    ],
+    "open_outlook": "Traders will watch the 9:30\u202fET open for any US economic releases or Fed commentary that could shape direction. With no specific macro headlines overnight, early price action will set the tone for the day.",
+    "watchlist_today": [
+      "OBX",
+      "FLY",
+      "KRMN",
+      "ARQQ",
+      "LYNX"
+    ],
+    "sources": [
+      "web:NVDA",
+      "rates"
+    ],
+    "caveats": [
+      "Prices are indicative quotes outside US market hours; actual trading may differ at the open.",
+      "Large moves in thinly\u2011traded tokens may be exaggerated and subject to higher volatility."
+    ],
+    "breadth": {
+      "core_count": 10,
+      "core_avg_pct": -0.167,
+      "advancers": 6,
+      "decliners": 4
+    }
+  },
+  "core_movers": [
+    {
+      "symbol": "RMETAUSDT",
+      "ticker": "META",
+      "start_price": 622.54,
+      "end_price": 613.18,
+      "pct_change": -1.504,
+      "range_pct": 2.432,
+      "turnover_usdt": 6608652680.24
+    },
+    {
+      "symbol": "RMSFTUSDT",
+      "ticker": "MSFT",
+      "start_price": 535.61,
+      "end_price": 531.24,
+      "pct_change": -0.816,
+      "range_pct": 1.488,
+      "turnover_usdt": 10763662319.34
+    },
+    {
+      "symbol": "RAAPLUSDT",
+      "ticker": "AAPL",
+      "start_price": 344.765,
+      "end_price": 342.95,
+      "pct_change": -0.526,
+      "range_pct": 0.977,
+      "turnover_usdt": 7536551670.64
+    },
+    {
+      "symbol": "RAMDUSDT",
+      "ticker": "AMD",
+      "start_price": 446.9447,
+      "end_price": 448.87,
+      "pct_change": 0.431,
+      "range_pct": 1.24,
+      "turnover_usdt": 68448577.27
+    },
+    {
+      "symbol": "RGOOGLUSDT",
+      "ticker": "GOOGL",
+      "start_price": 285.11,
+      "end_price": 286.0,
+      "pct_change": 0.312,
+      "range_pct": 0.368,
+      "turnover_usdt": 34197815.28
+    },
+    {
+      "symbol": "RNVDAUSDT",
+      "ticker": "NVDA",
+      "start_price": 187.55,
+      "end_price": 188.01,
+      "pct_change": 0.245,
+      "range_pct": 0.864,
+      "turnover_usdt": 172478344.02
+    },
+    {
+      "symbol": "RQQQUSDT",
+      "ticker": "QQQ",
+      "start_price": 656.9645,
+      "end_price": 658.05,
+      "pct_change": 0.165,
+      "range_pct": 1.203,
+      "turnover_usdt": 379712378.83
+    },
+    {
+      "symbol": "RSPYUSDT",
+      "ticker": "SPY",
+      "start_price": 737.04,
+      "end_price": 735.95,
+      "pct_change": -0.148,
+      "range_pct": 0.547,
+      "turnover_usdt": 21798212156.34
+    },
+    {
+      "symbol": "RAMZNUSDT",
+      "ticker": "AMZN",
+      "start_price": 259.3,
+      "end_price": 259.61,
+      "pct_change": 0.12,
+      "range_pct": 0.767,
+      "turnover_usdt": 2567969103.41
+    },
+    {
+      "symbol": "RTSLAUSDT",
+      "ticker": "TSLA",
+      "start_price": 358.8,
+      "end_price": 359.0,
+      "pct_change": 0.056,
+      "range_pct": 0.499,
+      "turnover_usdt": 63468459.91
+    }
+  ],
+  "other_movers": [
+    {
+      "symbol": "ROBXUSDT",
+      "ticker": "OBX",
+      "start_price": 9.6,
+      "end_price": 13.7,
+      "pct_change": 42.708,
+      "range_pct": 55.521,
+      "turnover_usdt": 31946177.89
+    },
+    {
+      "symbol": "RFLYUSDT",
+      "ticker": "FLY",
+      "start_price": 15.5975,
+      "end_price": 20.79,
+      "pct_change": 33.291,
+      "range_pct": 34.685,
+      "turnover_usdt": 259941065.74
+    },
+    {
+      "symbol": "RKRMNUSDT",
+      "ticker": "KRMN",
+      "start_price": 35.5,
+      "end_price": 46.5,
+      "pct_change": 30.986,
+      "range_pct": 37.211,
+      "turnover_usdt": 440175009.99
+    },
+    {
+      "symbol": "RAMNUSDT",
+      "ticker": "AMN",
+      "start_price": 49.4205,
+      "end_price": 36.19,
+      "pct_change": -26.771,
+      "range_pct": 28.107,
+      "turnover_usdt": 67267136.06
+    },
+    {
+      "symbol": "RARQQUSDT",
+      "ticker": "ARQQ",
+      "start_price": 12.7216,
+      "end_price": 16.07,
+      "pct_change": 26.321,
+      "range_pct": 30.263,
+      "turnover_usdt": 11725748.75
+    },
+    {
+      "symbol": "RLYNXUSDT",
+      "ticker": "LYNX",
+      "start_price": 11.14,
+      "end_price": 14.0,
+      "pct_change": 25.673,
+      "range_pct": 31.508,
+      "turnover_usdt": 22599825.07
+    },
+    {
+      "symbol": "RIRTCUSDT",
+      "ticker": "IRTC",
+      "start_price": 121.0,
+      "end_price": 90.26,
+      "pct_change": -25.405,
+      "range_pct": 28.653,
+      "turnover_usdt": 537050556.39
+    },
+    {
+      "symbol": "RIONXUSDT",
+      "ticker": "IONX",
+      "start_price": 10.15,
+      "end_price": 12.72,
+      "pct_change": 25.32,
+      "range_pct": 35.074,
+      "turnover_usdt": 21815246.67
+    },
+    {
+      "symbol": "RAOSLUSDT",
+      "ticker": "AOSL",
+      "start_price": 19.06,
+      "end_price": 23.61,
+      "pct_change": 23.872,
+      "range_pct": 27.859,
+      "turnover_usdt": 27083085.96
+    },
+    {
+      "symbol": "ROPENUSDT",
+      "ticker": "OPEN",
+      "start_price": 1.82,
+      "end_price": 1.4001,
+      "pct_change": -23.071,
+      "range_pct": 24.725,
+      "turnover_usdt": 120679457.74
+    }
+  ],
+  "llm_used": "openai/gpt-oss-120b",
+  "evidence": {
+    "news:META": "[{\"feed\": \"cnbc\", \"error\": \"\", \"items\": []}, {\"feed\": \"techcrunch\", \"error\": \"\", \"items\": []}, {\"feed\": \"theverge\", \"error\": \"\", \"items\": []}, {\"feed\": \"wired\", \"error\": \"\", \"items\": []}, {\"feed\": \"arstechnica\", \"error\": \"\", \"items\": []}]",
+    "news:MSFT": "[{\"feed\": \"cnbc\", \"error\": \"\", \"items\": []}, {\"feed\": \"techcrunch\", \"error\": \"\", \"items\": []}, {\"feed\": \"theverge\", \"error\": \"\", \"items\": []}, {\"feed\": \"wired\", \"error\": \"\", \"items\": []}, {\"feed\": \"arstechnica\", \"error\": \"\", \"items\": []}]",
+    "news:AAPL": "[{\"feed\": \"cnbc\", \"error\": \"\", \"items\": []}, {\"feed\": \"techcrunch\", \"error\": \"\", \"items\": []}, {\"feed\": \"theverge\", \"error\": \"\", \"items\": []}, {\"feed\": \"wired\", \"error\": \"\", \"items\": []}, {\"feed\": \"arstechnica\", \"error\": \"\", \"items\": []}]",
+    "news:AMD": "[{\"feed\": \"cnbc\", \"error\": \"\", \"items\": []}, {\"feed\": \"techcrunch\", \"error\": \"\", \"items\": []}, {\"feed\": \"theverge\", \"error\": \"\", \"items\": []}, {\"feed\": \"wired\", \"error\": \"\", \"items\": []}, {\"feed\": \"arstechnica\", \"error\": \"\", \"items\": []}]",
+    "news:GOOGL": "[{\"feed\": \"cnbc\", \"error\": \"\", \"items\": []}, {\"feed\": \"techcrunch\", \"error\": \"\", \"items\": []}, {\"feed\": \"theverge\", \"error\": \"\", \"items\": []}, {\"feed\": \"wired\", \"error\": \"\", \"items\": []}, {\"feed\": \"arstechnica\", \"error\": \"\", \"items\": []}]",
+    "news:OBX": "[{\"feed\": \"cnbc\", \"error\": \"\", \"items\": []}, {\"feed\": \"techcrunch\", \"error\": \"\", \"items\": []}, {\"feed\": \"theverge\", \"error\": \"\", \"items\": []}, {\"feed\": \"wired\", \"error\": \"\", \"items\": []}, {\"feed\": \"arstechnica\", \"error\": \"\", \"items\": []}]",
+    "news:FLY": "[{\"feed\": \"cnbc\", \"error\": \"\", \"items\": []}, {\"feed\": \"techcrunch\", \"error\": \"\", \"items\": []}, {\"feed\": \"theverge\", \"error\": \"\", \"items\": []}, {\"feed\": \"wired\", \"error\": \"\", \"items\": []}, {\"feed\": \"arstechnica\", \"error\": \"\", \"items\": []}]",
+    "news:KRMN": "[{\"feed\": \"cnbc\", \"error\": \"\", \"items\": []}, {\"feed\": \"techcrunch\", \"error\": \"\", \"items\": []}, {\"feed\": \"theverge\", \"error\": \"\", \"items\": []}, {\"feed\": \"wired\", \"error\": \"\", \"items\": []}, {\"feed\": \"arstechnica\", \"error\": \"\", \"items\": []}]",
+    "news:Wall Street": "[{\"feed\": \"cnbc\", \"error\": \"\", \"items\": []}, {\"feed\": \"fed\", \"error\": \"\", \"items\": []}]",
+    "news:Fed": "[{\"feed\": \"cnbc\", \"error\": \"\", \"items\": []}, {\"feed\": \"fed\", \"error\": \"\", \"items\": []}]",
+    "rates": "{\"fed_funds_target_upper\": {\"error\": \"\"}, \"fed_funds_target_lower\": {\"error\": \"\"}, \"t2y\": {\"error\": \"\"}, \"t10y\": {\"error\": \"\"}, \"t30y\": {\"error\": \"\"}, \"spread_10y2y\": {\"error\": \"\"}, \"breakeven_10y\": {\"error\": \"\"}, \"sofr\": {\"error\": \"\"}, \"mortgage_30y\": {\"error\": \"\"}, \"hy_spread\": {\"error\": \"\"}, \"ig_spread\": {\"error\": \"\"}, \"yield_curve_inverted\": false}",
+    "web:NVDA": "- Should You Buy Nvidia Before Nov . 17 ? The Evidence is Piling Up and Here What It Shows . (fool.com, 20261106T093000Z)\n- Should You Buy Nvidia Before Nov . 17 ? The Evidence is Piling Up and Here What It Shows . (fool.com, 20261106T093000Z)\n- Should You Buy Nvidia Stock Before Nov . 17 ? (fool.com, 20261106T043000Z)"
+  }
+}
