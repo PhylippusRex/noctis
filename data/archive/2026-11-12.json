@@ -1,0 +1,384 @@
+{
+  "generated_at": "2026-11-12T13:32:37.581037+00:00",
+  "window_hours": 16,
+  "market_note": "Outside Nasdaq/NYSE hours, rToken prices are indicative quotes, not live exchange prices.",
+  "briefing": {
+    "headline": "PARA spikes 60% overnight amid thin trading",
+    "mood": "risk-off",
+    "summary": "All ten mega\u2011cap tech names slipped, pulling the core average down about 1.1% and dragging the SPY and QQQ lower. The breadth was narrow \u2013 only two advancers versus eight decliners \u2013 while a handful of niche tokens saw wild moves, led by PARA up 60% and DPC up 18%. Small\u2011cap and specialty tokens such as REZI, CDNL and DGII posted large declines, underscoring a risk\u2011off tone ahead of the US open.",
+    "macro_context": [
+      {
+        "title": "Fed stance unchanged",
+        "detail": "No new Fed announcements were released overnight and the yield curve remains non\u2011inverted, suggesting stable monetary policy for now."
+      },
+      {
+        "title": "Bond market signals",
+        "detail": "Key rates (2\u2011year, 10\u2011year, 30\u2011year) showed no reported errors, indicating market pricing remains steady."
+      }
+    ],
+    "movers": [
+      {
+        "ticker": "NVDA",
+        "pct_change": -5.974,
+        "why": "NVDA fell 5.97% overnight, the largest drop among the core mega\u2011caps and 4.87% below the core average decline of 1.11%.",
+        "confidence": "low",
+        "watch_today": "Watch the US open for any fresh market news."
+      },
+      {
+        "ticker": "TSLA",
+        "pct_change": -1.216,
+        "why": "TSLA slipped 1.22% overnight, marginally worse than the core average decline of 1.11%.",
+        "confidence": "low",
+        "watch_today": "Watch the US open for any fresh market news."
+      },
+      {
+        "ticker": "META",
+        "pct_change": -1.213,
+        "why": "META declined 1.21% overnight, roughly in line with the core average decline of 1.11%.",
+        "confidence": "low",
+        "watch_today": "Watch the US open for any fresh market news."
+      },
+      {
+        "ticker": "QQQ",
+        "pct_change": -1.123,
+        "why": "QQQ dropped 1.12% overnight, just shy of the core average decline of 1.11% and ranking 10th in magnitude among 20 tickers.",
+        "confidence": "low",
+        "watch_today": "Watch the US open for any fresh market news."
+      },
+      {
+        "ticker": "AMZN",
+        "pct_change": -0.747,
+        "why": "AMZN eased 0.75% overnight, outperforming the core average decline and ranking 9th smallest mover among the set.",
+        "confidence": "low",
+        "watch_today": "Watch the US open for any fresh market news."
+      },
+      {
+        "ticker": "SPY",
+        "pct_change": -0.684,
+        "why": "SPY slipped 0.68% overnight, a milder decline than the core average and the 8th\u2011largest move overall.",
+        "confidence": "low",
+        "watch_today": "Watch the US open for any fresh market news."
+      },
+      {
+        "ticker": "GOOGL",
+        "pct_change": -0.563,
+        "why": "GOOGL fell 0.56% overnight, the smallest decline among the core group and 7th\u2011largest mover overall.",
+        "confidence": "low",
+        "watch_today": "Watch the US open for any fresh market news."
+      },
+      {
+        "ticker": "AMD",
+        "pct_change": 0.357,
+        "why": "AMD rose 0.36% overnight, the top positive mover among the core stocks and 4th\u2011largest move overall.",
+        "confidence": "low",
+        "watch_today": "Watch the US open for any fresh market news."
+      },
+      {
+        "ticker": "AAPL",
+        "pct_change": 0.287,
+        "why": "AAPL edged up 0.29% overnight, the second\u2011best performer among the core set and 5th\u2011largest move overall.",
+        "confidence": "low",
+        "watch_today": "Watch the US open for any fresh market news."
+      },
+      {
+        "ticker": "MSFT",
+        "pct_change": -0.196,
+        "why": "MSFT slipped 0.20% overnight, a modest decline that sits just below the core average and ranks 6th\u2011largest mover overall.",
+        "confidence": "low",
+        "watch_today": "Watch the US open for any fresh market news."
+      },
+      {
+        "ticker": "PARA",
+        "pct_change": 60.157,
+        "why": "PARA surged 60.16% overnight, the biggest mover of all tickers and more than 60% above the core average decline.",
+        "confidence": "low",
+        "watch_today": "Watch the US open for any fresh market news."
+      },
+      {
+        "ticker": "CDNL",
+        "pct_change": -38.288,
+        "why": "CDNL plunged 38.29% overnight, the steepest drop among all tickers and nearly 38% worse than the core average decline.",
+        "confidence": "low",
+        "watch_today": "Watch the US open for any fresh market news."
+      },
+      {
+        "ticker": "DGII",
+        "pct_change": -20.138,
+        "why": "DGII fell 20.14% overnight, the second\u2011largest decline overall and far exceeding the core average drop.",
+        "confidence": "low",
+        "watch_today": "Watch the US open for any fresh market news."
+      },
+      {
+        "ticker": "BZ",
+        "pct_change": -19.441,
+        "why": "BZ dropped 19.44% overnight, the third\u2011largest decline among the 20 tickers.",
+        "confidence": "low",
+        "watch_today": "Watch the US open for any fresh market news."
+      },
+      {
+        "ticker": "BRUN",
+        "pct_change": -18.354,
+        "why": "BRUN slipped 18.35% overnight, the fourth\u2011largest decline in the set.",
+        "confidence": "low",
+        "watch_today": "Watch the US open for any fresh market news."
+      },
+      {
+        "ticker": "NBIS",
+        "pct_change": -17.974,
+        "why": "NBIS fell 17.97% overnight, the fifth\u2011largest mover and well below the core average decline.",
+        "confidence": "low",
+        "watch_today": "Watch the US open for any fresh market news."
+      },
+      {
+        "ticker": "DPC",
+        "pct_change": 17.925,
+        "why": "DPC rallied 17.93% overnight, the second\u2011largest positive move after PARA and far above the core average.",
+        "confidence": "low",
+        "watch_today": "Watch the US open for any fresh market news."
+      },
+      {
+        "ticker": "REZI",
+        "pct_change": 15.63,
+        "why": "REZI climbed 15.63% overnight, the third\u2011largest gain among all tickers.",
+        "confidence": "low",
+        "watch_today": "Watch the US open for any fresh market news."
+      },
+      {
+        "ticker": "IRE",
+        "pct_change": -15.135,
+        "why": "IRE dropped 15.14% overnight, the sixth\u2011largest decline overall.",
+        "confidence": "low",
+        "watch_today": "Watch the US open for any fresh market news."
+      },
+      {
+        "ticker": "NVDL",
+        "pct_change": -12.167,
+        "why": "NVDL fell 12.17% overnight, the seventh\u2011largest decline among the 20 tickers.",
+        "confidence": "low",
+        "watch_today": "Watch the US open for any fresh market news."
+      }
+    ],
+    "open_outlook": "No fresh Fed or Wall Street headlines were released overnight, so the market is likely to react to any US\u2011specific news at the 9:30\u202fET open. Keep an eye on early\u2011session price action for clues on direction.",
+    "watchlist_today": [
+      "PARA",
+      "DPC",
+      "REZI",
+      "NVDA",
+      "AMD"
+    ],
+    "sources": [
+      "rates",
+      "wall street",
+      "fed",
+      "web:AMZN"
+    ],
+    "caveats": [
+      "rToken prices shown are indicative quotes outside US market hours and may differ from the official settlement prices at the open."
+    ],
+    "breadth": {
+      "core_count": 10,
+      "core_avg_pct": -1.107,
+      "advancers": 2,
+      "decliners": 8
+    }
+  },
+  "core_movers": [
+    {
+      "symbol": "RNVDAUSDT",
+      "ticker": "NVDA",
+      "start_price": 168.57,
+      "end_price": 158.5,
+      "pct_change": -5.974,
+      "range_pct": 10.34,
+      "turnover_usdt": 18777906896.96
+    },
+    {
+      "symbol": "RTSLAUSDT",
+      "ticker": "TSLA",
+      "start_price": 390.63,
+      "end_price": 385.88,
+      "pct_change": -1.216,
+      "range_pct": 1.725,
+      "turnover_usdt": 331094058.32
+    },
+    {
+      "symbol": "RMETAUSDT",
+      "ticker": "META",
+      "start_price": 629.98,
+      "end_price": 622.34,
+      "pct_change": -1.213,
+      "range_pct": 1.898,
+      "turnover_usdt": 270608622.31
+    },
+    {
+      "symbol": "RQQQUSDT",
+      "ticker": "QQQ",
+      "start_price": 689.51,
+      "end_price": 681.77,
+      "pct_change": -1.123,
+      "range_pct": 2.265,
+      "turnover_usdt": 3034075626.73
+    },
+    {
+      "symbol": "RAMZNUSDT",
+      "ticker": "AMZN",
+      "start_price": 266.26,
+      "end_price": 264.27,
+      "pct_change": -0.747,
+      "range_pct": 2.145,
+      "turnover_usdt": 369933982.12
+    },
+    {
+      "symbol": "RSPYUSDT",
+      "ticker": "SPY",
+      "start_price": 759.74,
+      "end_price": 754.545,
+      "pct_change": -0.684,
+      "range_pct": 0.924,
+      "turnover_usdt": 2083385253.96
+    },
+    {
+      "symbol": "RGOOGLUSDT",
+      "ticker": "GOOGL",
+      "start_price": 293.1,
+      "end_price": 291.45,
+      "pct_change": -0.563,
+      "range_pct": 2.436,
+      "turnover_usdt": 820880155.7
+    },
+    {
+      "symbol": "RAMDUSDT",
+      "ticker": "AMD",
+      "start_price": 559.49,
+      "end_price": 561.49,
+      "pct_change": 0.357,
+      "range_pct": 5.559,
+      "turnover_usdt": 3438445486.8
+    },
+    {
+      "symbol": "RAAPLUSDT",
+      "ticker": "AAPL",
+      "start_price": 355.98,
+      "end_price": 357.0017,
+      "pct_change": 0.287,
+      "range_pct": 0.758,
+      "turnover_usdt": 313683253.65
+    },
+    {
+      "symbol": "RMSFTUSDT",
+      "ticker": "MSFT",
+      "start_price": 520.01,
+      "end_price": 518.99,
+      "pct_change": -0.196,
+      "range_pct": 1.237,
+      "turnover_usdt": 381766570.9
+    }
+  ],
+  "other_movers": [
+    {
+      "symbol": "RPARAUSDT",
+      "ticker": "PARA",
+      "start_price": 0.0763,
+      "end_price": 0.1222,
+      "pct_change": 60.157,
+      "range_pct": 101.835,
+      "turnover_usdt": 49039754.05
+    },
+    {
+      "symbol": "RCDNLUSDT",
+      "ticker": "CDNL",
+      "start_price": 14.6,
+      "end_price": 9.01,
+      "pct_change": -38.288,
+      "range_pct": 48.219,
+      "turnover_usdt": 18450541.94
+    },
+    {
+      "symbol": "RDGIIUSDT",
+      "ticker": "DGII",
+      "start_price": 67.93,
+      "end_price": 54.25,
+      "pct_change": -20.138,
+      "range_pct": 20.904,
+      "turnover_usdt": 45917228.39
+    },
+    {
+      "symbol": "RBZUSDT",
+      "ticker": "BZ",
+      "start_price": 17.18,
+      "end_price": 13.84,
+      "pct_change": -19.441,
+      "range_pct": 25.242,
+      "turnover_usdt": 89527532.07
+    },
+    {
+      "symbol": "RBRUNUSDT",
+      "ticker": "BRUN",
+      "start_price": 7.41,
+      "end_price": 6.05,
+      "pct_change": -18.354,
+      "range_pct": 23.549,
+      "turnover_usdt": 21752677.17
+    },
+    {
+      "symbol": "RNBISUSDT",
+      "ticker": "NBIS",
+      "start_price": 157.17,
+      "end_price": 128.92,
+      "pct_change": -17.974,
+      "range_pct": 23.612,
+      "turnover_usdt": 2149762269.24
+    },
+    {
+      "symbol": "RDPCUSDT",
+      "ticker": "DPC",
+      "start_price": 30.065,
+      "end_price": 35.4541,
+      "pct_change": 17.925,
+      "range_pct": 21.404,
+      "turnover_usdt": 79656643.76
+    },
+    {
+      "symbol": "RREZIUSDT",
+      "ticker": "REZI",
+      "start_price": 19.45,
+      "end_price": 22.49,
+      "pct_change": 15.63,
+      "range_pct": 23.599,
+      "turnover_usdt": 244664424.97
+    },
+    {
+      "symbol": "RIREUSDT",
+      "ticker": "IRE",
+      "start_price": 1.85,
+      "end_price": 1.57,
+      "pct_change": -15.135,
+      "range_pct": 16.757,
+      "turnover_usdt": 7991143.37
+    },
+    {
+      "symbol": "RNVDLUSDT",
+      "ticker": "NVDL",
+      "start_price": 19.15,
+      "end_price": 16.82,
+      "pct_change": -12.167,
+      "range_pct": 16.762,
+      "turnover_usdt": 647065121.21
+    }
+  ],
+  "llm_used": "openai/gpt-oss-120b",
+  "evidence": {
+    "news:NVDA": "[{\"feed\": \"cnbc\", \"error\": \"\", \"items\": []}, {\"feed\": \"techcrunch\", \"error\": \"\", \"items\": []}, {\"feed\": \"theverge\", \"error\": \"\", \"items\": []}, {\"feed\": \"wired\", \"error\": \"\", \"items\": []}, {\"feed\": \"arstechnica\", \"error\": \"\", \"items\": []}]",
+    "news:TSLA": "[{\"feed\": \"cnbc\", \"error\": \"\", \"items\": []}, {\"feed\": \"techcrunch\", \"error\": \"\", \"items\": []}, {\"feed\": \"theverge\", \"error\": \"\", \"items\": []}, {\"feed\": \"wired\", \"error\": \"\", \"items\": []}, {\"feed\": \"arstechnica\", \"error\": \"\", \"items\": []}]",
+    "news:META": "[{\"feed\": \"cnbc\", \"error\": \"\", \"items\": []}, {\"feed\": \"techcrunch\", \"error\": \"\", \"items\": []}, {\"feed\": \"theverge\", \"error\": \"\", \"items\": []}, {\"feed\": \"wired\", \"error\": \"\", \"items\": []}, {\"feed\": \"arstechnica\", \"error\": \"\", \"items\": []}]",
+    "news:QQQ": "[{\"feed\": \"cnbc\", \"error\": \"\", \"items\": []}, {\"feed\": \"techcrunch\", \"error\": \"\", \"items\": []}, {\"feed\": \"theverge\", \"error\": \"\", \"items\": []}, {\"feed\": \"wired\", \"error\": \"\", \"items\": []}, {\"feed\": \"arstechnica\", \"error\": \"\", \"items\": []}]",
+    "news:AMZN": "[{\"feed\": \"cnbc\", \"error\": \"\", \"items\": []}, {\"feed\": \"techcrunch\", \"error\": \"\", \"items\": []}, {\"feed\": \"theverge\", \"error\": \"\", \"items\": []}, {\"feed\": \"wired\", \"error\": \"\", \"items\": []}, {\"feed\": \"arstechnica\", \"error\": \"\", \"items\": []}]",
+    "news:PARA": "[{\"feed\": \"cnbc\", \"error\": \"\", \"items\": []}, {\"feed\": \"techcrunch\", \"error\": \"\", \"items\": []}, {\"feed\": \"theverge\", \"error\": \"\", \"items\": []}, {\"feed\": \"wired\", \"error\": \"\", \"items\": []}, {\"feed\": \"arstechnica\", \"error\": \"\", \"items\": []}]",
+    "news:CDNL": "[{\"feed\": \"cnbc\", \"error\": \"\", \"items\": []}, {\"feed\": \"techcrunch\", \"error\": \"\", \"items\": []}, {\"feed\": \"theverge\", \"error\": \"\", \"items\": []}, {\"feed\": \"wired\", \"error\": \"\", \"items\": []}, {\"feed\": \"arstechnica\", \"error\": \"\", \"items\": []}]",
+    "news:DGII": "[{\"feed\": \"cnbc\", \"error\": \"\", \"items\": []}, {\"feed\": \"techcrunch\", \"error\": \"\", \"items\": []}, {\"feed\": \"theverge\", \"error\": \"\", \"items\": []}, {\"feed\": \"wired\", \"error\": \"\", \"items\": []}, {\"feed\": \"arstechnica\", \"error\": \"\", \"items\": []}]",
+    "news:Wall Street": "[{\"feed\": \"cnbc\", \"error\": \"\", \"items\": []}, {\"feed\": \"fed\", \"error\": \"\", \"items\": []}]",
+    "news:Fed": "[{\"feed\": \"cnbc\", \"error\": \"\", \"items\": []}, {\"feed\": \"fed\", \"error\": \"\", \"items\": []}]",
+    "rates": "{\"fed_funds_target_upper\": {\"error\": \"\"}, \"fed_funds_target_lower\": {\"error\": \"\"}, \"t2y\": {\"error\": \"\"}, \"t10y\": {\"error\": \"\"}, \"t30y\": {\"error\": \"\"}, \"spread_10y2y\": {\"error\": \"\"}, \"breakeven_10y\": {\"error\": \"\"}, \"sofr\": {\"error\": \"\"}, \"mortgage_30y\": {\"error\": \"\"}, \"hy_spread\": {\"error\": \"\"}, \"ig_spread\": {\"error\": \"\"}, \"yield_curve_inverted\": false}",
+    "web:AMZN": "- Food Basics Ontario Flyer Deals November 12th - 18th - Canadian Freebies , Coupons , Deals , Bargains , Flyers , Contests Canada Canadian Freebies , Coupons , Deals , Bargains , Flyers , Contests Canada (smartcanucks.ca, 20261111T013000Z)\n- Amazon drone delivery center in Markham set for takeoff (wbez.org, 20261111T053000Z)\n- Arizona Daily Star Reports $7 Million Amazon Prime Settlement (econotimes.com, 20261112T034500Z)"
+  }
+}
