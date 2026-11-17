@@ -1,383 +1,378 @@
 {
-  "generated_at": "2026-11-16T13:22:41.588523+00:00",
-  "window_hours": 64,
+  "generated_at": "2026-11-17T14:07:38.349335+00:00",
+  "window_hours": 17,
   "market_note": "Outside Nasdaq/NYSE hours, rToken prices are indicative quotes, not live exchange prices.",
   "briefing": {
-    "headline": "PSNYW rockets 50.8% overnight",
-    "mood": "risk-off",
-    "summary": "The overnight session saw a broad pullback in the core mega\u2011cap tech group, with AMD, NVDA and AMZN down sharply while MSFT, AAPL and META posted modest gains. Index trackers QQQ and SPY were slightly lower, underscoring a risk\u2011off tone. Outside the core, a handful of niche tokens posted extreme moves \u2013 PSNYW and SNDQ surged over 30%, whereas AAOX, SNXX and PSNY slumped similarly. Overall breadth was thin, with more decliners than advancers.",
+    "headline": "SLS surges 258% overnight as small\u2011cap tokens rally",
+    "mood": "mixed",
+    "summary": "Mega\u2011cap tech stocks were split, with five advancers and five decliners among the core US equities. The Nasdaq\u2011linked QQQ edged higher while the broader SPY was flat. Meanwhile, tiny caps drove the extremes, highlighted by SLS soaring over 250% and EMAT tumbling nearly 30%. Overall breadth was mixed, reflecting divergent moves across market segments.",
     "macro_context": [
       {
-        "title": "Fed policy",
-        "detail": "No new Fed announcements were released; policy stance remains unchanged."
-      },
-      {
-        "title": "Yield curve",
-        "detail": "The yield curve is not inverted, indicating no immediate recession signal."
+        "title": "Fed stance unchanged",
+        "detail": "The Federal Reserve has not altered its policy target, and the yield curve remains non\u2011inverted, indicating a steady macro backdrop."
       }
     ],
     "movers": [
       {
         "ticker": "AMD",
-        "pct_change": -4.708,
-        "why": "AMD fell 4.708% overnight, the 15th largest mover out of 20 and ranked 4th in turnover.",
+        "pct_change": 2.342,
+        "why": "AMD rose 2.34% overnight; no specific news was reported.",
         "confidence": "low",
-        "watch_today": "Watch for any earnings or supply\u2011chain updates that could affect the chip sector."
+        "watch_today": "watch for any chipset or earnings updates"
       },
       {
         "ticker": "NVDA",
-        "pct_change": -3.023,
-        "why": "NVDA slipped 3.023% overnight, ranking 14th in move and 7th in turnover among the 20 tickers.",
-        "confidence": "low",
-        "watch_today": "Monitor GPU demand trends ahead of the open."
-      },
-      {
-        "ticker": "AMZN",
-        "pct_change": -1.815,
-        "why": "AMZN dropped 1.815% overnight, the 13th biggest mover and 5th in turnover.",
-        "confidence": "low",
-        "watch_today": "Watch for any retail traffic or AWS guidance."
-      },
-      {
-        "ticker": "MSFT",
-        "pct_change": 1.316,
-        "why": "MSFT rose 1.316% overnight, the 6th strongest mover and 3rd highest turnover.",
-        "confidence": "low",
-        "watch_today": "Watch for cloud revenue cues."
+        "pct_change": 1.13,
+        "why": "NVDA gained 1.13% after reports of Jensen Huang\u2019s departure, which may signal a slowdown in Nvidia\u2019s AI momentum.",
+        "confidence": "medium",
+        "watch_today": "monitor AI\u2011chip demand and leadership news"
       },
       {
         "ticker": "TSLA",
-        "pct_change": -1.289,
-        "why": "TSLA slipped 1.289% overnight, ranking 12th in move and 8th in turnover.",
+        "pct_change": 0.764,
+        "why": "TSLA increased 0.76% with no news reported.",
         "confidence": "low",
-        "watch_today": "Watch for production and delivery numbers."
-      },
-      {
-        "ticker": "QQQ",
-        "pct_change": -0.969,
-        "why": "QQQ declined 0.969% overnight, the 11th biggest mover and 9th in turnover.",
-        "confidence": "low",
-        "watch_today": "Watch for broader tech sector sentiment."
+        "watch_today": "watch for production or pricing updates"
       },
       {
         "ticker": "META",
-        "pct_change": 0.603,
-        "why": "META edged up 0.603% overnight, the 7th best mover and 6th in turnover.",
+        "pct_change": -0.701,
+        "why": "META fell 0.70% with no news reported.",
         "confidence": "low",
-        "watch_today": "Watch for ad\u2011revenue trends."
+        "watch_today": "keep an eye on ad\u2011revenue trends"
+      },
+      {
+        "ticker": "MSFT",
+        "pct_change": -0.685,
+        "why": "MSFT slipped 0.69% with no news reported.",
+        "confidence": "low",
+        "watch_today": "watch cloud and AI segment data"
       },
       {
         "ticker": "GOOGL",
-        "pct_change": -0.531,
-        "why": "GOOGL slipped 0.531% overnight, the 10th biggest mover and 10th in turnover.",
+        "pct_change": -0.515,
+        "why": "GOOGL dropped 0.52% with no news reported.",
         "confidence": "low",
-        "watch_today": "Watch for search and cloud updates."
+        "watch_today": "track ad\u2011spend and AI product news"
+      },
+      {
+        "ticker": "AMZN",
+        "pct_change": 0.469,
+        "why": "AMZN rose 0.47% with no news reported.",
+        "confidence": "low",
+        "watch_today": "watch retail traffic and AWS metrics"
       },
       {
         "ticker": "AAPL",
-        "pct_change": 0.469,
-        "why": "AAPL gained 0.469% overnight, the 8th strongest mover and 2nd in turnover.",
+        "pct_change": -0.448,
+        "why": "AAPL fell 0.45% with no news reported.",
         "confidence": "low",
-        "watch_today": "Watch for iPhone sales data."
+        "watch_today": "monitor supply\u2011chain and services revenue"
+      },
+      {
+        "ticker": "QQQ",
+        "pct_change": 0.349,
+        "why": "QQQ inched up 0.35% with no news reported.",
+        "confidence": "low",
+        "watch_today": "watch tech earnings outlook"
       },
       {
         "ticker": "SPY",
-        "pct_change": -0.072,
-        "why": "SPY ticked down 0.072% overnight, the 9th biggest mover and the top turnover rank.",
+        "pct_change": -0.097,
+        "why": "SPY dipped 0.10% with no news reported.",
         "confidence": "low",
-        "watch_today": "Watch overall market breadth."
+        "watch_today": "watch broader market sentiment"
       },
       {
-        "ticker": "PSNYW",
-        "pct_change": 50.806,
-        "why": "PSNYW surged 50.806% overnight, the top mover and 19th in turnover among the 20 tokens.",
+        "ticker": "SLS",
+        "pct_change": 257.831,
+        "why": "SLS exploded 257.83% overnight; no news was reported.",
         "confidence": "low",
-        "watch_today": "Watch for any news on the underlying biotech pipeline."
+        "watch_today": "expect high volatility"
       },
       {
-        "ticker": "SNDQ",
-        "pct_change": 38.575,
-        "why": "SNDQ jumped 38.575% overnight, the second\u2011largest mover and 12th in turnover.",
+        "ticker": "EMAT",
+        "pct_change": -29.808,
+        "why": "EMAT plunged 29.81% overnight; no news was reported.",
         "confidence": "low",
-        "watch_today": "Watch for sector\u2011specific catalysts."
+        "watch_today": "watch for reversal signals"
       },
       {
-        "ticker": "AAOX",
-        "pct_change": -33.184,
-        "why": "AAOX plunged 33.184% overnight, the lowest mover and 15th in turnover.",
+        "ticker": "OFRM",
+        "pct_change": 20.976,
+        "why": "OFRM jumped 20.98% overnight; no news was reported.",
         "confidence": "low",
-        "watch_today": "Watch for any regulatory updates."
+        "watch_today": "watch for liquidity spikes"
       },
       {
-        "ticker": "SNXX",
-        "pct_change": -30.187,
-        "why": "SNXX fell 30.187% overnight, the 19th biggest mover and 11th in turnover.",
+        "ticker": "IEP",
+        "pct_change": -14.444,
+        "why": "IEP declined 14.44% overnight; no news was reported.",
         "confidence": "low",
-        "watch_today": "Watch for market sentiment in its niche."
+        "watch_today": "monitor energy demand"
       },
       {
-        "ticker": "PSNY",
-        "pct_change": -30.181,
-        "why": "PSNY dropped 30.181% overnight, the 18th biggest mover and 20th in turnover.",
+        "ticker": "RCAT",
+        "pct_change": -12.429,
+        "why": "RCAT fell 12.43% overnight; no news was reported.",
         "confidence": "low",
-        "watch_today": "Watch for any biotech trial results."
+        "watch_today": "watch sector sentiment"
       },
       {
-        "ticker": "CGON",
-        "pct_change": 29.373,
-        "why": "CGON rose 29.373% overnight, the third\u2011largest mover and 13th in turnover.",
+        "ticker": "LUXE",
+        "pct_change": 11.798,
+        "why": "LUXE rose 11.80% overnight; no news was reported.",
         "confidence": "low",
-        "watch_today": "Watch for commodity price influence."
+        "watch_today": "watch luxury consumer trends"
       },
       {
-        "ticker": "SKDD",
-        "pct_change": 29.134,
-        "why": "SKDD climbed 29.134% overnight, the fourth\u2011largest mover and 18th in turnover.",
+        "ticker": "OMER",
+        "pct_change": -11.196,
+        "why": "OMER dropped 11.20% overnight; no news was reported.",
         "confidence": "low",
-        "watch_today": "Watch for sector news."
+        "watch_today": "watch biotech pipeline"
       },
       {
-        "ticker": "MVLL",
-        "pct_change": -25.516,
-        "why": "MVLL declined 25.516% overnight, the 17th biggest mover and 16th in turnover.",
+        "ticker": "URGN",
+        "pct_change": 10.733,
+        "why": "URGN gained 10.73% overnight; no news was reported.",
         "confidence": "low",
-        "watch_today": "Watch for any earnings release."
+        "watch_today": "watch biotech approvals"
       },
       {
-        "ticker": "SKUU",
-        "pct_change": -24.768,
-        "why": "SKUU slid 24.768% overnight, the 16th biggest mover and 17th in turnover.",
+        "ticker": "ODD",
+        "pct_change": -9.813,
+        "why": "ODD fell 9.81% overnight; no news was reported.",
         "confidence": "low",
-        "watch_today": "Watch for market sentiment."
+        "watch_today": "monitor market breadth"
       },
       {
-        "ticker": "MUZ",
-        "pct_change": 23.094,
-        "why": "MUZ climbed 23.094% overnight, the fifth\u2011largest mover and 14th in turnover.",
+        "ticker": "CYPH",
+        "pct_change": 7.968,
+        "why": "CYPH advanced 7.97% overnight; no news was reported.",
         "confidence": "low",
-        "watch_today": "Watch for any sector\u2011specific developments."
+        "watch_today": "watch crypto\u2011related news"
       }
     ],
-    "open_outlook": "With no fresh macro or earnings headlines, traders will focus on any Fed commentary that could shift sentiment before the 9:30\u202fET open. Core tech stocks remain mixed, so expect continued volatility in the early session.",
+    "open_outlook": "Leadership news at Nvidia could influence AI\u2011chip sentiment heading into the US open. With no major macro releases, price action will likely be driven by sector\u2011specific catalysts and earnings cues.",
     "watchlist_today": [
-      "PSNYW",
-      "SNDQ",
-      "CGON",
-      "SKDD",
-      "MUZ"
+      "NVDA",
+      "SLS",
+      "EMAT",
+      "URGN",
+      "LUXE"
     ],
     "sources": [
-      "Wall Street",
-      "Fed",
-      "rates"
+      "web:NVDA"
     ],
     "caveats": [
-      "rToken prices are indicative quotes outside US market hours and may not reflect actual trading prices.",
-      "No specific news drivers were identified for the moves; explanations are based solely on statistical data."
+      "Token prices are indicative quotes outside regular US market hours; actual trading may differ.",
+      "Many moves lack publicly reported news, so the explanations are based solely on price changes."
     ],
     "breadth": {
       "core_count": 10,
-      "core_avg_pct": -1.002,
-      "advancers": 3,
-      "decliners": 7
+      "core_avg_pct": 0.261,
+      "advancers": 5,
+      "decliners": 5
     }
   },
   "core_movers": [
     {
       "symbol": "RAMDUSDT",
       "ticker": "AMD",
-      "start_price": 530.13,
-      "end_price": 505.17,
-      "pct_change": -4.708,
-      "range_pct": 6.737,
-      "turnover_usdt": 9141037554.2
+      "start_price": 505.0,
+      "end_price": 516.8292,
+      "pct_change": 2.342,
+      "range_pct": 5.107,
+      "turnover_usdt": 1373356356.15
     },
     {
       "symbol": "RNVDAUSDT",
       "ticker": "NVDA",
-      "start_price": 161.78,
-      "end_price": 156.89,
-      "pct_change": -3.023,
-      "range_pct": 6.738,
-      "turnover_usdt": 3937812633.87
-    },
-    {
-      "symbol": "RAMZNUSDT",
-      "ticker": "AMZN",
-      "start_price": 269.8,
-      "end_price": 264.904,
-      "pct_change": -1.815,
-      "range_pct": 3.28,
-      "turnover_usdt": 8789953163.36
-    },
-    {
-      "symbol": "RMSFTUSDT",
-      "ticker": "MSFT",
-      "start_price": 518.28,
-      "end_price": 525.1,
-      "pct_change": 1.316,
-      "range_pct": 4.51,
-      "turnover_usdt": 14417256067.65
+      "start_price": 156.2097,
+      "end_price": 157.9754,
+      "pct_change": 1.13,
+      "range_pct": 3.835,
+      "turnover_usdt": 2663018153.01
     },
     {
       "symbol": "RTSLAUSDT",
       "ticker": "TSLA",
-      "start_price": 390.22,
-      "end_price": 385.19,
-      "pct_change": -1.289,
-      "range_pct": 2.832,
-      "turnover_usdt": 1901378982.48
-    },
-    {
-      "symbol": "RQQQUSDT",
-      "ticker": "QQQ",
-      "start_price": 677.1938,
-      "end_price": 670.6301,
-      "pct_change": -0.969,
-      "range_pct": 2.304,
-      "turnover_usdt": 1859139462.73
+      "start_price": 378.85,
+      "end_price": 381.7438,
+      "pct_change": 0.764,
+      "range_pct": 1.964,
+      "turnover_usdt": 239722290.86
     },
     {
       "symbol": "RMETAUSDT",
       "ticker": "META",
-      "start_price": 634.76,
-      "end_price": 638.5855,
-      "pct_change": 0.603,
-      "range_pct": 3.044,
-      "turnover_usdt": 8699543438.11
+      "start_price": 624.8793,
+      "end_price": 620.5,
+      "pct_change": -0.701,
+      "range_pct": 1.52,
+      "turnover_usdt": 263975904.18
+    },
+    {
+      "symbol": "RMSFTUSDT",
+      "ticker": "MSFT",
+      "start_price": 517.707,
+      "end_price": 514.1603,
+      "pct_change": -0.685,
+      "range_pct": 1.758,
+      "turnover_usdt": 520021897.35
     },
     {
       "symbol": "RGOOGLUSDT",
       "ticker": "GOOGL",
-      "start_price": 295.81,
-      "end_price": 294.2391,
-      "pct_change": -0.531,
-      "range_pct": 3.678,
-      "turnover_usdt": 1833658174.39
+      "start_price": 284.3,
+      "end_price": 282.8352,
+      "pct_change": -0.515,
+      "range_pct": 1.59,
+      "turnover_usdt": 393571257.65
+    },
+    {
+      "symbol": "RAMZNUSDT",
+      "ticker": "AMZN",
+      "start_price": 258.15,
+      "end_price": 259.36,
+      "pct_change": 0.469,
+      "range_pct": 1.805,
+      "turnover_usdt": 330533658.72
     },
     {
       "symbol": "RAAPLUSDT",
       "ticker": "AAPL",
-      "start_price": 356.29,
-      "end_price": 357.96,
-      "pct_change": 0.469,
-      "range_pct": 1.735,
-      "turnover_usdt": 16025086943.73
+      "start_price": 352.5207,
+      "end_price": 350.94,
+      "pct_change": -0.448,
+      "range_pct": 1.438,
+      "turnover_usdt": 2550279375.42
+    },
+    {
+      "symbol": "RQQQUSDT",
+      "ticker": "QQQ",
+      "start_price": 661.8019,
+      "end_price": 664.1099,
+      "pct_change": 0.349,
+      "range_pct": 1.969,
+      "turnover_usdt": 2719824863.42
     },
     {
       "symbol": "RSPYUSDT",
       "ticker": "SPY",
-      "start_price": 750.0,
-      "end_price": 749.46,
-      "pct_change": -0.072,
-      "range_pct": 1.287,
-      "turnover_usdt": 19233492001.2
+      "start_price": 739.76,
+      "end_price": 739.04,
+      "pct_change": -0.097,
+      "range_pct": 0.818,
+      "turnover_usdt": 1827670840.89
     }
   ],
   "other_movers": [
     {
-      "symbol": "RPSNYWUSDT",
-      "ticker": "PSNYW",
-      "start_price": 2.965,
-      "end_price": 4.4714,
-      "pct_change": 50.806,
-      "range_pct": 140.968,
-      "turnover_usdt": 11236510.1
+      "symbol": "RSLSUSDT",
+      "ticker": "SLS",
+      "start_price": 7.47,
+      "end_price": 26.73,
+      "pct_change": 257.831,
+      "range_pct": 357.162,
+      "turnover_usdt": 601775919.25
     },
     {
-      "symbol": "RSNDQUSDT",
-      "ticker": "SNDQ",
-      "start_price": 22.017,
-      "end_price": 30.51,
-      "pct_change": 38.575,
-      "range_pct": 40.65,
-      "turnover_usdt": 913141336.91
+      "symbol": "REMATUSDT",
+      "ticker": "EMAT",
+      "start_price": 1.04,
+      "end_price": 0.73,
+      "pct_change": -29.808,
+      "range_pct": 42.308,
+      "turnover_usdt": 1770675.04
     },
     {
-      "symbol": "RAAOXUSDT",
-      "ticker": "AAOX",
-      "start_price": 2.23,
-      "end_price": 1.49,
-      "pct_change": -33.184,
-      "range_pct": 34.081,
-      "turnover_usdt": 116132671.34
+      "symbol": "ROFRMUSDT",
+      "ticker": "OFRM",
+      "start_price": 9.63,
+      "end_price": 11.65,
+      "pct_change": 20.976,
+      "range_pct": 23.053,
+      "turnover_usdt": 26630725.48
     },
     {
-      "symbol": "RSNXXUSDT",
-      "ticker": "SNXX",
-      "start_price": 4.44,
-      "end_price": 3.0997,
-      "pct_change": -30.187,
-      "range_pct": 32.099,
-      "turnover_usdt": 1114388477.36
+      "symbol": "RIEPUSDT",
+      "ticker": "IEP",
+      "start_price": 4.1727,
+      "end_price": 3.57,
+      "pct_change": -14.444,
+      "range_pct": 16.776,
+      "turnover_usdt": 21752800.57
     },
     {
-      "symbol": "RPSNYUSDT",
-      "ticker": "PSNY",
-      "start_price": 4.8,
-      "end_price": 3.3513,
-      "pct_change": -30.181,
-      "range_pct": 41.896,
-      "turnover_usdt": 6941851.78
+      "symbol": "RRCATUSDT",
+      "ticker": "RCAT",
+      "start_price": 2.7292,
+      "end_price": 2.39,
+      "pct_change": -12.429,
+      "range_pct": 25.649,
+      "turnover_usdt": 13007100.13
     },
     {
-      "symbol": "RCGONUSDT",
-      "ticker": "CGON",
-      "start_price": 75.57,
-      "end_price": 97.7672,
-      "pct_change": 29.373,
-      "range_pct": 52.362,
-      "turnover_usdt": 586241260.92
+      "symbol": "RLUXEUSDT",
+      "ticker": "LUXE",
+      "start_price": 10.51,
+      "end_price": 11.75,
+      "pct_change": 11.798,
+      "range_pct": 13.475,
+      "turnover_usdt": 5597863.8
     },
     {
-      "symbol": "RSKDDUSDT",
-      "ticker": "SKDD",
-      "start_price": 8.89,
-      "end_price": 11.48,
-      "pct_change": 29.134,
-      "range_pct": 30.934,
-      "turnover_usdt": 49001729.35
+      "symbol": "ROMERUSDT",
+      "ticker": "OMER",
+      "start_price": 17.015,
+      "end_price": 15.11,
+      "pct_change": -11.196,
+      "range_pct": 17.632,
+      "turnover_usdt": 23608443.56
     },
     {
-      "symbol": "RMVLLUSDT",
-      "ticker": "MVLL",
-      "start_price": 12.43,
-      "end_price": 9.2584,
-      "pct_change": -25.516,
-      "range_pct": 27.675,
-      "turnover_usdt": 89867028.84
+      "symbol": "RURGNUSDT",
+      "ticker": "URGN",
+      "start_price": 26.18,
+      "end_price": 28.99,
+      "pct_change": 10.733,
+      "range_pct": 24.102,
+      "turnover_usdt": 124129088.25
     },
     {
-      "symbol": "RSKUUUSDT",
-      "ticker": "SKUU",
-      "start_price": 15.06,
-      "end_price": 11.33,
-      "pct_change": -24.768,
-      "range_pct": 25.892,
-      "turnover_usdt": 82751756.78
+      "symbol": "RODDUSDT",
+      "ticker": "ODD",
+      "start_price": 17.63,
+      "end_price": 15.9,
+      "pct_change": -9.813,
+      "range_pct": 17.583,
+      "turnover_usdt": 17747521.91
     },
     {
-      "symbol": "RMUZUSDT",
-      "ticker": "MUZ",
-      "start_price": 8.79,
-      "end_price": 10.82,
-      "pct_change": 23.094,
-      "range_pct": 24.687,
-      "turnover_usdt": 142513282.15
+      "symbol": "RCYPHUSDT",
+      "ticker": "CYPH",
+      "start_price": 1.89,
+      "end_price": 2.0406,
+      "pct_change": 7.968,
+      "range_pct": 11.111,
+      "turnover_usdt": 8096324.77
     }
   ],
   "llm_used": "openai/gpt-oss-120b",
   "evidence": {
     "news:AMD": "[{\"feed\": \"cnbc\", \"error\": \"\", \"items\": []}, {\"feed\": \"techcrunch\", \"error\": \"\", \"items\": []}, {\"feed\": \"theverge\", \"error\": \"\", \"items\": []}, {\"feed\": \"wired\", \"error\": \"\", \"items\": []}, {\"feed\": \"arstechnica\", \"error\": \"\", \"items\": []}]",
     "news:NVDA": "[{\"feed\": \"cnbc\", \"error\": \"\", \"items\": []}, {\"feed\": \"techcrunch\", \"error\": \"\", \"items\": []}, {\"feed\": \"theverge\", \"error\": \"\", \"items\": []}, {\"feed\": \"wired\", \"error\": \"\", \"items\": []}, {\"feed\": \"arstechnica\", \"error\": \"\", \"items\": []}]",
-    "news:AMZN": "[{\"feed\": \"cnbc\", \"error\": \"\", \"items\": []}, {\"feed\": \"techcrunch\", \"error\": \"\", \"items\": []}, {\"feed\": \"theverge\", \"error\": \"\", \"items\": []}, {\"feed\": \"wired\", \"error\": \"\", \"items\": []}, {\"feed\": \"arstechnica\", \"error\": \"\", \"items\": []}]",
-    "news:MSFT": "[{\"feed\": \"cnbc\", \"error\": \"\", \"items\": []}, {\"feed\": \"techcrunch\", \"error\": \"\", \"items\": []}, {\"feed\": \"theverge\", \"error\": \"\", \"items\": []}, {\"feed\": \"wired\", \"error\": \"\", \"items\": []}, {\"feed\": \"arstechnica\", \"error\": \"\", \"items\": []}]",
     "news:TSLA": "[{\"feed\": \"cnbc\", \"error\": \"\", \"items\": []}, {\"feed\": \"techcrunch\", \"error\": \"\", \"items\": []}, {\"feed\": \"theverge\", \"error\": \"\", \"items\": []}, {\"feed\": \"wired\", \"error\": \"\", \"items\": []}, {\"feed\": \"arstechnica\", \"error\": \"\", \"items\": []}]",
-    "news:PSNYW": "[{\"feed\": \"cnbc\", \"error\": \"\", \"items\": []}, {\"feed\": \"techcrunch\", \"error\": \"\", \"items\": []}, {\"feed\": \"theverge\", \"error\": \"\", \"items\": []}, {\"feed\": \"wired\", \"error\": \"\", \"items\": []}, {\"feed\": \"arstechnica\", \"error\": \"\", \"items\": []}]",
-    "news:SNDQ": "[{\"feed\": \"cnbc\", \"error\": \"\", \"items\": []}, {\"feed\": \"techcrunch\", \"error\": \"\", \"items\": []}, {\"feed\": \"theverge\", \"error\": \"\", \"items\": []}, {\"feed\": \"wired\", \"error\": \"\", \"items\": []}, {\"feed\": \"arstechnica\", \"error\": \"\", \"items\": []}]",
-    "news:AAOX": "[{\"feed\": \"cnbc\", \"error\": \"\", \"items\": []}, {\"feed\": \"techcrunch\", \"error\": \"\", \"items\": []}, {\"feed\": \"theverge\", \"error\": \"\", \"items\": []}, {\"feed\": \"wired\", \"error\": \"\", \"items\": []}, {\"feed\": \"arstechnica\", \"error\": \"\", \"items\": []}]",
+    "news:META": "[{\"feed\": \"cnbc\", \"error\": \"\", \"items\": []}, {\"feed\": \"techcrunch\", \"error\": \"\", \"items\": []}, {\"feed\": \"theverge\", \"error\": \"\", \"items\": []}, {\"feed\": \"wired\", \"error\": \"\", \"items\": []}, {\"feed\": \"arstechnica\", \"error\": \"\", \"items\": []}]",
+    "news:MSFT": "[{\"feed\": \"cnbc\", \"error\": \"\", \"items\": []}, {\"feed\": \"techcrunch\", \"error\": \"\", \"items\": []}, {\"feed\": \"theverge\", \"error\": \"\", \"items\": []}, {\"feed\": \"wired\", \"error\": \"\", \"items\": []}, {\"feed\": \"arstechnica\", \"error\": \"\", \"items\": []}]",
+    "news:SLS": "[{\"feed\": \"cnbc\", \"error\": \"\", \"items\": []}, {\"feed\": \"techcrunch\", \"error\": \"\", \"items\": []}, {\"feed\": \"theverge\", \"error\": \"\", \"items\": []}, {\"feed\": \"wired\", \"error\": \"\", \"items\": []}, {\"feed\": \"arstechnica\", \"error\": \"\", \"items\": []}]",
+    "news:EMAT": "[{\"feed\": \"cnbc\", \"error\": \"\", \"items\": []}, {\"feed\": \"techcrunch\", \"error\": \"\", \"items\": []}, {\"feed\": \"theverge\", \"error\": \"\", \"items\": []}, {\"feed\": \"wired\", \"error\": \"\", \"items\": []}, {\"feed\": \"arstechnica\", \"error\": \"\", \"items\": []}]",
+    "news:OFRM": "[{\"feed\": \"cnbc\", \"error\": \"\", \"items\": []}, {\"feed\": \"techcrunch\", \"error\": \"\", \"items\": []}, {\"feed\": \"theverge\", \"error\": \"\", \"items\": []}, {\"feed\": \"wired\", \"error\": \"\", \"items\": []}, {\"feed\": \"arstechnica\", \"error\": \"\", \"items\": []}]",
     "news:Wall Street": "[{\"feed\": \"cnbc\", \"error\": \"\", \"items\": []}, {\"feed\": \"fed\", \"error\": \"\", \"items\": []}]",
     "news:Fed": "[{\"feed\": \"cnbc\", \"error\": \"\", \"items\": []}, {\"feed\": \"fed\", \"error\": \"\", \"items\": []}]",
-    "rates": "{\"fed_funds_target_upper\": {\"error\": \"\"}, \"fed_funds_target_lower\": {\"error\": \"\"}, \"t2y\": {\"error\": \"\"}, \"t10y\": {\"error\": \"\"}, \"t30y\": {\"error\": \"\"}, \"spread_10y2y\": {\"error\": \"\"}, \"breakeven_10y\": {\"error\": \"\"}, \"sofr\": {\"error\": \"\"}, \"mortgage_30y\": {\"error\": \"\"}, \"hy_spread\": {\"error\": \"\"}, \"ig_spread\": {\"error\": \"\"}, \"yield_curve_inverted\": false}"
+    "rates": "{\"fed_funds_target_upper\": {\"error\": \"\"}, \"fed_funds_target_lower\": {\"error\": \"\"}, \"t2y\": {\"error\": \"\"}, \"t10y\": {\"error\": \"\"}, \"t30y\": {\"error\": \"\"}, \"spread_10y2y\": {\"error\": \"\"}, \"breakeven_10y\": {\"error\": \"\"}, \"sofr\": {\"error\": \"\"}, \"mortgage_30y\": {\"error\": \"\"}, \"hy_spread\": {\"error\": \"\"}, \"ig_spread\": {\"error\": \"\"}, \"yield_curve_inverted\": false}",
+    "web:NVDA": "- Jensen Huang departure from Nvidia may cause a  minor slowdown ; wont impact AI investment cycle : IBM Arvind Krishna (businesstoday.in, 20261116T081500Z)\n- Megaspeed International : Megaspeed Investigates Alice Huang Exit Amid Nvidia Scandal , ETTelecom (telecom.economictimes.indiatimes.com, 20261116T081500Z)\n- BOJ Takata calls for early rate hikes to curb inflation risks (economictimes.indiatimes.com, 20261116T081500Z)"
   }
 }
